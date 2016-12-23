@@ -1,0 +1,40 @@
+######################################
+
+#' Create a Block Matrix
+#' 
+#' Assembles a block matrix from sub-matrices mimicking coding capabilities of
+#' Matlab.
+#' 
+#' @param x A list of the sub-matrices written in order
+#' they are to appear by row
+#' @param b Numeric. The number of "block" columns. The list
+#' \code{length(x)} must be a multiple of \code{b}.
+#' @return The assembled block matrix
+#' @note Combine sub-Matrices into larger matrix;
+#' Mimic of Matlab. Matrices must be as lists
+#' @author Stu Field
+#' @references %% ~put references to the literature/web site here ~
+#' @keywords ~kwd1 ~kwd2
+#' @examples
+#' 
+#' A <- diag(1:4)
+#' A
+#' B <- diag(9:12)
+#' B
+#' I <- diag(4)
+#' I
+#' blocks <- list(A, B, A*B, B-I)
+#' blocks
+#' BlockMat(blocks, b=2)
+#' BlockMat(blocks, b=4)
+#' 
+#' @export BlockMat
+BlockMat <- function(x, b) {
+   L <- length(x)
+   if ( L%%b!=0 ) 
+      stop("List length (x) must be multiple of: ", b)
+   hi <- seq(b, L, b)
+   lo <- hi - (b - 1)
+   mList <- lapply(1:(L/b), function(i) do.call(cbind, x[lo[i]:hi[i]])) 
+   do.call(rbind, mList)
+}

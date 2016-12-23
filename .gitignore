@@ -1,0 +1,26 @@
+
+# no dropbox attributes files
+*dropbox.attr
+
+# don't care about SomaPkgs backup
+R.scripts.backup.zip
+
+# ignore anything in the R_CMD_checks
+Packages/R_CMD_checks/*
+# except the 1 file
+!Packages/R_CMD_checks/R_CMD_check_DumpingGround
+
+# ignore pkg related manuals and package builds
+man
+
+# ignore files related to adding keyword expansion
+# Revision Info: Id, Author and Date in file header
+# This was desired at one point; look like SVN style
+# and may be incorporated at some point in the future
+filter_clean
+filter_smudge
+
+# ignore all packrat and RStudio project related files
+.project
+packrat/lib*/
+

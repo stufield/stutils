@@ -1,0 +1,16 @@
+Package: stuRpkg
+Type: Package
+Title: My Own stuRpkg
+Version: 1.2
+Date: 2016-03-19
+Authors@R: c(person('Stu', 'Field', email='wiki.kimi@gmail.com', role=c('aut','cre')))
+Description: Full suite of all user-defined functions, subroutines, and data for
+    Stu's R-scripts.
+License: GNU General Public License (>= 3)
+Depends: R (>= 3.1.0)
+Imports: VennDiagram, grid
+Suggests: gplots, testthat
+BuildVignettes: false
+LazyLoad: yes
+LazyData: yes
+RoxygenNote: 5.0.1
