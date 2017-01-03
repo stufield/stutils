@@ -1,4 +1,3 @@
-######################################
 
 #' Create a Block Matrix
 #' 
@@ -10,8 +9,8 @@
 #' @param b Numeric. The number of "block" columns. The list
 #' \code{length(x)} must be a multiple of \code{b}.
 #' @return The assembled block matrix
-#' @note Combine sub-Matrices into larger matrix;
-#' Mimic of Matlab. Matrices must be as lists
+#' @note Combine sub-Matrices into larger matrix; a
+#' mimic of Matlab. Matrices \emph{must} be as a list
 #' @author Stu Field
 #' @references %% ~put references to the literature/web site here ~
 #' @keywords ~kwd1 ~kwd2

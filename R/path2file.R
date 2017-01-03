@@ -1,11 +1,14 @@
-#' 
+
 #' Determine Path to File
 #' 
 #' Determine the path of a defined file via brute force search of root
 #' directory and optionally change the R working directory to the directory
 #' containing that file. Useful in setting the WD prior to a
 #' \code{\link{read.csv}} call.
-#' 
+#'
+#' If the file in \code{filename} is not found, function is
+#' stopped and warning printed.
+#'
 #' @param filename Character string of the desired file, typically \code{"*.R"}
 #' or \code{"*.csv"}.
 #' @param root.dir The path of the root directory. The higher up the root to
@@ -16,10 +19,8 @@
 #' \code{filename}, if found. Uses setwd().
 #' @return The path of the file declared in "filename".
 #' @note %% ~~further notes~~
-#' @section Warning! : If the file in \code{filename} is not found, function is
-#' stopped and warning printed.
 #' @author Stu Field, Steven Mosher
-#' @seealso \code{\link{list.files}} \cr \code{\link{setwd}}
+#' @seealso \code{\link{list.files}}, \code{\link{setwd}}
 #' @references %% ~put references to the literature/web site here ~
 #' @keywords ~kwd1 ~kwd2
 #' @examples
@@ -32,7 +33,7 @@
 #' }
 #' 
 #' @export path2file
-path2file <- function(filename, root.dir= "~/Dropbox/r_scripts", setdir=FALSE) {
+path2file <- function(filename, root.dir= "~/Dropbox", setdir=FALSE) {
 
    fullpath <- list.files(root.dir, full.names=TRUE,
                           recursive=TRUE, pattern=filename)

@@ -8,7 +8,7 @@
 #' Package: \tab stuRpkg \cr
 #' Type: \tab Package\cr
 #' Version: \tab 1.2 \cr
-#' Date: \tab 2016-08-26 \cr
+#' Date: \tab 2017-01-03 \cr
 #' License: \tab GNU General Public License (>= 3) \cr
 #' LazyLoad: \tab yes \cr
 #' LazyData: \tab yes
@@ -23,6 +23,7 @@
 #' \code{\link{MonteCarloIntegral}} - MCrep.v \cr \code{\link{Pop6C}} - popdata \cr
 #' \code{\link{Ri_data}} - Ri_data \cr
 #' \code{\link{TreeData}} - TreeData (trees) from R_tutorial (Sala et al.)
+#'
 #' @references Special thanks to Ben Bolker, the original R Yoda ...
 #' @keywords Stu's Package Ha!
 #' @examples

@@ -7,10 +7,11 @@
 #' 
 #' Neat function for making histogram with density line as well
 #' 
-#' @param n Number of observations.
-#' @param mu Vector of means.
-#' @param sdv Vector of standard deviations.
-#' @param bks How to set the breaks for plotting the histogram.
+#' @param n Numeric. The number of observations
+#' @param mu Numeric. A vector of means
+#' @param sd Numeric. A vector of standard deviations
+#' @param bks How to set the breaks for plotting the histogram
+#' @param ... Argumnets passed to \code{\link{hist}}
 #' @return A Histogram with the random observations produced in rnorm() with a
 #' line produced with dnorm().
 #' @note Used as an example to demo how to create functions in the R tutorial.
@@ -22,13 +23,15 @@
 #' 
 #' NormFun()
 #' 
+#' @importFrom stats density dnorm rnorm
+#' @importFrom graphics hist lines
 #' @export NormFun
-NormFun <- function(n=1000, mu=400, sdv=25, bks=25) {
+NormFun <- function(n=1000, mu=400, sd=25, bks=25, ...) {
 
-	Y <- rnorm(n, mu, sdv)
-	H <- hist(Y, main="", xlab="", prob=TRUE, col="gray88", breaks=bks)
+	Y <- rnorm(n, mean=mu, sd=sd)
+	H <- hist(Y, main="", xlab="", prob=TRUE, col="gray88", breaks=bks, ...)
 	x <- seq(min(Y), max(Y), length=100)
-	y <- dnorm(x, mu, sdv)
+	y <- dnorm(x, mean=mu, sd=sd)
 	lines(x, y, lwd=1.5, col="navy")
 	lines(density(Y), col=2, lty="dotted")
    box()

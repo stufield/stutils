@@ -1,4 +1,3 @@
-########################################################
 
 #' Calculate Interclass Correlation Coefficient (ICC)
 #' 
@@ -23,16 +22,17 @@
 #' group relative to the differences found \emph{among} groups.}
 #' @note %% ~~further notes~~
 #' @author Stu Field
-#' @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~
-#' @references Sokal & Rohlf (Biometry; 3rd ed.) 210-214. \cr Sokal & Rohlf
+#' @seealso \code{\link{aov}}
+#' @references Sokal & Rohlf (Biometry; 3rd ed.) 210-214. Sokal & Rohlf
 #' (Biometry; 2rd ed.) 211-216.
 #' @keywords ~kwd1 ~kwd2
 #' @examples
 #' 
 #' Ri_data    # call data
 #' x <- as.vector(as.matrix(Ri_data))[ !is.na(as.vector(as.matrix(Ri_data))) ]
-#' coefRi(x, groups=rep(names(Ri_data), c(8,10,13,6)))
+#' coefRi(x, groups=rep(names(Ri_data), c(8, 10, 13, 6)))
 #' 
+#' @importFrom stats aov
 #' @export coefRi
 coefRi <- function(x, groups, do.log=TRUE) {
 
@@ -48,7 +48,7 @@ coefRi <- function(x, groups, do.log=TRUE) {
    n_o <- (1 / (length(n_i)-1)) * ( sum(n_i) - (sum(n_i^2) / sum(n_i)) )
 
    ### Calculate r_i ###
-   MS.among <- model[[1]][1,"Mean Sq"]
+   MS.among  <- model[[1]][1,"Mean Sq"]
    MS.within <- model[[1]][2,"Mean Sq"]
    s.Asq <- (MS.among - MS.within) / n_o
    r_i <- s.Asq / (MS.within + s.Asq)

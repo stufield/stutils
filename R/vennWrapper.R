@@ -32,13 +32,11 @@
 #' Default of \code{NULL} or \code{NA} prints to the null device.
 #' @return A grob class object which can be plotting to a device of printed to
 #' file if \code{filename} is not \code{NULL}.
-#' @note I stole this fucker ...
+#' @note I stole this ...
 #' @author Stu Field
 #' @seealso \code{\link{VennDiagram}}, \code{\link{grid}}
 #' @references See the \code{\link{VennDiagram}} package.
 #' @keywords ~kwd1 ~kwd2
-#' @importFrom VennDiagram draw.triple.venn draw.pairwise.venn draw.single.venn draw.quad.venn draw.quintuple.venn add.title adjust.venn
-#' @importFrom grid grid.draw unit gpar gList textGrob
 #' @examples
 #' 
 #' int.list <- lapply(1:3, function(...) sample(LETTERS[1:10], 6))
@@ -46,6 +44,9 @@
 #' vennWrapper(int.list, num.cex=seq(0.5,2,length=7), cat.cex=c(1,1.5,2),
 #'             main="Title Here", sub="Subtitle")
 #' 
+#' @importFrom VennDiagram draw.triple.venn draw.pairwise.venn draw.single.venn draw.quad.venn draw.quintuple.venn add.title adjust.venn
+#' @importFrom grid grid.draw unit gpar gList textGrob
+#' @importFrom grDevices dev.list dev.new dev.off pdf png tiff svg
 #' @export vennWrapper venn_default
 vennWrapper <- function(x, ..., edge.col="transparent",
 								 colors=seq(length(x)), num.cex=1,
@@ -77,20 +78,23 @@ vennWrapper <- function(x, ..., edge.col="transparent",
 
 
 venn_default <- function(x, filename, height=9, width=9, scale=1, resolution=500,
-						 compression="lzw", na=c("stop","none","remove"), 
-						 main=NULL, sub=NULL,
-						 main.pos=c(0.5,1.05), main.fontface, sub.fontface,
-						 main.fontfamily="sans", main.col="black", main.cex=1,
-						 main.just=c(0.5, 1), sub.pos=c(0.5,1.05),
-						 sub.fontfamily="sans", sub.col="black", sub.cex=1,
-						 sub.just=c(0.5,1), category.names=names(x), force.unique=TRUE,
-						 print.mode="raw", sigdigs=3, direct.area=FALSE, area.vector=0,
-						 hyper.test=FALSE, total.population=NULL, ...) {
+                         compression="lzw", na=c("stop","none","remove"), 
+                         main=NULL, sub=NULL,
+                         main.pos=c(0.5,1.05), main.fontface, sub.fontface,
+                         main.fontfamily="sans", main.col="black", main.cex=1,
+                         main.just=c(0.5, 1), sub.pos=c(0.5,1.05),
+                         sub.fontfamily="sans", sub.col="black", sub.cex=1,
+                         sub.just=c(0.5,1), category.names=names(x),
+                         force.unique=TRUE, print.mode="raw", sigdigs=3,
+                         direct.area=FALSE, area.vector=0,
+                         hyper.test=FALSE, total.population=NULL, ...) {
 
 	if ( direct.area ) {
 		if (1 == length(area.vector)) {
 			list.names <- category.names
-			if ( is.null(list.names) ) { list.names <- "" }
+			if ( is.null(list.names) ) {
+            list.names <- ""
+         }
 			grob.list <- VennDiagram::draw.single.venn(area=area.vector[1], 
 																	 category=list.names, 
 																	 ind=FALSE, ...)
@@ -281,39 +285,37 @@ venn_default <- function(x, filename, height=9, width=9, scale=1, resolution=500
 
 	# file print
 	if ( !is.na(filename) ) {
-		imagetype <-  get.ext(filename)
+
+		imagetype <-  getFileExt(filename)
 		current.type <- getOption("bitmapType")
 
-		if ( length(grep("Darwin", Sys.info()["sysname"])) )
+		if ( length(grep("Darwin", Sys.info()["sysname"])) ) {
 			options(bitmapType="quartz")
-		else
+      } else {
 			options(bitmapType="cairo")
+      }
 
-		height <- height*scale
-		width <- width*scale
+		height <- height * scale
+		width  <- width * scale
 
 		if ( "tiff" == imagetype ) {
 			tiff(filename=filename, height=height, width=width, 
 				  units="in", res=resolution, compression=compression)
-		}
-		else if ( "pdf" == imagetype ) {
+		} else if ( "pdf" == imagetype ) {
 			pdf(file=filename, height=height, width=width, useDingbats=FALSE, title=basename(filename))
-		}
-		else if ( "png" == imagetype ) {
+		} else if ( "png" == imagetype ) {
 			png(filename=filename, height=height, width=width, units="in", res=resolution)
-		}
-		else if ( "svg" == imagetype ) {
+		} else if ( "svg" == imagetype ) {
 			svg(filename=filename, height=height, width=width)
-		}
-		else {
+		} else {
 			stop("Unknown imagetype in file extension ... please check filename argument", call.=FALSE)
 		}
 
 		on.exit(dev.off())
 		on.exit(options(bitmapType=current.type), add=TRUE)
-	} 
-	else {
-		if ( !is.null(dev.list()) ) dev.new()
+	} else {
+		if ( !is.null(dev.list()) )
+         dev.new()
 	}
 	grid::grid.draw(grob.list)
 	invisible(grob.list)

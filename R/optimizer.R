@@ -2,7 +2,7 @@
 #' Optimization Function
 #' 
 #' Given a function, determine the set of parameters that maximizes
-#' (default) or minimizes it over a given interval.
+#' (default) or minimizes it over a given interval via brute force.
 #' 
 #' %% ~~ If necessary, more details than the description above ~~
 #' 
@@ -26,6 +26,7 @@
 #' optimizer(fn=myfun, I=c(-10,10), max=TRUE, a=2, b=12, t=0.1)
 #' optimizer(fn=myfun, I=c(-10,10), max=FALSE, a=2, b=12, t=0.1)
 #' 
+#' @importFrom graphics abline points legend plot
 #' @export optimizer
 optimizer <- function(fn, I, max=TRUE, ...) {
 

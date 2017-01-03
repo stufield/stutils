@@ -16,6 +16,7 @@
 #' 
 #' CI95se(rnorm(100))
 #' 
+#' @importFrom stats sd
 #' @export CI95se
 CI95se <- function(x) {
    sem   <- sd(x) / sqrt(length(x))

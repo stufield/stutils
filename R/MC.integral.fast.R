@@ -56,6 +56,8 @@
 #' H <- hist(MCrep.v, plot=FALSE)
 #' print(sum((H$breaks[2]-H$breaks[1])*H$density), digits=10)
 #' 
+#' @importFrom stats density runif optimize
+#' @importFrom graphics points title curve
 #' @export MC.integral.fast
 MC.integral.fast <- function(n, interval, FUN, force=FALSE, plot=FALSE){
 

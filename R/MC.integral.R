@@ -40,7 +40,8 @@
 #' MC.integral(n=10000, interval=c(-2.98, 2.98), FUN=mystery.fun)
 #' }
 #' 
-#' 
+#' @importFrom graphics points title curve abline par
+#' @importFrom stats optimize
 #' @export MC.integral
 MC.integral <- function(n=10000, interval, FUN, force=FALSE) {
 
@@ -60,12 +61,13 @@ MC.integral <- function(n=10000, interval, FUN, force=FALSE) {
    abline(v=interval, lty=2, lwd=1.5)
    box()
    
-   for (i in 1:n) {                       # Loop proposals ###
-   	  if (i%%1000==0) cat("iteration...",i,"\n",sep="")
-      x <- runif(1,l,r)                   # random x between l & r
+   for ( i in 1:n ) {                       # Loop proposals ###
+      if ( i%%1000==0 )
+         cat("iteration...", i, "\n", sep="")
+      x <- runif(1, l, r)                 # random x between l & r
       y <- runif(1) * MaxY                # random y between 0 & 1
       f.x <- FUN(x)                       # y at random x (point on curve)
-      if (y < f.x) {
+      if ( y < f.x ) {
          count <- count + 1   # count if below curve
          points(x, y, cex=0.2, pch=20, col="darkgreen")
       } else {
