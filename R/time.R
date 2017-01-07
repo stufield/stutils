@@ -1,14 +1,16 @@
-#' 
-#' Determine Time from Seconds (vice versa)
+
+#' Determine Time from Seconds (& vice versa)
 #' 
 #' \code{\link{time2seconds}} and \code{\link{seconds2time}} determine the
 #' time (format="hh:mm:ss.ss") from the value in seconds or vice versa. Two
 #' digit hour precision optional.
 #' 
+#' @rdname time
 #' @aliases time2seconds seconds2time
-#' @param x Character. Of the form \code{"hh:mm:ss.ss"} with 2 decimal point
-#' precision on the seconds to convert to seconds, OR\cr Numeric. Representing
-#' seconds to convert to a character string of the form \code{"hh:mm:ss.ss"}.
+#' @param x Character or Numeric. Of the form \code{"hh:mm:ss.ss"} 
+#' with 2 decimal point precision on the seconds to convert to seconds.
+#' If numeric, the seconds to convert to a character string of 
+#' the form \code{"hh:mm:ss.ss"}.
 #' @return Either number of seconds (\code{numeric} or the time format
 #' (\code{string}) in "hh:mm:ss.ss".
 #' @note %% ~~further notes~~
@@ -16,13 +18,9 @@
 #' @seealso \code{\link[base]{strsplit}}, \code{\link[base]{gsub}},
 #' \code{\link[base]{grepl}}, \code{\link[base]{sprintf}}
 #' @references %% ~put references to the literature/web site here ~
-#' @keywords ~kwd1 ~kwd2
 #' @examples
 #' 
 #' seconds2time(159.72)
-#' time2seconds("3:44:12.04")
-#' time2seconds("15:44:12.04")
-#' 
 #' @export seconds2time
 seconds2time <- function(x) {
 
@@ -37,7 +35,13 @@ seconds2time <- function(x) {
  
 
 
-#' @rdname seconds2time
+#' Determine Seconds from Time
+#'
+#' @rdname time
+#' @examples
+#' time2seconds("3:44:12.04")
+#' time2seconds("15:44:12.04")
+#'
 #' @export time2seconds
 time2seconds <- function(x) {
 

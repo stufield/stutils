@@ -1,0 +1,8 @@
+#!/bin/bash
+# --------------------------------------------
+# This is run on a checkout from a branch/repository
+# it replaces the words "Date" and "Author" with appropriate substitutions
+# --------------------------------------------
+curdate=$(git log --pretty=format:"%ad" | head -n 1)
+aut=$(git log --pretty=format:"%an" | head -n 1)
+sed -e "s/[$]Date[$]/\$Date: $curdate \$/" -e "s/[$]Author[$]/\$Author: $aut \$/"

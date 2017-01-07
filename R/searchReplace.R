@@ -1,8 +1,8 @@
-#' 
+
 #' Search and Replace Method Dispatch
 #' @noRd
 #' @export
-search.replace <- function(x, s, r) UseMethod("search.replace")
+searchReplace <- function(x, s, r) UseMethod("searchReplace")
 
 
 
@@ -11,8 +11,8 @@ search.replace <- function(x, s, r) UseMethod("search.replace")
 #' 
 #' A global search & replace of entries within a vector, matrix, or data frame
 #' 
-#' @aliases search.replace search.replace.data.frame search.replace.matrix search.replace.numeric
-#' @rdname search.replace
+#' @aliases searchReplace searchReplace.data.frame searchReplace.matrix searchReplace.numeric
+#' @rdname searchReplace
 #' @param x The object to be searched, typically a matrix or data frame but
 #' can be a vector of character or numeric class
 #' @param s The search index
@@ -31,33 +31,33 @@ search.replace <- function(x, s, r) UseMethod("search.replace")
 #' # matrix
 #' Y <- matrix(1:25, ncol=5)
 #' Y
-#' search.replace(Y, s=c(8,20), r=c(99,99))
+#' searchReplace(Y, s=c(8,20), r=c(99,99))
 #'
 #' # data.frame
 #' X <- data.frame(x=c(1,2,3), y=c(2,2,4), z=c(1,2,4))
 #' rownames(X) <- c("one", "two", "three")
 #' X
-#' search.replace(X, s=1:4, r=c("A","C","G","T"))
+#' searchReplace(X, s=1:4, r=c("A","C","G","T"))
 #'
 #' # numeric
-#' search.replace(1:10, s=4, r=19)
+#' searchReplace(1:10, s=4, r=19)
 #'
 #' # character
-#' search.replace(head(LETTERS,10), s="G", r="Z")
+#' searchReplace(head(LETTERS,10), s="G", r="Z")
 #' 
-#' @method search.replace default
+#' @method searchReplace default
 #' @export
-search.replace.default <- function(x, ...)
+searchReplace.default <- function(x, ...)
    stop("Could not find the appropriate S3 method definition for this object: ", class(x))
 
 
 
-# S3 search.replace method for data.frame 
+# S3 searchReplace method for data.frame 
 
-#' @rdname search.replace
-#' @method search.replace data.frame
+#' @rdname searchReplace
+#' @method searchReplace data.frame
 #' @export
-search.replace.data.frame <- function(x, s, r) {
+searchReplace.data.frame <- function(x, s, r) {
 
    if ( length(s) != length(r) )
       stop("Search & Replace Are Unequal Lengths")
@@ -74,12 +74,12 @@ search.replace.data.frame <- function(x, s, r) {
 
 
 
-# S3 search.replace method for matrix
+# S3 searchReplace method for matrix
 
-#' @rdname search.replace
-#' @method search.replace matrix
+#' @rdname searchReplace
+#' @method searchReplace matrix
 #' @export
-search.replace.matrix <- function(x, s, r) {
+searchReplace.matrix <- function(x, s, r) {
 
    if ( length(s) != length(r) )
       stop("Search & Replace Are Unequal Lengths")
@@ -94,12 +94,12 @@ search.replace.matrix <- function(x, s, r) {
 }
 
 
-# S3 search.replace method for numeric
+# S3 searchReplace method for numeric
 
-#' @rdname search.replace
-#' @method search.replace numeric
+#' @rdname searchReplace
+#' @method searchReplace numeric
 #' @export
-search.replace.numeric <- function(x, s, r) {
+searchReplace.numeric <- function(x, s, r) {
 
    if ( length(s) != length(r) )
       stop("Search & Replace Are Unequal Lengths")
@@ -113,13 +113,11 @@ search.replace.numeric <- function(x, s, r) {
 }
 
 
-# S3 search.replace method for character
+# S3 searchReplace method for character
 
-#' @rdname search.replace
-#' @method search.replace character
+#' @rdname searchReplace
+#' @method searchReplace character
 #' @export
-search.replace.character <- function(...) search.replace.numeric(...)
-
-
+searchReplace.character <- function(...) searchReplace.numeric(...)
 
 

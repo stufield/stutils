@@ -1,0 +1,6 @@
+#!/bin/bash
+# --------------------------------------------
+# This is run when files are staged; putting things 
+# back the way they are in the repository
+# --------------------------------------------
+sed -e "s/[$]Date:.*[$]/\$Date\$/" -e "s/[$]Author:.*[$]/\$Author\$/"
