@@ -1,4 +1,4 @@
-#' 
+
 #' Linear Sensitivity Analysis
 #' 
 #' Sensitivity analysis of linear maps, all in one function.

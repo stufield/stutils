@@ -18,8 +18,8 @@
 #' @keywords cumulative sum product
 #' @examples
 #' 
-#' cumulative(1:10)
 #' ?cumsum
+#' cumulative(1:10)
 #' 
 #' @export cumulative
 cumulative <- function(x) {

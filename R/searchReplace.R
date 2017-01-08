@@ -1,27 +1,19 @@
 
-#' Search and Replace Method Dispatch
-#' @noRd
-#' @export
-searchReplace <- function(x, s, r) UseMethod("searchReplace")
-
-
-
-
 #' Search & Replace
 #' 
 #' A global search & replace of entries within a vector, matrix, or data frame
 #' 
-#' @aliases searchReplace searchReplace.data.frame searchReplace.matrix searchReplace.numeric
-#' @rdname searchReplace
+#' @aliases searchReplace
 #' @param x The object to be searched, typically a matrix or data frame but
 #' can be a vector of character or numeric class
 #' @param s The search index
 #' @param r The replace with. Must be same length as \code{s}
 #' @param ... Pass throught to various S3 methods
-#' @return An object of the same dimensions and class as \code{x} with the
-#' \code{s} replaced with \code{r}.
+#' @return An object of the same dimensions and class as \code{x}, with the
+#' \code{s=} matches replaced with \code{r=}.
 #' @note %% ~~further notes~~
-#' @section Warning : The lengths of \code{s} & \code{r} must be the same.
+#' @section Warning:
+#' The lengths of \code{s} and \code{r} \emph{must} be identical
 #' @author Stu Field
 #' @seealso \code{\link{replace}}
 #' @references %% ~put references to the literature/web site here ~
@@ -44,7 +36,14 @@ searchReplace <- function(x, s, r) UseMethod("searchReplace")
 #'
 #' # character
 #' searchReplace(head(LETTERS,10), s="G", r="Z")
-#' 
+#'
+#' @export searchReplace
+searchReplace <- function(x, s, r) UseMethod("searchReplace")
+
+
+#' S3 default method searchReplace
+
+#' @noRd
 #' @method searchReplace default
 #' @export
 searchReplace.default <- function(x, ...)
@@ -52,9 +51,9 @@ searchReplace.default <- function(x, ...)
 
 
 
-# S3 searchReplace method for data.frame 
+#' S3 searchReplace method for data.frame 
 
-#' @rdname searchReplace
+#' @noRd
 #' @method searchReplace data.frame
 #' @export
 searchReplace.data.frame <- function(x, s, r) {
@@ -72,11 +71,9 @@ searchReplace.data.frame <- function(x, s, r) {
 }
 
 
+#' S3 searchReplace method for matrix
 
-
-# S3 searchReplace method for matrix
-
-#' @rdname searchReplace
+#' @noRd
 #' @method searchReplace matrix
 #' @export
 searchReplace.matrix <- function(x, s, r) {
@@ -94,9 +91,9 @@ searchReplace.matrix <- function(x, s, r) {
 }
 
 
-# S3 searchReplace method for numeric
+#' S3 searchReplace method for numeric
 
-#' @rdname searchReplace
+#' @noRd
 #' @method searchReplace numeric
 #' @export
 searchReplace.numeric <- function(x, s, r) {
@@ -113,9 +110,9 @@ searchReplace.numeric <- function(x, s, r) {
 }
 
 
-# S3 searchReplace method for character
+#' S3 searchReplace method for character
 
-#' @rdname searchReplace
+#' @noRd
 #' @method searchReplace character
 #' @export
 searchReplace.character <- function(...) searchReplace.numeric(...)

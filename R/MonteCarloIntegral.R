@@ -52,22 +52,22 @@
 #' MonteCarloIntegral(n=10000, interval=c(-2.98, 2.98), FUN=mysteryFun)
 #' }
 #' 
-#' # Repeat in loop 1000 times
-#' data(MonteCarloIntegral)   # get stored object
-#' MCrep.v
+#' # 1000 simulations
+#' head(MC_sims)
+#' mean(MC_sims)
 #' 
-#' # Plot histogram of estimates #
-#' hist(MCrep.v, col="gray75", prob=TRUE, xlab="Area", main="", breaks=15)
+#' # Plot histogram of 1000 estimates
+#' hist(MC_sims, col="gray75", prob=TRUE, xlab="Area", main="", breaks=15)
 #' box()
-#' lines(density(MCrep.v))
-#' lines(density(MCrep.v, adjust=1.75), lty="dotted", col=2)
-#' par <- density(MCrep.v)$x[which.max(density(MCrep.v)$y)]
+#' lines(density(MC_sims))
+#' lines(density(MC_sims, adjust=1.75), lty="dotted", col=2)
+#' par <- density(MC_sims)$x[which.max(density(MC_sims)$y)]
 #' abline(v=par, col=4, lty="dotted")
 #' legend("topleft", legend=sprintf("Area Est ~ 0.3%f", par), 
 #'        bg="gray75", cex=0.75)
 #' 
-#' # check that histogram sums to 1 # 
-#' H <- hist(MCrep.v, plot=FALSE)
+#' # check that histogram sums to 1
+#' H <- hist(MC_sims, plot=FALSE)
 #' print(sum((H$breaks[2]-H$breaks[1])*H$density), digits=10)
 #' 
 #' @importFrom graphics points title curve abline par box

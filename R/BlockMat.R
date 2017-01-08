@@ -1,8 +1,8 @@
 
 #' Create a Block Matrix
 #' 
-#' Assembles a block matrix from sub-matrices mimicking coding capabilities of
-#' Matlab.
+#' Assembles a block matrix from sub-matrices mimicking 
+#' coding capabilities of Matlab.
 #' 
 #' @param x A list of the sub-matrices written in order
 #' they are to appear by row
@@ -30,10 +30,11 @@
 #' @export BlockMat
 BlockMat <- function(x, b) {
    L <- length(x)
-   if ( L%%b!=0 ) 
+   if ( L%%b!=0 )
       stop("List length (x) must be multiple of: ", b)
-   hi <- seq(b, L, b)
-   lo <- hi - (b - 1)
+   hi    <- seq(b, L, b)
+   lo    <- hi - (b - 1)
    mList <- lapply(1:(L/b), function(i) do.call(cbind, x[lo[i]:hi[i]])) 
    do.call(rbind, mList)
 }
+

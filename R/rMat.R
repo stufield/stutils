@@ -12,7 +12,7 @@
 #' @param replace Logical. Should the sampled numbers be repeated?
 #' @param ... Additional arguments passed to \code{\link{matrix}}
 #' @return A matrix with m x n dimensions full of random numbers
-#' on the interval [ min, max ].
+#' on the interval [min, max]
 #' @note Never know when you need a matrix of random numbers!
 #' @author Stu Field
 #' @seealso \code{\link[base]{sample}}
@@ -29,7 +29,7 @@ rMat <- function(m, n, min, max, replace=FALSE, ...) {
    s <- sample(min:max, size=m*n, replace=replace)
 
    if ( m*n!=length(s) )
-      stop("Incorrect dimensions or min/max length")
+      stop("Incorrect dimensions or min/max length", call.=FALSE)
 
    matrix(s, nrow=m, ncol=n, ...)
 

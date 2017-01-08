@@ -10,7 +10,7 @@
 #' @param nsim Integer. Number of simulations to perform
 #' @param plot Plot both histogram and drift with time (default) or just
 #' histogram ("h") or just line graph ("l")
-#' @return %% ~Describe the value returned
+#' @return A plot of the simulation is returned
 #' @note Simulation written for FEScUE class
 #' @author Stu Field
 #' @seealso \code{\link{DriftSim2}}

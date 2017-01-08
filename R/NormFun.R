@@ -11,8 +11,8 @@
 #' @param mu Numeric. A vector of means
 #' @param sd Numeric. A vector of standard deviations
 #' @param bks How to set the breaks for plotting the histogram
-#' @param ... Argumnets passed to \code{\link{hist}}
-#' @return A Histogram with the random observations produced in rnorm() with a
+#' @param ... Additional argumnets passed to \code{\link{hist}}
+#' @return A histogram with the random observations produced in rnorm() with a
 #' line produced with dnorm().
 #' @note Used as an example to demo how to create functions in the R tutorial.
 #' @author Stu Field

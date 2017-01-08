@@ -1,4 +1,4 @@
-#' 
+
 #' Collapse Vector List to Data Frame
 #' 
 #' Function collapses a list of vectors, or a list of 1-row data frames, into a
@@ -10,8 +10,8 @@
 #' 
 #' @param x A \emph{named} list (which become the rows) containing numeric
 #' vectors of the same length. Vectors can be in the form of a numeric vector
-#' or a 1-row data frame.
-#' @return A data frame object of the vertically collapsed vectors.
+#' or a 1-row data frame
+#' @return A data frame object of the vertically collapsed vectors
 #' @note Functions similarly to \code{\link[base]{do.call}}.
 #' @author Stu Field
 #' @seealso \code{\link[base]{rbind}}, \code{\link[base]{Reduce}}
@@ -20,9 +20,9 @@
 #' @examples
 #' 
 #' tmp <- lapply(1:3, function(...) rnorm(4))
-#' names(tmp) <- LETTERS[1:3]
+#' names(tmp) <- head(LETTERS, 3)
 #' collapse2df(tmp)
-#' tmp2 <- lapply(tmp, function(x) {names(x) = letters[1:4]; x})
+#' tmp2 <- lapply(tmp, function(x) { names(x) <- head(letters,4); x })
 #' collapse2df(tmp2)
 #' 
 #' @export collapse2df
@@ -33,8 +33,10 @@ collapse2df <- function(x) {
    nm <- names(x)
    out <- Reduce(function(...) rbind(...), x)
    rownames(out) <- nm
-   if ( !inherits(out, "data.frame") )
+   if ( !inherits(out, "data.frame") ) {
       as.data.frame(out)
-   else
+   } else {
       out
+   }
 }
+

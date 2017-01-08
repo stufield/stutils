@@ -8,7 +8,7 @@
 #' 
 #' @param x Matrix object to be searched
 #' @param match Index to be matched
-#' @return A matrix indicating which entries agree with \code{match}. Rows are
+#' @return A matrix indicating which entries agree with \code{match=}. Rows are
 #' the number of different match(es) and column 1 is the row of a positive
 #' match and column 2 is the column of the positive match.
 #' @note %% ~~further notes~~

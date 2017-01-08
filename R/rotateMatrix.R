@@ -1,4 +1,4 @@
-#' 
+
 #' Rotate a Matrix
 #' 
 #' Function rotates a matrix 90 degrees. Direction can be either
@@ -10,7 +10,7 @@
 #' @return A matrix rotated 90 degrees from the original matrix
 #' @note %% ~~further notes~~
 #' @author Stu Field
-#' @seealso \code{\link{match.arg}}
+#' @seealso \code{\link{match.arg}}, \code{\link{t}}
 #' @references %% ~put references to the literature/web site here ~
 #' @keywords ~kwd1 ~kwd2
 #' @examples

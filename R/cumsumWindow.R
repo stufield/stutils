@@ -1,4 +1,4 @@
-#' 
+
 #' Calculate Limited Cumulative Sum
 #' 
 #' Calculate the cumulative sum of a set of numbers within a vector. The
@@ -9,12 +9,12 @@
 #' the beginning, the entries returned will be identical to
 #' \code{\link[base]{cumsum}}.
 #' 
-#' If \code{window >= length(x)} then a Warning is printed and
+#' If \code{window >= length(x)}, a warning is triggered and
 #' \code{cumsumWindow} reverts to \code{\link[base]{cumsum}}.
 #' 
 #' @param x The vector to be summed across
-#' @param window The length/size of the window to sum within (the moving
-#' cutoff).
+#' @param window The length/size of the window to sum 
+#' within (the moving  cutoff)
 #' @return A vector of the sums of the sliding window for the cumulative sums.
 #' @note %% ~~further notes~~
 #' @author Stu Field
@@ -26,7 +26,7 @@
 #' cumsumWindow(1:20, 5)
 #' cumsumWindow(1:20, window=20)
 #' cumsum(1:20)
-#' r.vec <- sample(1:20,100,replace=TRUE) # random vector
+#' r.vec <- sample(1:20, 100, replace=TRUE) # random vector
 #' cumsumWindow(r.vec, 5)
 #' 
 #' @export cumsumWindow
@@ -36,7 +36,7 @@ cumsumWindow <- function(x, window) {
    lo <- hi - (window - 1)
 
    if ( window >= length(x) ) {
-      cat("  Warning: window >= length(x)!\n")
+      warning("window >= length(x)!")
       return(cumsum(x))
    } else {
       one <- cumsum(x[1:window])
