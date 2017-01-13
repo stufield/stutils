@@ -10,7 +10,7 @@ License: GNU General Public License (>= 3)
 Depends: R (>= 3.1.0), magrittr
 Imports: VennDiagram, grid
 Suggests: gplots, testthat
-BuildVignettes: false
+BuildVignettes: fuddyduddy
 LazyLoad: yes
 LazyData: yes
 RoxygenNote: 5.0.1
