@@ -1,14 +1,14 @@
 
-#' stuRpkg - my very first R package
+#' stuRpkg - The Stu R Package
 #' 
-#' Full suite of all user-defined functions, subroutines, and data for Stu's
-#' R-scripts.
+#' Small suite of useful functions, subroutines, and data objects for
+#' data set manipulation and analysis in R.
 #' 
 #' \tabular{ll}{
 #' Package:  \tab stuRpkg \cr
 #' Type:     \tab Package\cr
 #' Version:  \tab 1.2 \cr
-#' Date:     \tab 2017-01-08 \cr
+#' Date:     \tab 2017-01-15 \cr
 #' License:  \tab GNU General Public License (>= 3) \cr
 #' LazyLoad: \tab yes \cr
 #' LazyData: \tab yes
