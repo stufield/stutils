@@ -19,11 +19,9 @@
 #' @param switchDir Logical. Set the working directory to the path of the file in
 #' \code{file}, if found. Uses setwd().
 #' @return The path of the file specified in \code{file}
-#' @note %% ~~further notes~~
 #' @author Stu Field, Steven Mosher
 #' @seealso \code{\link{list.files}}, \code{\link{setwd}}
 #' @references Assistance from Steven Mosher via StackOverflow
-#' @keywords ~kwd1 ~kwd2
 #' @examples
 #' 
 #' \dontrun{
@@ -47,7 +45,7 @@ path2file <- function(file, root.dir=Sys.getenv("HOME"),
 
    if ( switchDir ) {
       if ( getwd()==path ) 
-         warning("Path is already the R working directory ... staying put")
+         warning("Path is already the R working directory ... staying put", call.=FALSE)
       cat("Changing R Working Directory to:", "\n")
       setwd(path)
    }

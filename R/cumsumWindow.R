@@ -16,11 +16,8 @@
 #' @param window The length/size of the window to sum 
 #' within (the moving  cutoff)
 #' @return A vector of the sums of the sliding window for the cumulative sums.
-#' @note %% ~~further notes~~
 #' @author Stu Field
 #' @seealso \code{\link[base]{cumsum}}
-#' @references %% ~put references to the literature/web site here ~
-#' @keywords ~kwd1 ~kwd2
 #' @examples
 #' 
 #' cumsumWindow(1:20, 5)
@@ -44,4 +41,3 @@ cumsumWindow <- function(x, window) {
       return(c(one, two))
    }
 }
-

@@ -12,7 +12,6 @@
 #' \item{upper }{the upper CI95}
 #' @author Stu Field
 #' @seealso \code{\link{bootstrap}} to create CI95 via bootstrapping method.
-#' @references %% ~put references to the literature/web site here ~
 #' @examples
 #' 
 #' CI95se(rnorm(100))

@@ -14,7 +14,6 @@
 #' @note Used as a mere exercise in function writing for the R tutorial.
 #' @author Stu Field
 #' @seealso \code{\link{cumsum}}, \code{\link{cumprod}}
-#' @references %% ~put references to the literature/web site here ~
 #' @keywords cumulative sum product
 #' @examples
 #' 
@@ -29,6 +28,5 @@ cumulative <- function(x) {
         cum_sum=cumsum(x),
         prod=prod(x),
         cum_prod=cumprod(x)
-        )
+   )
 }
-

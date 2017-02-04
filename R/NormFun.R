@@ -1,4 +1,4 @@
-#' 
+
 #' Normal Distribution Histogram
 #' 
 #' Describes a Gaussian (Normal) distribution given various
@@ -17,14 +17,12 @@
 #' @note Used as an example to demo how to create functions in the R tutorial.
 #' @author Stu Field
 #' @seealso \code{\link{hist}}, \code{\link{rnorm}}, \code{\link{dnorm}}, \code{\link{curve}}
-#' @references %% ~put references to the literature/web site here ~
-#' @keywords ~kwd1 ~kwd2
 #' @examples
 #' 
 #' NormFun()
 #' 
 #' @importFrom stats density dnorm rnorm
-#' @importFrom graphics hist lines
+#' @importFrom graphics hist lines box
 #' @export NormFun
 NormFun <- function(n=1000, mu=400, sd=25, bks=25, ...) {
 

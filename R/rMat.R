@@ -1,9 +1,7 @@
-#' 
+
 #' Create Random Matrix
 #' 
 #' Generate a matrix with random numbers in its entries.
-#' 
-#' %% ~~ If necessary, more details than the description above ~~
 #' 
 #' @param m Numeric. Row dimension of the matrix to be produced
 #' @param n Numeric. Column dimension of the matrix to be produced
@@ -16,8 +14,6 @@
 #' @note Never know when you need a matrix of random numbers!
 #' @author Stu Field
 #' @seealso \code{\link[base]{sample}}
-#' @references %% ~put references to the literature/web site here ~
-#' @keywords ~kwd1 ~kwd2
 #' @examples
 #' 
 #' rMat(5, 6, 35, 75)

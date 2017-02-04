@@ -15,8 +15,6 @@
 #' @note Functions similarly to \code{\link[base]{do.call}}.
 #' @author Stu Field
 #' @seealso \code{\link[base]{rbind}}, \code{\link[base]{Reduce}}
-#' @references %% ~put references to the literature/web site here ~
-#' @keywords ~kwd1 ~kwd2
 #' @examples
 #' 
 #' tmp <- lapply(1:3, function(...) rnorm(4))
@@ -30,7 +28,7 @@ collapse2df <- function(x) {
 
    if ( is.null(names(x)) )
       stop("Must provide a named list as input argument [x]", call.=FALSE)
-   nm <- names(x)
+   nm  <- names(x)
    out <- Reduce(function(...) rbind(...), x)
    rownames(out) <- nm
    if ( !inherits(out, "data.frame") ) {
@@ -39,4 +37,3 @@ collapse2df <- function(x) {
       out
    }
 }
-

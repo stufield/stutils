@@ -13,11 +13,9 @@
 #' the form \code{"hh:mm:ss.ss"}.
 #' @return Either number of seconds (\code{numeric} or the time format
 #' (\code{string}) in "hh:mm:ss.ss".
-#' @note %% ~~further notes~~
 #' @author Stu Field
 #' @seealso \code{\link[base]{strsplit}}, \code{\link[base]{gsub}},
 #' \code{\link[base]{grepl}}, \code{\link[base]{sprintf}}
-#' @references %% ~put references to the literature/web site here ~
 #' @examples
 #' 
 #' seconds2time(159.72)
@@ -32,7 +30,6 @@ seconds2time <- function(x) {
    sprintf("%01d:%02d:%02d.%s", hours, mins, round(secs,0), decimals)
 
 }
- 
 
 
 #' Determine Seconds from Time
@@ -56,3 +53,4 @@ time2seconds <- function(x) {
 	return(hr*60 + min*60 + sec)
 
 }
+

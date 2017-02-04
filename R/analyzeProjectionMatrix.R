@@ -1,10 +1,9 @@
-#' 
+
 #' Linear Matrix Analysis
 #' 
-#' A quick and dirty function for the analysis of a projection matrix. Includes
-#' sensitivity and elasticity of a linear (projection) matrix model.
-#' 
-#' %% ~~ If necessary, more details than the description above ~~
+#' A quick and dirty function for the analysis of a projection
+#' matrix. Includes sensitivity and elasticity of a linear 
+#' (projection) matrix model.
 #' 
 #' @param A A population projection matrix
 #' @param initial A numeric vector of the initial stage structured population.
@@ -41,11 +40,9 @@
 #' \item{KeyPars }{Which parameters have Elasticities greater than 
 #' the argument determined by \code{key.thresh}, sorted by decreasing "values".
 #' Theta is the vector of model parameters}
-#' @note %% ~~further notes~~
 #' @author Stu Field
 #' @seealso \code{\link{calcMatrixSensitivity}}, \code{\link{eigen}}, \code{\link[popbio]{eigen.analysis}}, \code{\link[popbio]{popbio}}
 #' @references Caswell, H. Matrix Population Models. 2001.
-#' @keywords ~kwd1 ~kwd2
 #' @examples
 #' 
 #' A <- diag(1:5 / 10)
@@ -123,7 +120,4 @@ analyzeProjectionMatrix <- function(A, initial, Gen=25, key.thresh=0.1, plots=TR
         SensitivityZero=pars$Sensitivity * as.numeric(A!=0),
         Elasticity=pars$Elasticity,
         KeyPars=keypars)
-
 }
-
-

@@ -9,8 +9,6 @@
 #' the groups. When ICC is high, it means most of the variation is
 #' \emph{between} treatment groups.
 #' 
-#' %% ~~ If necessary, more details than the description above ~~
-#' 
 #' @param x A matrix or data frame containing the raw data of the various
 #' treatments you are testing in the ANOVA
 #' @param groups A vector of the factor groupings for x
@@ -20,12 +18,10 @@
 #' \item{ICC }{The intraclass correlation coefficient, the measure of
 #' similarity among individuals \emph{within} a treatment
 #' group relative to the differences found \emph{among} groups}
-#' @note %% ~~further notes~~
 #' @author Stu Field
 #' @seealso \code{\link{aov}}
 #' @references Sokal & Rohlf (Biometry; 3rd ed.) 210-214. Sokal & Rohlf
 #' (Biometry; 2rd ed.) 211-216.
-#' @keywords ~kwd1 ~kwd2
 #' @examples
 #' 
 #' head(Ri_data)    # internal data
@@ -33,7 +29,7 @@
 #' coefRi(x, groups=rep(names(Ri_data), c(8, 10, 13, 6)))
 #' 
 #' @importFrom stats aov
-#' @importFrom magrittr '%<>%' '%>%'
+#' @importFrom magrittr "%<>%" "%>%"
 #' @export coefRi
 coefRi <- function(x, groups, do.log=TRUE) {
 

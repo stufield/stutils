@@ -11,13 +11,10 @@
 #' @param ... Pass throught to various S3 methods
 #' @return An object of the same dimensions and class as \code{x}, with the
 #' \code{s=} matches replaced with \code{r=}.
-#' @note %% ~~further notes~~
 #' @section Warning:
 #' The lengths of \code{s} and \code{r} \emph{must} be identical
 #' @author Stu Field
 #' @seealso \code{\link{replace}}
-#' @references %% ~put references to the literature/web site here ~
-#' @keywords ~kwd1 ~kwd2
 #' @examples
 #' 
 #' # matrix

@@ -12,8 +12,6 @@
 #' @note Combine sub-Matrices into larger matrix; a
 #' mimic of Matlab. Matrices \emph{must} be as a list
 #' @author Stu Field
-#' @references %% ~put references to the literature/web site here ~
-#' @keywords ~kwd1 ~kwd2
 #' @examples
 #' 
 #' A <- diag(1:4)

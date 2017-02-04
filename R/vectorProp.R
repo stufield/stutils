@@ -1,11 +1,11 @@
-#' 
+
 #' Vector Proportions
 #' 
-#' Calculate the proportion of each entry in a vector relative to the entire
-#' vector.
+#' Calculate the proportion of each entry in a vector
+#' relative to the entire vector.
 #' 
-#' Often useful in calculating proportions of individuals in given stages, then
-#' calculating gene frequencies.
+#' Often useful in calculating proportions of individuals in 
+#' given stages, then calculating gene frequencies.
 #' 
 #' @aliases vectorProp
 #' @param x Numeric vector
@@ -15,8 +15,6 @@
 #' mating function by Jesse Drendel.
 #' @author Stu Field
 #' @seealso \code{\link[base]{sum}}
-#' @references %% ~put references to the literature/web site here ~
-#' @keywords ~kwd1 ~kwd2
 #' @examples
 #' 
 #' vectorProp(1:10)

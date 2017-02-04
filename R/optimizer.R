@@ -1,10 +1,8 @@
-#' 
+
 #' Optimization Function
 #' 
 #' Given a function, determine the set of parameters that maximizes
 #' (default) or minimizes it over a given interval via brute force.
-#' 
-#' %% ~~ If necessary, more details than the description above ~~
 #' 
 #' @param fn Function to be evaluated. Must return a scalar value
 #' @param I Numeric. Interval over which to find the max (or min)
@@ -15,8 +13,6 @@
 #' does the same. This is a brute force method.
 #' @author Stu field
 #' @seealso \code{\link{optimize}}, \code{\link{optim}}
-#' @references %% ~put references to the literature/web site here ~
-#' @keywords ~kwd1 ~kwd2
 #' @examples
 #' 
 #' myfun <- function(x, a, b, t) {
@@ -53,6 +49,5 @@ optimizer <- function(fn, I, max=TRUE, ...) {
           cex=0.75, inset=0.00)
 
    list(Max_Min=max.min, Value=y.value)
+
 }
-
-

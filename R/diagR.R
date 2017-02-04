@@ -4,8 +4,6 @@
 #' Matlab mimic function for producing matrices with vectors 
 #' along the sub- or super-diagonal
 #' 
-#' %% ~~ If necessary, more details than the description above ~~
-#' 
 #' @param x Numeric. A Vector to be placed into entries 
 #' of a matrix along a diagonal.
 #' @param k Numeric. The offset from the diagonal.
@@ -16,8 +14,6 @@
 #' @note Matlab style matrix diag()
 #' @author Stu Field
 #' @seealso \code{\link{diag}}, \code{\link{zeros}}
-#' @references %% ~put references to the literature/web site here ~
-#' @keywords ~kwd1 ~kwd2
 #' @examples
 #' 
 #' diagR(1:7, k=-1)     # sub-diagonal

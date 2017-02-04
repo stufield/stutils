@@ -3,8 +3,6 @@
 #' 
 #' Sensitivity analysis of linear maps, all in one function.
 #' 
-#' %% ~~ If necessary, more details than the description above ~~
-#' 
 #' @param A A projection matrix to be analyzed.
 #' @return A list of the following:
 #' \item{Matrix }{The original projection matrix (map)}
@@ -18,12 +16,10 @@
 #' population}
 #' \item{v }{The left eigenvector or the reproductive "value" of each stage 
 #' in the population}
-#' @note %% ~~further notes~~
 #' @author Stu Field
 #' @seealso \code{\link{analyzeProjectionMatrix}}, \code{\link{eigen}},
 #' \code{\link[popbio]{eigen.analysis}}, \code{\link[popbio]{popbio}}
 #' @references Caswell, H. Matrix Population Models. 2001. Sensitivity & Elasticity.
-#' @keywords ~kwd1 ~kwd2
 #' @examples
 #' 
 #' A <- diag(1:5 / 10)
@@ -49,4 +45,3 @@ calcMatrixSensitivity <- function(A) {
    list(Matrix=A, Sensitivity=S, Elasticity=E, lambda=lambda, w=w, v=v)
 
 }
-

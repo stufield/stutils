@@ -1,4 +1,4 @@
-#' 
+
 #' Which Entry(s)
 #' 
 #' Determine which entry of a matrix matches a given value. Similar functions
@@ -11,11 +11,8 @@
 #' @return A matrix indicating which entries agree with \code{match=}. Rows are
 #' the number of different match(es) and column 1 is the row of a positive
 #' match and column 2 is the column of the positive match.
-#' @note %% ~~further notes~~
 #' @author Stu Field
 #' @seealso \code{\link{which}}
-#' @references %% ~put references to the literature/web site here ~
-#' @keywords ~kwd1 ~kwd2
 #' @examples
 #' 
 #' M <- matrix(1:25, ncol=5)

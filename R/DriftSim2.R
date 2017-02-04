@@ -1,10 +1,8 @@
-#' 
+
 #' Genetic Drift Simulation 2
 #' 
 #' Performs a simulation of genetic drift according to the one described in the
 #' Evolution & Ecology Excel spreadsheets manuals
-#' 
-#' If necessary, more details than the description above
 #' 
 #' @param p Numeric. Initial allelic frequency in for each of the simulations
 #' @param Gen Integer. Generations to run each simulation
@@ -15,11 +13,9 @@
 #' drift simulations following the allelic frequency p.} 
 #' \item{P.fix }{The proportion of the time the p allele becomes fixed 
 #' in the population. Should approach 0.5 when trials increases.}
-#' @note %% ~~further notes~~
 #' @author Stu Field
 #' @seealso \code{\link{DriftSim}}
 #' @references Evolutionary Ecology Tutorials in Excel - Workbook.
-#' @keywords ~kwd1 ~kwd2
 #' @examples
 #' 
 #' \dontrun{

@@ -17,8 +17,6 @@
 #' character
 #' @author Stu Field
 #' @seealso \code{\link{na.omit}}
-#' @references %% ~put references to the literature/web site here ~
-#' @keywords ~kwd1 ~kwd2
 #' @examples
 #' 
 #' M <- matrix(1:25, ncol=5)

@@ -1,22 +1,19 @@
-#' 
+
 #' Genetic Drift Simulation
 #' 
-#' Performs a simulation of genetic drift
+#' Performs an illustrative simulation of genetic drift.
 #' 
-#' If necessary, more details than the description above
-#' 
-#' @param p.star Initial allelic frequency of the p allele
-#' @param n Integer. Number of individuals in the population
-#' @param nsim Integer. Number of simulations to perform
+#' @param p.star Initial allelic frequency of the p allele.
+#' @param n Integer. Number of individuals in the population.
+#' @param nsim Integer. Number of simulations to perform.
 #' @param plot Plot both histogram and drift with time (default) or just
-#' histogram ("h") or just line graph ("l")
-#' @return A plot of the simulation is returned
+#' histogram ("h") or just line graph ("l").
+#' @return A plot of the simulation is returned.
 #' @note Simulation written for FEScUE class
 #' @author Stu Field
 #' @seealso \code{\link{DriftSim2}}
 #' @references Department of Biology, Colorado State University,
 #' Fort Collins, CO 80523-1878. sgf@colostate.edu
-#' @keywords ~kwd1 ~kwd2
 #' @examples
 #' 
 #' \dontrun{

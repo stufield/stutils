@@ -1,4 +1,4 @@
-#' 
+
 #' Diaginal Matrix of Zeros
 #' 
 #' Produce a matrix of zeros of dimensions determined by the
@@ -13,8 +13,6 @@
 #' @note Mimic of MatLab, even though MatLab is bullshit.
 #' @author Stu Field
 #' @seealso \code{\link{diag}}, \code{\link{diagR}}
-#' @references %%
-#' @keywords ~kwd1 ~kwd2
 #' @examples
 #' 
 #' zeros(7)

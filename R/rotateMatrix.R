@@ -8,11 +8,8 @@
 #' @param direction Character. Which direction to rotate 90 degrees.
 #' Partial matching allowed
 #' @return A matrix rotated 90 degrees from the original matrix
-#' @note %% ~~further notes~~
 #' @author Stu Field
 #' @seealso \code{\link{match.arg}}, \code{\link{t}}
-#' @references %% ~put references to the literature/web site here ~
-#' @keywords ~kwd1 ~kwd2
 #' @examples
 #' 
 #' m <- matrix(1:9, ncol=3)
