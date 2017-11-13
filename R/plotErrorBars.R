@@ -60,9 +60,9 @@ plotErrorBars <- function(x, lo, up, plotfun=graphics::barplot, bar.col=1, ylims
 		stop("Lengths of values and confidence intervals must all be equal", call.=FALSE)
 
 	if ( is.null(ylims) ) {
-		rng <- range(c(lo, up))
+		rng     <- range(c(lo, up))
       stretch <- diff(rng) * pad
-		ylims <- rng + stretch * c(-1,1)
+		ylims   <- rng + stretch * c(-1,1)
    }
 
 	if ( grepl("barplot$", deparse(substitute(plotfun))) ) {

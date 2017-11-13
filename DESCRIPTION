@@ -2,7 +2,7 @@ Package: stuRpkg
 Type: Package
 Title: The Stu R Package
 Version: 1.2
-Date: 2017-01-15
+Date: 2017-11-13
 Authors@R: c(person("Stu", "Field", email="wiki.kimi@gmail.com", role=c("aut","cre")))
 Description: Small suite of useful functions, subroutines, and data objects for
     data set manipulation and analysis in R.
@@ -11,6 +11,7 @@ Depends: R (>= 3.1.0), magrittr
 Imports: VennDiagram, grid
 Suggests: gplots, testthat
 BuildVignettes: false
+X-CRAN-COMMENT: *Extra comments can go here*
 LazyLoad: yes
 LazyData: yes
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1

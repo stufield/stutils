@@ -33,14 +33,14 @@
 #' @export bootstrap
 bootstrap <- function(x, boot=1000, FUN, up=0.975, lo=0.025){
 
-   if ( is.numeric(x) || is.character(x) ) {
+   if ( inherits(x, c("numeric","character")) ) {
       if ( is.numeric(x) ) {
          est <- FUN(x)      # calculate point estimate
          bootsamples <- lapply(1:boot, function(i) sample(x, replace=TRUE))
-         boot.est <- sapply(bootsamples, FUN)   # pt. estimates of bootstraps
-         upper <- quantile(boot.est, probs=up)  # upper CI
-         lower <- quantile(boot.est, probs=lo)  # lower CI
-         se <- sqrt(var(boot.est))              # standard error of pt. estimate
+         boot.est <- sapply(bootsamples, FUN)      # pt. estimates of bootstraps
+         upper    <- quantile(boot.est, probs=up)  # upper CI
+         lower    <- quantile(boot.est, probs=lo)  # lower CI
+         se       <- sqrt(var(boot.est))           # standard error of pt. estimate
          ret <- list(BootSamples=bootsamples,
                      BootEstimates=boot.est,
                      CI95=c(lower, estimate=est, upper),
@@ -52,7 +52,7 @@ bootstrap <- function(x, boot=1000, FUN, up=0.975, lo=0.025){
    } else {
    	 input <- readline("x must be numeric or character! Coerce to character (y/n)? ")
    	 if ( grepl("y", input, ignore.case=TRUE) ) {
-   	   y <- as.character(x)
+   	   y   <- as.character(x)
    	   ret <- lapply(1:boot, function(i) sample(y, replace=TRUE))
    	 } else {
           stop("Function aborted ... please try again ...", call.=FALSE)

@@ -32,7 +32,6 @@ BlockMat <- function(x, b) {
       stop("List length (x) must be multiple of: ", b)
    hi    <- seq(b, L, b)
    lo    <- hi - (b - 1)
-   mList <- lapply(1:(L/b), function(i) do.call(cbind, x[lo[i]:hi[i]])) 
-   do.call(rbind, mList)
+   lapply(1:(L/b), function(i) do.call(cbind, x[lo[i]:hi[i]])) %>% do.call(rbind, .)
 }
 

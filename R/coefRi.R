@@ -48,7 +48,7 @@ coefRi <- function(x, groups, do.log=TRUE) {
    MS.among  <- model[[1]][1, "Mean Sq"]
    MS.within <- model[[1]][2, "Mean Sq"]
    s.Asq <- (MS.among - MS.within) / n_o
-   r_i <- s.Asq / (MS.within + s.Asq)
+   r_i   <- s.Asq / (MS.within + s.Asq)
    list(Model=model, ICC=r_i)
 
 }

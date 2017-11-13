@@ -26,7 +26,7 @@
 #' \code{\link{Ri_data}} \cr
 #' \code{\link{TreeData}}
 #'
-#' @references Special thanks to Ben Bolker, my original R Yoda ...
+#' @references Special thanks to Ben Bolker and Mike Mehan, my R Yoda and Obi Wan ...
 #' @note Stu has an R package ... Ha!
 #' @examples
 #' 
