@@ -12,8 +12,11 @@
 #' unrecognizable and used as the main example data set for the R tutorial.
 #' @source Stu Field
 #' @examples
+#'
 #' head(TreeData)
-#' apply(TreeData[,5:ncol(TreeData)], 2, mean)
+#' summary(TreeData)
+#' suppressWarnings(sapply(TreeData, mean))
+#'
 #' @keywords R_tutorial
 NULL
 
@@ -30,7 +33,9 @@ NULL
 #' @references Stu Field, The R Tutorial.
 #' @source Stu Field
 #' @examples
+#'
 #' head(popdata, 10)
+#'
 #' @keywords R Tutorial
 NULL
 
@@ -46,7 +51,9 @@ NULL
 #' @references Sokal & Rolff (Biometry; 3rd ed.), p. 210-214.
 #' @source Stu Field
 #' @examples
+#'
 #' Ri_data
+#'
 #' @keywords Ri
 NULL
 
@@ -65,10 +72,12 @@ NULL
 #' @references Stu Field
 #' @source Bill Black
 #' @examples
+#'
 #' head(MC_sims)
 #' tail(MC_sims)
 #' mean(MC_sims)
 #' hist(MC_sims)
+#'
 #' @keywords Student Demo
 NULL
 
@@ -76,26 +85,28 @@ NULL
 #' 
 #' Infection data describing the infections count data of an infectious disease
 #' by geographic position. Includes the following headings: \cr
-#' CountyNo \cr
-#' CountyName \cr
-#' State \cr
-#' Fips \cr
-#' Site \cr
-#' Lat \cr
-#' Long \cr
-#' Population \cr
-#' Area \cr
-#' Density \cr
-#' Infected
+#'    CountyNo \cr
+#'    CountyName \cr
+#'    State \cr
+#'    Fips \cr
+#'    Site \cr
+#'    Lat \cr
+#'    Long \cr
+#'    Population \cr
+#'    Area \cr
+#'    Density \cr
+#'    Infected
 #' 
 #' @name InfectionByCounty
 #' @docType data
-#' @format A data frame containing over 3000 individual cases
+#' @format A data frame containing 3082 individual cases/records.
 #' @references Infection data originally from Dylan George and 
-#' used for an exercise data set in the EEID R tutorial. 
+#' used for an exercise data set in the EEID R tutorial (2010). 
 #' @source Stu Field
 #' @examples
+#'
 #' head(InfectionByCounty)
+#'
 #' @keywords R tutorial
 NULL
 
