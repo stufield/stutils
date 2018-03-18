@@ -1,4 +1,4 @@
-
+#'
 #' Linear Sensitivity Analysis
 #' 
 #' Sensitivity analysis of linear maps, all in one function.
@@ -31,17 +31,18 @@
 #' @export calcMatrixSensitivity
 calcMatrixSensitivity <- function(A) {
 
-   w      <- Mod(eigen(A)$vectors[, 1])                 # right eigenvector; used for SSD
-   v      <- Mod(eigen(t(A))$vectors[, 1])              # left eigenvector; used for RV
-   lambda <- Mod(eigen(A, only.values=TRUE)$values[1])  # dominant eigenvalue
-   dot    <- drop( t(v) %*% as.matrix(w) )              # dot product of eigenvectors
+  w      <- Mod(eigen(A)$vectors[, 1])             # right eigenvector
+  v      <- Mod(eigen(t(A))$vectors[, 1])          # left eigenvector
+  lambda <- Mod(eigen(A, only.values = TRUE)$values[1])  # dominant eigenvalue
+  dot    <- drop( t(v) %*% as.matrix(w) )          # dot product of eigenvectors
 
-   # Sensitivity matrix
-   S <- (as.matrix(v) %*% t(w)) / dot
+  # Sensitivity matrix
+  S <- (as.matrix(v) %*% t(w)) / dot
 
-   # Elasticity matrix
-   E <- (1 / lambda) * S * A
+  # Elasticity matrix
+  E <- (1 / lambda) * S * A
 
-   list(Matrix=A, Sensitivity=S, Elasticity=E, lambda=lambda, w=w, v=v)
+  list(Matrix = A, Sensitivity = S, Elasticity = E,
+       lambda = lambda, w = w, v = v)
 
 }

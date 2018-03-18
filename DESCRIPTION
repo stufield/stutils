@@ -2,15 +2,22 @@ Package: stuRpkg
 Type: Package
 Title: The Stu R Package
 Version: 1.2
-Date: 2017-11-13
-Authors@R: c(person("Stu", "Field", email="wiki.kimi@gmail.com", role=c("aut","cre")))
+Authors@R: c(person("Stu", "Field", email = "wiki.kimi@gmail.com", role = c("aut","cre")))
 Description: Small suite of useful functions, subroutines, and data objects for
     data set manipulation and analysis in R.
-License: GNU General Public License (>= 3)
-Depends: R (>= 3.1.0), magrittr
-Imports: VennDiagram, grid
-Suggests: gplots, testthat
+License: GPL-3 | file LICENSE
+Depends:
+  R (>= 3.1.0),
+  magrittr
+Imports:
+  VennDiagram,
+  dplyr,
+  grid
+Suggests:
+  gplots,
+  testthat
 BuildVignettes: false
+URL: https://github.com/stufield/stuRpkg
 X-CRAN-COMMENT: *Extra comments can go here*
 LazyLoad: yes
 LazyData: yes
