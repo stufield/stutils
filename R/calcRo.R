@@ -19,9 +19,9 @@
 #' parF <- c(0, 0, 3,
 #'           0, 0, 2,
 #'           0, 0, 1)
-#' TM <- matrix(parS, 3, 3, byrow=TRUE)
+#' TM <- matrix(parS, 3, 3, byrow = TRUE)
 #' TM
-#' FM <- matrix(parF, 3, 3, byrow=TRUE)
+#' FM <- matrix(parF, 3, 3, byrow = TRUE)
 #' FM
 #' A <- TM + FM
 #' A
@@ -32,11 +32,11 @@
 #' @export calcRo
 calcRo <- function(TM, FM) {
 
-   I  <- diag(ncol(TM))
-   N  <- solve((I - TM), I)   # The fundamental matrix N
-   R  <- FM %*% N             # The Next Generation matrix R
-   Ro <- eigen(R)$values[1]
-   return(Ro)
+  I  <- diag(ncol(TM))
+  N  <- solve((I - TM), I)   # The fundamental matrix N
+  R  <- FM %*% N             # The Next Generation matrix R
+  Ro <- eigen(R)$values[1]
+  return(Ro)
 
 }
 

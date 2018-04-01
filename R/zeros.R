@@ -1,5 +1,5 @@
 
-#' Diaginal Matrix of Zeros
+#' Diagonal Matrix of Zeros
 #' 
 #' Produce a matrix of zeros of dimensions determined by the
 #' diagonal argument.
@@ -17,7 +17,7 @@
 #' 
 #' zeros(7)
 #' zeros(15)
-#' zeros(c(3,5))
+#' zeros(c(3, 5))
 #' 
 #' @export zeros
 zeros <- function(x) diag(0, x) 

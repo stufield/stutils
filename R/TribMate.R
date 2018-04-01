@@ -1,5 +1,5 @@
 #' 
-#' Tribolium Mating Subrouting
+#' Tribolium Mating Subroutine
 #' 
 #' A sub-routine used to determine the number of offspring produced by the
 #' current population according to Hardy-Weinberg predictions. Used in
@@ -16,37 +16,33 @@
 #' intermediate, solution to obtain the current solution.
 #' @note Used in FEScUE for \code{Tribolium9()}.
 #' @author Stu Field, Jesse Drendel
-#' @references Tribolium Example from Caswell (2008); pg 71 \cr Perturbation
-#' analysis of nonlinear matrix popn models \cr Demographic Research 18: 59-116
-#' @keywords ~kwd1 ~kwd2
-#' @examples
-#' 
-#' ### See Tribolium9() ###
-#' 
+#' @references Tribolium Example from Caswell (2008); pg 71. Perturbation
+#' analysis of nonlinear matrix popn models. Demographic Research 18: 59-116
+#' @seealso \code{Tribolium9}
 #' @export TribMate
 TribMate <- function(Y, f) {
 
-   Offspring <- matrix(0, nrow=nrow(Y), ncol=ncol(Y))
-   nAA <- Y[3, 1]
-   nAa <- Y[3, 2]
-   naa <- Y[3, 3]
-   Total <- nAA + nAa + naa        # total number of reproductive adults
+  Offspring <- matrix(0, nrow = nrow(Y), ncol = ncol(Y))
+  nAA <- Y[3, 1]
+  nAa <- Y[3, 2]
+  naa <- Y[3, 3]
+  Total <- nAA + nAa + naa        # total number of reproductive adults
 
-   if ( Total > 0 ) {
-      p <- (nAa + 2 * nAA) / (2 * Total)
-      q <- (nAa + 2 * naa) / (2 * Total)
-      # ---------------------------
-      fnAA <- f * nAA
-      fnAa <- f * nAa
-      fnaa <- f * naa
-      # ---------------------------
-      FAA <- p * (fnAa / 2 + fnAA)
-      FAa <- q * (fnAa / 2 + fnAA) + p * (fnAa / 2 + fnaa) # heterozygotes
-      Faa <- q * (fnAa / 2 + fnaa)
-      # ---------------------------
-      Offspring[1,] <- c(FAA, FAa, Faa)
-   }
+  if ( Total > 0 ) {
+    p <- (nAa + 2 * nAA) / (2 * Total)
+    q <- (nAa + 2 * naa) / (2 * Total)
+    # ---------------------------
+    fnAA <- f * nAA
+    fnAa <- f * nAa
+    fnaa <- f * naa
+    # ---------------------------
+    FAA <- p * (fnAa / 2 + fnAA)
+    FAa <- q * (fnAa / 2 + fnAA) + p * (fnAa / 2 + fnaa) # heterozygotes
+    Faa <- q * (fnAa / 2 + fnaa)
+    # ---------------------------
+    Offspring[1,] <- c(FAA, FAa, Faa)
+  }
 
-   return(Offspring)
+  return(Offspring)
 
 }

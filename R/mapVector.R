@@ -25,7 +25,7 @@
 #' @param v The source vector to perform the mapping. Must be a character or
 #' factor vector, or be able to be converted to one. In general, the returned
 #' value is of the same class (character/factor) as the input vector.
-#' @param from.list A list of the associated levels to map in the order thay
+#' @param from.list A list of the associated levels to map in the order they
 #' will be mapped to in \code{to.vec}. Alternatively, a character vector of the
 #' same length as \code{to.vec} of only 1-to-1 mapping is desired.
 #' @param to.vec The new mapping in the same order as they appear in
@@ -76,7 +76,7 @@ mapVector.default <- function(v, ...)
 #' @noRd
 #' @method mapVector factor
 #' @export
-mapVector.factor <- function(v, from.list, to.vec, nomatch=NULL) {
+mapVector.factor <- function(v, from.list, to.vec, nomatch = NULL) {
 
    if ( is.null(nomatch) ) {
       new.v <- as.character(v)
@@ -90,14 +90,14 @@ mapVector.factor <- function(v, from.list, to.vec, nomatch=NULL) {
    if ( length(from.list)==length(to.vec) && !inherits(from.list, "list") )
       from.list <- as.list(from.list)
 
-   my_dict <- mapVsubfun(from.list %names% to.vec)
+   my_dict <- mapVsubfun(from.list %>% magrittr::set_names(to.vec))
 
    for ( i in names(my_dict) )
-      new.v[ v==i ] <- my_dict[[which(names(my_dict)==i)]]
+      new.v[ v==i ] <- my_dict[[which(names(my_dict) == i)]]
 
-   miss.vec <- setdiff(v, unlist(from.list, recursive=FALSE))
+   miss.vec <- setdiff(v, unlist(from.list, recursive = FALSE))
    #print(miss.vec)
-   factor(new.v, levels=c(to.vec, miss.vec))
+   factor(new.v, levels = c(to.vec, miss.vec))
 
 }
 
@@ -107,7 +107,7 @@ mapVector.factor <- function(v, from.list, to.vec, nomatch=NULL) {
 #' @noRd
 #' @method mapVector character
 #' @export
-mapVector.character <- function(v, from.list, to.vec, nomatch=NULL) {
+mapVector.character <- function(v, from.list, to.vec, nomatch = NULL) {
 
    if ( !is.null(nomatch) ) {
       new.v <- rep(nomatch, length(v))
@@ -121,12 +121,12 @@ mapVector.character <- function(v, from.list, to.vec, nomatch=NULL) {
    if ( length(from.list)==length(to.vec) && !inherits(from.list, "list") )
       from.list <- as.list(from.list)
 
-   my_dict <- mapVsubfun(from.list %names% to.vec)
+   my_dict <- mapVsubfun(from.list %>% magrittr::set_names(to.vec))
 
    for ( i in names(my_dict) )
-      new.v[ v==i ] <- my_dict[[which(names(my_dict)==i)]]
+      new.v[ v==i ] <- my_dict[[which(names(my_dict) == i)]]
 
-   miss.vec <- setdiff(v, unlist(from.list, recursive=FALSE))
+   miss.vec <- setdiff(v, unlist(from.list, recursive = FALSE))
    #print(miss.vec)
 
    if ( class(to.vec) != class(v) ) {
@@ -150,7 +150,7 @@ mapVector.character <- function(v, from.list, to.vec, nomatch=NULL) {
 #' @noRd
 #' @method mapVector numeric
 #' @export
-mapVector.numeric <- function(v, from.list, to.vec, nomatch=NULL) {
+mapVector.numeric <- function(v, from.list, to.vec, nomatch = NULL) {
 
    if ( !is.null(nomatch) ) {
       new.v <- rep(nomatch, length(v))
@@ -164,17 +164,17 @@ mapVector.numeric <- function(v, from.list, to.vec, nomatch=NULL) {
    if ( length(from.list)==length(to.vec) && !inherits(from.list, "list") )
       from.list <- as.list(from.list)
 
-   my_dict <- mapVsubfun(from.list %names% to.vec)
+   my_dict <- mapVsubfun(from.list %>% magrittr::set_names(to.vec))
 
    for ( i in names(my_dict) )
-      new.v[ v==i ] <- my_dict[[which(names(my_dict)==i)]]
+      new.v[ v==i ] <- my_dict[[which(names(my_dict) == i)]]
 
-   miss.vec <- setdiff(v, unlist(from.list, recursive=FALSE))
+   miss.vec <- setdiff(v, unlist(from.list, recursive = FALSE))
    #print(miss.vec)
 
    if ( class(to.vec) != class(v) ) {
       warning(sprintf("* mapVector is changing object class of [v]: %s -> %s",
-                      class(v), class(to.vec)), call.=FALSE)
+                      class(v), class(to.vec)), call. = FALSE)
       if ( inherits(to.vec, "factor") )
          new.v %<>% as.factor
       if ( inherits(to.vec, "integer") )

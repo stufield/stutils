@@ -17,7 +17,7 @@
 #' time. The default is a Mac/Unix formulation. For Windows/PC machines, 
 #' \code{root.dir} must be specified
 #' @param switchDir Logical. Set the working directory to the path of the file in
-#' \code{file}, if found. Uses setwd().
+#' \code{file}, if found. Uses \code{\link{setwd}}.
 #' @return The path of the file specified in \code{file}
 #' @author Stu Field, Steven Mosher
 #' @seealso \code{\link{list.files}}, \code{\link{setwd}}
@@ -27,30 +27,31 @@
 #' \dontrun{
 #' filename <- "TreeData.csv"
 #' path2file(filename)
-#' path2file(filename, switchDir=TRUE)
+#' path2file(filename, switchDir = TRUE)
 #' read.csv(filename)
 #' }
 #' 
 #' @export path2file
-path2file <- function(file, root.dir=Sys.getenv("HOME"),
-                      switchDir=FALSE) {
+path2file <- function(file, root.dir = Sys.getenv("HOME"),
+                      switchDir = FALSE) {
 
-   fullpath <- list.files(path=root.dir, pattern=file,
-                          full.names=TRUE, recursive=TRUE)
+  fullpath <- list.files(path = root.dir, pattern = file,
+                         full.names = TRUE, recursive = TRUE)
 
-   path <- dirname(fullpath)
+  path <- dirname(fullpath)
 
-   if ( length(fullpath)==0 )
-      stop("File not found!", call.=FALSE)
+  if ( length(fullpath) == 0 )
+    stop("File not found!", call. = FALSE)
 
-   if ( switchDir ) {
-      if ( getwd()==path ) 
-         warning("Path is already the R working directory ... staying put", call.=FALSE)
-      cat("Changing R Working Directory to:", "\n")
-      setwd(path)
-   }
+  if ( switchDir ) {
+    if ( getwd() == path ) 
+      warning("Path is already the R working directory ... staying put",
+              call. = FALSE)
+    cat("Changing R Working Directory to:", "\n")
+    setwd(path)
+  }
 
-   return(path)
+  return(path)
 
 }
 

@@ -22,12 +22,12 @@
 #' @export seconds2time
 seconds2time <- function(x) {
 
-   hours <- x %/% 3600
-   mins <- (x %% 3600) %/% 60
-   secs <- ((x %% 60) %% 60) %% 60
-   decimals <- gsub(".*[0-9][.]","",sprintf("%.2f",secs))
-   #print(list(hours,mins,secs,decimals))
-   sprintf("%01d:%02d:%02d.%s", hours, mins, round(secs,0), decimals)
+  hours <- x %/% 3600
+  mins  <- (x %% 3600) %/% 60
+  secs  <- ((x %% 60) %% 60) %% 60
+  decimals <- gsub(".*[0-9][.]", "", sprintf("%.2f", secs))
+  #print(list(hours,mins,secs,decimals))
+  sprintf("%01d:%02d:%02d.%s", hours, mins, round(secs, 0), decimals)
 
 }
 
@@ -42,15 +42,16 @@ seconds2time <- function(x) {
 #' @export time2seconds
 time2seconds <- function(x) {
 
-   format.check <- grepl("^[0-9]{1,2}:[0-9]{2}:[0-9]{2}[.][0-9]{1,2}$", x)
-   if ( !format.check )
-		stop("Incorrect time format ... check time format is 'hh:mm:ss.ss'", call.=FALSE)
-	char.split <- strsplit(x, split=":", fixed=TRUE)[[1]]
-	convert <- as.numeric(char.split)
-	hr <- convert[1]
-	min <- convert[2]
-	sec <- convert[3]
-	return(hr*60 + min*60 + sec)
+  format.check <- grepl("^[0-9]{1,2}:[0-9]{2}:[0-9]{2}[.][0-9]{1,2}$", x)
+  if ( !format.check )
+    stop("Incorrect time format ... check time format is 'hh:mm:ss.ss'",
+         call. = FALSE)
+  char.split <- strsplit(x, split = ":", fixed = TRUE)[[1]]
+  convert    <- as.numeric(char.split)
+  hr  <- convert[1]
+  min <- convert[2]
+  sec <- convert[3]
+  return(hr*60 + min*60 + sec)
 
 }
 

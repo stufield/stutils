@@ -16,7 +16,7 @@
 #' "title case" (i.e. first letter capitalized).
 #' @param strict Logical. Should first letter capitalization be \emph{strictly}
 #' applied? See example.
-#' @return A character string with "title case" convertion
+#' @return A character string with "title case" conversion.
 #' @author Stu Field
 #' @seealso \code{\link[base]{toupper}}, \code{\link[base]{tolower}}, \code{\link[base]{strsplit}}
 #' @examples

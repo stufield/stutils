@@ -17,6 +17,8 @@
 #' \code{\link{tapply}}. If \code{x} is a data frame, then \code{y} must be
 #' supplied and corresponds to a column in \code{x}.
 #'
+#' THIS FUNCTION WILL EVENTUALLY BE REPLACED BY \code{\link[dplyr]{summarise}}.
+#'
 #' @param x A vector, data frame, of matrix of values evaluate.
 #' @param index If \code{x} is a vector, the sub-setting index of same length
 #' as \code{x}. If \code{x} is a data frame, a character string indicating the
@@ -57,12 +59,10 @@
 #'          longform = TRUE, sum.field = "Mean")
 #'
 #' # S3 matrix
-#' library(magrittr)
 #' test_data$Sample %<>% as.numeric
 #' m <- test_data[, c(1, 3, 11)] %>% data.matrix
 #' subapply(m, index = "Sample", .fun = mean, y = "z", longform = TRUE) # same as data.frame
 #'
-#' @importFrom magrittr "%<>%" "%>%"
 #' @importFrom dplyr select
 #' @export subapply
 subapply <- function(x, index, .fun, ...) UseMethod("subapply")
@@ -74,7 +74,8 @@ subapply <- function(x, index, .fun, ...) UseMethod("subapply")
 #' @method subapply default
 #' @export
 subapply.default <- function(x, ...)
-   stop("Couldn't find the appropriate S3 method definition for this object: ", class(x))
+   stop("Couldn't find the appropriate S3 method definition for this object: ",
+        class(x))
 
 
 
@@ -86,8 +87,9 @@ subapply.default <- function(x, ...)
 subapply.numeric <- function(x, index, .fun, ...) {
 
    if ( length(index) != length(x) )
-      stop("The [index=] argument must be a vector the same length as [x=]", call.=FALSE)
-   tapply(x, INDEX=index, FUN=.fun, ...)
+      stop("The [index=] argument must be a vector the same length as [x=]",
+           call. = FALSE)
+   tapply(x, INDEX = index, FUN = .fun, ...)
 
 }
 
@@ -106,8 +108,8 @@ subapply.character <- function(x, ...) subapply.numeric(x, ...)
 #' @rdname subapply
 #' @method subapply data.frame
 #' @export
-subapply.data.frame <- function(x, index, .fun, y, longform=FALSE,
-                                sum.field=deparse(substitute(.fun)),
+subapply.data.frame <- function(x, index, .fun, y, longform = FALSE,
+                                sum.field = deparse(substitute(.fun)),
                                 ...) {
 
   if ( missing(y) )
@@ -119,24 +121,26 @@ subapply.data.frame <- function(x, index, .fun, y, longform=FALSE,
   index <- dplyr::select(x, index) %>% as.list
 
   if ( length(index) == 1 ) {
-    ret <- tapply(x[[y]], INDEX=index, FUN=.fun, ...)
+    ret <- tapply(x[[y]], INDEX = index, FUN = .fun, ...)
 
     if ( longform ) {
       n <- index %>% table %>% as.vector
       #print(n)
-      ret <- data.frame(n, ret) %names% c("n", sum.field)
+      ret <- data.frame(n, ret) %>% magrittr::set_names(c("n", sum.field))
     }
 
-  } else if ( length(index)==2 ) {
+  } else if ( length(index) == 2 ) {
 
-    ret    <- tapply(x[[y]], INDEX=index, FUN=.fun, ...)
+    ret    <- tapply(x[[y]], INDEX = index, FUN = .fun, ...)
     n      <- table(index)
     dnames <- dimnames(n)
 
     if ( longform )
       ret <- data.frame(rep(dnames[[1]], length(dnames[[2]])),
-                        rep(dnames[[2]], each=length(dnames[[1]])),
-                        as.vector(n), as.vector(ret)) %names% c(index, "n", sum.field)
+                        rep(dnames[[2]], each = length(dnames[[1]])),
+                        as.vector(n), as.vector(ret)) %>% magrittr::set_names(c(index,
+                                                                                "n",
+                                                                                sum.field))
   } else {
     stop("subapply can handle only 1 or 2 subset indices ... ")
   }

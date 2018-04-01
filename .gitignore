@@ -9,3 +9,29 @@ man
 .project
 packrat/lib*/
 
+# R stuff
+.Rhistory
+.Rapp.history
+.RData
+
+# RStudio files
+.Rproj.user/
+*.Rproj
+.Rproj.user
+/.DS_Store
+/r.Rproj
+
+# knitr and R markdown default tmp files and cache directories
+/*_cache/
+/cache/
+*.utf8.md
+*.knit.md
+
+# ignore all packrat related files
+.project
+packrat/lib*/
+
+# ignore files related to adding keyword expansion
+# Revision Info: Id, Author and Date in file header
+filter_clean
+filter_smudge

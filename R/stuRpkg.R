@@ -4,5 +4,5 @@
 
 #  Suppress with R CMD checks note
 #' @import magrittr
-#' @importFrom dplyr select
+#' @importFrom dplyr select left_join
 NULL

@@ -41,14 +41,14 @@ NULL
 
 #' Coefficient Interclass Correlation Data Example
 #' 
-#' Coefficient Interclass Correlation Data Example from Sokal & Rolff
+#' Coefficient Interclass Correlation Data Example from Sokal & Rohlf
 #' (Biometry; 3rd ed.), pages 210-214.
 #' 
 #' @name Ri_data
 #' @docType data
 #' @format A data frame of data with treatments as columns and rows as
 #' cases
-#' @references Sokal & Rolff (Biometry; 3rd ed.), p. 210-214.
+#' @references Sokal & Rohlf (Biometry; 3rd ed.), p. 210-214.
 #' @source Stu Field
 #' @examples
 #'
@@ -85,17 +85,20 @@ NULL
 #' 
 #' Infection data describing the infections count data of an infectious disease
 #' by geographic position. Includes the following headings: \cr
-#'    CountyNo \cr
-#'    CountyName \cr
-#'    State \cr
-#'    Fips \cr
-#'    Site \cr
-#'    Lat \cr
-#'    Long \cr
-#'    Population \cr
-#'    Area \cr
-#'    Density \cr
-#'    Infected
+#' \itemize{
+#'   \item CountyNo
+#'   \item CountyNo
+#'   \item CountyName
+#'   \item State
+#'   \item Fips
+#'   \item Site
+#'   \item Lat
+#'   \item Long
+#'   \item Population
+#'   \item Area
+#'   \item Density
+#'   \item Infected
+#' }
 #' 
 #' @name InfectionByCounty
 #' @docType data
@@ -111,3 +114,36 @@ NULL
 NULL
 
 
+#' Sample Test Data Frame
+#'
+#' A quick sample tibble data frame for running examples and 
+#' checking data frame functionalities. See \code{?tibble}.
+#'
+#' @name test_data
+#' @docType data
+#' @format test_data a tibble object:
+#'
+#' \tabular{ll}{
+#'   Column \tab Definition \cr
+#'   pid \tab seq(1041, 1080, 1) \cr
+#'   Pop \tab rep(LETTERS[\verb{1:10]}) \cr
+#'   Sample \tab sample(c("small", "medium", "large"), 20) \cr
+#'   TimePoint \tab rep(c("baseline", "6 mths", "12 mths", "24 mths"), each = 10) \cr
+#'   a \tab 1:length(test_data$TimePoint) \cr
+#'   b \tab sample(\verb{1:10}, 40, replace = TRUE) \cr
+#'   ABCD.1234.56.8 \tab rnorm(40, 25, 3) \cr
+#'   XYZZ.6969.4.7 \tab rnorm(40, 25, 3) \cr
+#'   x \tab test_data$a * runif (length(test_data$a), 0.25, 0.75) \cr
+#'   y \tab sample(11:20, 40, replace = TRUE) \cr
+#'   z \tab Mod(round(sample(rnorm(40)), 3)) \cr
+#'   Response \tab sample(c("control", "disease"), 40, replace = TRUE)) \cr
+#' }
+#'
+#' @source Stu Field
+#' @keywords datasets
+#' @examples
+#'
+#' dim(test_data)
+#' head(test_data)
+#'
+NULL
