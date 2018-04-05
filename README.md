@@ -47,20 +47,21 @@ devtools::install_github("stufield/stuRpkg")
         checking data frame functionalities. See `\code{?tibble}`.
       + The format of `test_data` is:
 
-         Column  | Definition
-         | -----:|:---------- | 
-         pid             | `seq(1041, 1080, 1)`
-         Pop             | `rep(LETTERS[1:10])`
-         Sample          | `sample(c("small", "medium", "large"), 20)`
-         TimePoint       | `rep(c("baseline", "6 mths", "12 mths", "24 mths"), each = 10)`
-         a               | `1:length(test_data$TimePoint)`
-         b               | `sample(1:10, 40, replace = TRUE)`
-         ABCD.1234.56.8  | `rnorm(40, 25, 3)`
-         XYZZ.6969.4.7   | `rnorm(40, 25, 3)`
-         x               | `test_data\$a * runif (length(test_data\$a), 0.25, 0.75)`
-         y               | `sample(11:20, 40, replace = TRUE)`
-         z               | `Mod(round(sample(rnorm(40)), 3))`
-         Response        | `sample(c("control", "disease"), 40, replace = TRUE))`
+| Column          | Definition           |
+| --------------: | :------------------- | 
+| pid             | `seq(1041, 1080, 1)` |
+| Pop             | `rep(LETTERS[1:10])` |
+| Sample          | `sample(c("small", "medium", "large"), 20)` |
+| TimePoint       | `rep(c("baseline", "6 mths", "12 mths", "24 mths"), each = 10)` |
+| a               | `1:length(test_data$TimePoint)` |
+| b               | `sample(1:10, 40, replace = TRUE)` |
+| ABCD.1234.56.8  | `rnorm(40, 25, 3)` |
+| XYZZ.6969.4.7   | `rnorm(40, 25, 3)` |
+| x               | `test_data$a * runif (length(test_data$a), 0.25, 0.75)` |
+| y               | `sample(11:20, 40, replace = TRUE)` |
+| z               | `Mod(round(sample(rnorm(40)), 3))` |
+| Response        | `sample(c("control", "disease"), 40, replace = TRUE))` |
+
 
 -------------------------
 
