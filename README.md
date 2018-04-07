@@ -5,9 +5,17 @@ data set manipulation and analysis in R.
 
 -------------------------
 
-[![Travis-CI Build Status](https://travis-ci.org/stufield/stuRpkg.svg?branch=master)](https://travis-ci.org/stufield/stuRpkg)
-[![codecov.io](http://codecov.io/github/stufield/stuRpkg/coverage.svg?branch=master)](http://codecov.io/github/stufield/stuRpkg?branch=master)
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/stuRpkg)](https://cran.r-project.org/package=stuRpkg)
+[![Travis Build Status](https://travis-ci.org/stufield/stuRpkg.svg?branch=master)](https://travis-ci.org/stufield/stuRpkg)
+
+[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/stufield/stuRpkg?branch=master&svg=true)](https://ci.appveyor.com/project/stufield/stuRpkg)
+
+[![CRAN_Status](http://www.r-pkg.org/badges/version/stuRpkg)](https://cran.r-project.org/package=stuRpkg)
+
+[![Coverage status](http://codecov.io/github/stufield/stuRpkg/coverage.svg?branch=master)](http://codecov.io/github/stufield/stuRpkg?branch=master)
+
+[![Coverage status](https://codecov.io/gh/klutometis/roxygen/branch/master/graph/badge.svg)](https://codecov.io/github/stufield/stuRpkg?branch=master)
+
+
 
 -------------------------
 
