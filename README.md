@@ -31,29 +31,29 @@ devtools::install_github("stufield/stuRpkg")
 ### Datasets
 
 * **nyflights13**
-    + new york city airport flight data from 2013 (**must install**)
-    + install with `install.packages("nyflights13", repos="http://cran.rstudio.com")`
+  + new york city airport flight data from 2013 (**must install**)
+  + install with `install.packages("nyflights13", repos="http://cran.rstudio.com")`
 * **TreeData**
-    + Sala et. al.
+  + Sala et. al.
 * **popdata**
-    + This data set it the data produced by the projection for
-      the 6 class example used in the EEID R tutorial.
+  + This data set it the data produced by the projection for
+    the 6 class example used in the EEID R tutorial.
 * **Ri_data**
-    + Coefficient Interclass Correlation Data Example from Sokal & Rohlf
-      (Biometry; 3rd ed.), pages 210-214.
+  + Coefficient Interclass Correlation Data Example from Sokal & Rohlf
+    (Biometry; 3rd ed.), pages 210-214.
 * **MC_sims**
-    + Vector containing 1000 simulation estimates of the 
-      Monte-Carlo integral estimate (area under curve) for a 
-      given function. The simulation is time greedy so these 
-      data are saved as an object.
+  + Vector containing 1000 simulation estimates of the 
+    Monte-Carlo integral estimate (area under curve) for a 
+    given function. The simulation is time greedy so these 
+    data are saved as an object.
 * **InfectionByCounty**
-    + Infection data describing the infections count data of an infectious disease
-      by geographic position for 3082 individual cases.
-    + Source: Dylan George, EEID 2008
+  + Infection data describing the infections count data of an infectious disease
+    by geographic position for 3082 individual cases.
+  + Source: Dylan George, EEID 2008
 * **test_data**
-      + A quick sample tibble data frame for running examples and 
-        checking data frame functionalities. See `\code{?tibble}`.
-      + The format of `test_data` is:
+  + A quick sample tibble data frame for running examples and 
+    checking data frame functionalities. See `\code{?tibble}`.
+  + The format of `test_data` is:
 
 | Column          | Definition           |
 | --------------: | :------------------- | 
