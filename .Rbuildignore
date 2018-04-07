@@ -2,6 +2,7 @@ data-raw
 tests
 .gitignore
 .gitattributes
+^\.travis.yml$
 ^\.Rproj\.user$
 ^\.lintr$
 ^README\.md$
