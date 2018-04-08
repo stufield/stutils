@@ -1,4 +1,3 @@
-data-raw
 tests
 .gitignore
 .gitattributes
@@ -7,3 +6,5 @@ tests
 ^\.lintr$
 ^README\.md$
 ^_pkgdown\.yml$
+^filter_clean$
+^filter_smudge$

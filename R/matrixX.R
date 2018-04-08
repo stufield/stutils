@@ -7,14 +7,13 @@
 #' nrow(A) x ncol(B) matrix as a result. Must be matrices not vectors. If
 #' vector is desired, use 1 row/col matrix.
 #' 
-#' @param A Pre-multiplied Matrix.
-#' @param B Post-multiplied Matrix.
+#' @param A The pre-multiplied matrix.
+#' @param B The post-multiplied matrix.
 #' @return A matrix (or vector) result of matrix multiplication.
 #' @note This is a mimic of the MatLab version of matrix multiplication, A * B,
 #' where here is it is \code{matrixX(A, B)}.
 #' @author Stu Field
 #' @seealso \code{\%*\%}
-#' @references put references to the literature/web site here
 #' @examples
 #' 
 #' M <- diag(1:4)

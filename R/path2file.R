@@ -3,7 +3,7 @@
 #' 
 #' Determine the path of a defined file via brute force search of root
 #' directory and optionally change the R working directory to the directory
-#' containing that file. Useful in setting the WD prior to a
+#' containing that file. Useful in setting the working directory prior to a
 #' \code{\link{read.csv}} call.
 #'
 #' If the file in \code{filename} is not found, function is
