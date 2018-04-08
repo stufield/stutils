@@ -10,6 +10,9 @@ addons:
     packages:
       libicu-dev
 
+r_packages:
+  - covr
+
 before_script:
   - Rscript -e 'devtools::install_github("jimhester/covr")'
 
