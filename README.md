@@ -15,6 +15,7 @@ data set manipulation and analysis in R.
 
 [![Coverage status](https://codecov.io/gh/klutometis/roxygen/branch/master/graph/badge.svg)](https://codecov.io/github/stufield/stuRpkg?branch=master)
 
+[![codecov](https://codecov.io/gh/stufield/stuRpkg/branch/master/graph/badge.svg)](https://codecov.io/gh/stufield/stuRpkg)
 
 
 -------------------------
