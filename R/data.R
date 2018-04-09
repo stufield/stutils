@@ -12,7 +12,7 @@ NULL
 
 
 # Tree Data
- 
+
 #' @describeIn objects Data set containing tree characteristic metric data,
 #' that has been blinded
 #' and anonymized from its original source. Used heavily in the \code{R}
@@ -32,8 +32,8 @@ TreeData <- function() NULL
 
 
 # 6 Class Population Projection
- 
-#' @describeIn objects A data set it the data produced by the 
+
+#' @describeIn objects A data set it the data produced by the
 #' projection for the 6 class example used in the EEID R tutorial.
 #' The format is a matrix of the 6-class population projection with classes
 #' as columns and the map/step solutions as the rows
@@ -48,10 +48,10 @@ popdata <- function() NULL
 
 
 # Coefficient Interclass Correlation Data Example
- 
-#' @describeIn objects Coefficient Interclass Correlation Data Example 
+
+#' @describeIn objects Coefficient Interclass Correlation Data Example
 #' from Sokal & Rohlf (Biometry; 3rd ed.), pages 210-214.
-#' The format is a data frame of data with treatments as 
+#' The format is a data frame of data with treatments as
 #' columns and rows as  cases.
 #' @references \code{Ri_data}: Sokal & Rohlf (Biometry; 3rd ed.), p. 210-214.
 #' @examples
@@ -63,10 +63,10 @@ Ri_data <- function() NULL
 
 
 # Monte-Carlo Integration Simulation
- 
-#' @describeIn objects A vector containing 1000 Monte-Carlo simulation 
-#' estimates of the integral estimate (area under curve) for a 
-#' given function. The simulation is time greedy so these 
+
+#' @describeIn objects A vector containing 1000 Monte-Carlo simulation
+#' estimates of the integral estimate (area under curve) for a
+#' given function. The simulation is time greedy so these
 #' data are saved as an object.
 #' The format is a numeric vector of length = 1000.
 #' @references \code{MC_sims}: Bill Black IV
@@ -81,8 +81,8 @@ MC_sims <- function() NULL
 
 
 # Infection data by US County
- 
-#' @describeIn objects Infection data describing the infections 
+
+#' @describeIn objects Infection data describing the infections
 #' count data of an infectious disease
 #' by geographic position. Includes the following headings: \cr
 #' \itemize{
@@ -100,8 +100,8 @@ MC_sims <- function() NULL
 #'   \item Infected
 #' }
 #' A "tibble" data frame containing 3082 individual cases/records.
-#' @references \code{InfectionByCounty}: originally from Dylan George and 
-#' used for an exercise data set in the EEID R tutorial (2010). 
+#' @references \code{InfectionByCounty}: originally from Dylan George and
+#' used for an exercise data set in the EEID R tutorial (2010).
 #' @source InfectionByCounty: Dylan George
 #' @examples
 #' head(InfectionByCounty)
