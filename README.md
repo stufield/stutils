@@ -6,17 +6,9 @@ data set manipulation and analysis in R.
 -------------------------
 
 [![Travis Build Status](https://travis-ci.org/stufield/stuRpkg.svg?branch=master)](https://travis-ci.org/stufield/stuRpkg)
-
 [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/stufield/stuRpkg?branch=master&svg=true)](https://ci.appveyor.com/project/stufield/stuRpkg)
-
 [![CRAN_Status](http://www.r-pkg.org/badges/version/stuRpkg)](https://cran.r-project.org/package=stuRpkg)
-
-[![Coverage status](http://codecov.io/github/stufield/stuRpkg/coverage.svg?branch=master)](http://codecov.io/github/stufield/stuRpkg?branch=master)
-
-[![Coverage status](https://codecov.io/gh/klutometis/roxygen/branch/master/graph/badge.svg)](https://codecov.io/github/stufield/stuRpkg?branch=master)
-
 [![codecov](https://codecov.io/gh/stufield/stuRpkg/branch/master/graph/badge.svg)](https://codecov.io/gh/stufield/stuRpkg)
-
 
 -------------------------
 
@@ -56,20 +48,20 @@ devtools::install_github("stufield/stuRpkg")
     checking data frame functionalities. See `\code{?tibble}`.
   + The format of `test_data` is:
 
-| Column          | Definition           |
-| --------------: | :------------------- | 
-| pid             | `seq(1041, 1080, 1)` |
-| Pop             | `rep(LETTERS[1:10])` |
-| Sample          | `sample(c("small", "medium", "large"), 20)` |
-| TimePoint       | `rep(c("baseline", "6 mths", "12 mths", "24 mths"), each = 10)` |
-| a               | `1:length(test_data$TimePoint)` |
-| b               | `sample(1:10, 40, replace = TRUE)` |
-| ABCD.1234.56.8  | `rnorm(40, 25, 3)` |
-| XYZZ.6969.4.7   | `rnorm(40, 25, 3)` |
-| x               | `test_data$a * runif (length(test_data$a), 0.25, 0.75)` |
-| y               | `sample(11:20, 40, replace = TRUE)` |
-| z               | `Mod(round(sample(rnorm(40)), 3))` |
-| Response        | `sample(c("control", "disease"), 40, replace = TRUE))` |
+| Column          | Definition              |
+| --------------: | :---------------------- | 
+| pid             | `1041:1080`             |
+| Pop             | `rep(LETTERS[1:10], 4)` |
+| Sample          | `factor(sample(c("small", "medium", "large"), 40, replace = TRUE))`           |
+| TimePoint       | `factor(rep(c("baseline", "6 months", "12 months", "24 months"), each = 10))` |
+| a               | `round(rnorm(40, mean = 25, sd = 3.5), 0)` |
+| b               | `sample(0:6, 40, replace = TRUE)`          |
+| ABCD.1234.56.8  | `rnorm(40, 25, 3.5)`                       |
+| XYZZ.6969.4.7   | `rnorm(40, 25, 1.5)`                       |
+| x               | `rnorm(40, mean = 5, sd = 3)`              |
+| y               | `round(runif(40, 10, 20), 0)`              |
+| z               | `round(rnorm(40, mean = 1, sd = 0.5), 3))` |
+| Response        | `factor(sample(c("control", "disease"), 40, replace = TRUE)))` |
 
 
 -------------------------
