@@ -7,10 +7,11 @@
 ##################################
 context("Map Vectors")
 
-source("../../data/create_objects.R", local = TRUE)
+time <- factor(rep(c("baseline", "6 months", "12 months", "24 months"), each = 10),
+               levels = c("baseline", "6 months", "12 months", "24 months"))
 
 test_that("MapVector Factor", {
-  f <- mapVector(test_data$TimePoint,
+  f <- mapVector(time,
                  list(c("baseline", "24 months"),
                       c("6 months", "12 months")),
                  c("one", "two"))
