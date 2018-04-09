@@ -48,10 +48,10 @@ devtools::install_github("stufield/stuRpkg")
     checking data frame functionalities. See `\code{?tibble}`.
   + The format of `test_data` is:
 
-| Column          | Definition              |
-| --------------: | :---------------------- | 
-| pid             | `1041:1080`             |
-| Pop             | `rep(LETTERS[1:10], 4)` |
+| Column          | Definition                  |
+| --------------: | :-------------------------- | 
+| pid             | `1041:1080`                 |
+| Pop             | `rep(head(LETTERS, 10), 4)` |
 | Sample          | `factor(sample(c("small", "medium", "large"), 40, replace = TRUE))`           |
 | TimePoint       | `factor(rep(c("baseline", "6 months", "12 months", "24 months"), each = 10))` |
 | a               | `round(rnorm(40, mean = 25, sd = 3.5), 0)` |
