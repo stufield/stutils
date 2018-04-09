@@ -117,18 +117,18 @@ InfectionByCounty <- function() NULL
 #' See \code{?tibble}.
 #' \tabular{lr}{
 #'   Variable       \tab Definition \cr
-#'   pid            \tab seq(1041, 1080, 1) \cr
-#'   Pop            \tab rep(LETTERS[\verb{1:10]}) \cr
-#'   Sample         \tab sample(c("small", "medium", "large"), 20) \cr
-#'   TimePoint      \tab rep(c("baseline", "6 mths", "12 mths", "24 mths"), each = 10) \cr
-#'   a              \tab 1:length(test_data$TimePoint) \cr
-#'   b              \tab sample(\verb{1:10}, 40, replace = TRUE) \cr
-#'   ABCD.1234.56.8 \tab rnorm(40, 25, 3) \cr
-#'   XYZZ.6969.4.7  \tab rnorm(40, 25, 3) \cr
-#'   x              \tab test_data$a * runif (length(test_data$a), 0.25, 0.75) \cr
-#'   y              \tab sample(11:20, 40, replace = TRUE) \cr
-#'   z              \tab Mod(round(sample(rnorm(40)), 3)) \cr
-#'   Response       \tab sample(c("control", "disease"), 40, replace = TRUE)) \cr
+#'   pid            \tab 1041:1080  \cr
+#'   Pop            \tab rep(head(LETTERS, 10), 4) \cr
+#'   Sample         \tab factor(sample(c("small", "medium", "large"), 20)) \cr
+#'   TimePoint      \tab factor(rep(c("baseline", "6 mths", "12 mths", "24 mths"), each = 10)) \cr
+#'   a              \tab round(rnorm(40, mean = 25, sd = 3.5), 0) \cr
+#'   b              \tab sampel(0:6, 40, replace = TRUE) \cr
+#'   ABCD.1234.56.8 \tab rnorm(40, mean = 25, sd = 3.5) \cr
+#'   XYZZ.6969.4.7  \tab rnorm(40, mean = 25, sd = 1.5) \cr
+#'   x              \tab rnorm(40, mean = 25, sd = 3) \cr
+#'   y              \tab round(runif(40, 10, 20), 0) \cr
+#'   z              \tab round(rnrom(40, mean = 1, sd = 0.5), 3) \cr
+#'   Response       \tab factor(sample(c("control", "disease"), 40, replace = TRUE))) \cr
 #' }
 #' @source test_data: Stu Field
 #' @examples

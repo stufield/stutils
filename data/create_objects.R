@@ -45,20 +45,26 @@ Ri_data <- data.frame(one   = c(380, 376, 360, 368, 372, 366, 374, 382, NA, NA, 
 
 
 set.seed(101)
-test_data <- tibble::tibble(pid   = 1041:1080,
-                        Pop       = rep(LETTERS[1:10], 4),
-                        Sample    = sample(c("small", "medium", "large"), 40, replace = TRUE),
-                        TimePoint = rep(c("baseline", "6 months", "12 months", "24 months"), each = 10),
-                        a         = round(stats::rnorm(40, mean = 160, sd = 20), 0),
-                        b         = sample(0:6, 40, replace = TRUE),
-                        ABCD.1234.56.8 = stats::rnorm(40, mean = 25, sd = 3.5),
-                        XYZZ.6969.4.7 = stats::rnorm(40, mean = 25, sd = 1.5),
-                        x         = stats::rnorm(40, mean = 5, sd = 3),
-                        y         = round(stats::runif (40, 10, 20),0),
-                        z         = round(stats::rnorm(40, mean = 1, sd = 0.5), 3),
-                        Response  = factor(sample(c("Control", "Disease"), 40, replace = TRUE)))
+test_data <- tibble::tibble(
+  pid   = 1041:1080,
+  Pop       = rep(utils::head(LETTERS, 10), 4),
+  Sample    = sample(c("small", "medium", "large"), 40, replace = TRUE),
+  TimePoint = rep(c("baseline", "6 months", "12 months", "24 months"), each = 10),
+  a         = round(stats::rnorm(40, mean = 160, sd = 20), 0),
+  b         = sample(0:6, 40, replace = TRUE),
+  ABCD.1234.56.8 = stats::rnorm(40, mean = 25, sd = 3.5),
+  XYZZ.6969.4.7 = stats::rnorm(40, mean = 25, sd = 1.5),
+  x         = stats::rnorm(40, mean = 5, sd = 3),
+  y         = round(stats::runif (40, 10, 20), 0),
+  z         = round(stats::rnorm(40, mean = 1, sd = 0.5), 3),
+  Response  = factor(sample(c("Control", "Disease"), 40, replace = TRUE))
+)
+
 test_data <- dplyr::mutate(test_data,
-                           Sample = factor(Sample, levels = c("small", "medium", "large")),
+                           Sample = factor(Sample, levels = c("small",
+                                                              "medium",
+                                                              "large")),
                            TimePoint = factor(TimePoint,
-                                              levels = c("baseline", "6 months", "12 months", "24 months")))
+                                              levels = c("baseline", "6 months",
+                                                         "12 months", "24 months")))
 
