@@ -71,8 +71,9 @@ devtools::install_github("stufield/stuRpkg")
 
 -------------------------
 
-### Cheatsheets:
-RStudio [cheatsheets](https://www.rstudio.com/resources/cheatsheets/)
+### RStudio Cheatsheets:
+* [Cheat sheet webpage](https://www.rstudio.com/resources/cheatsheets/)
+* [GitHub Cheatsheet PDFs](https://github.com/rstudio/cheatsheets)
 
 ### Fitting Distributions
 <img width="669" alt="fitting_distns" src="https://user-images.githubusercontent.com/25203086/39655576-b7d5595a-4fb7-11e8-9f1a-01714d304afd.png">
