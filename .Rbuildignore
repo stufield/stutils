@@ -8,3 +8,4 @@ tests
 ^_pkgdown\.yml$
 ^filter_clean$
 ^filter_smudge$
+^.*\.Rproj$

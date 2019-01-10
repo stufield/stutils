@@ -1,0 +1,37 @@
+---
+title: "Getting Started"
+output:
+  rmarkdown::html_vignette:
+    fig_caption: yes
+vignette: >
+  %\VignetteIndexEntry{Getting Started}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+library(stuRpkg)
+library(ggplot2)
+knitr::opts_chunk$set(
+  collapse = TRUE, comment = "#>"
+)
+set.seed(101)
+```
+
+
+------------------------------
+
+# The `stuRpkg` library
+Describe ...
+
+------------------------------
+
+
+
+
+-----------------------------
+
+
+Created on `r Sys.Date()` by [Rmarkdown](https://github.com/rstudio/rmarkdown)
+(v`r utils::packageVersion("rmarkdown")`) and `r R.version$version.string`.
+

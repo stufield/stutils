@@ -3,7 +3,7 @@ Type: Package
 Title: The Stu R Package
 Version: 1.3
 Authors@R: c(
-  person("Stu", "Field", email = "wiki.kimi@gmail.com", role = c("aut", "cre"))
+  person("Stu", "Field", email = "stu.g.field@gmail.com", role = c("aut", "cre"))
   )
 Description: Small suite of useful functions, subroutines, and data objects for
   data set manipulation and analysis in R.
@@ -13,7 +13,7 @@ Depends:
   magrittr (>= 1.5.0)
 Imports:
   VennDiagram,
-  dplyr (>= 0.7.4),
+  dplyr (>= 0.7.8),
   tibble (>= 1.3.4),
   grid
 Suggests:

@@ -1,4 +1,7 @@
 
+# no MacOS files
+/.DS_Store
+
 # no dropbox attributes files
 *dropbox.attr
 
@@ -12,10 +15,7 @@ packrat/lib*/
 .RData
 
 # RStudio files
-.Rproj.user/
-*.Rproj
 .Rproj.user
-/.DS_Store
 /r.Rproj
 
 # knitr and R markdown default tmp files and cache directories
@@ -23,10 +23,6 @@ packrat/lib*/
 /cache/
 *.utf8.md
 *.knit.md
-
-# ignore all packrat related files
-.project
-packrat/lib*/
 
 # ignore files related to adding keyword expansion
 # Revision Info: Id, Author and Date in file header
