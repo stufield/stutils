@@ -7,10 +7,10 @@
 cumsumWindow(x, window)
 }
 \arguments{
-\item{x}{The vector to be summed across}
+\item{x}{The vector to be summed across.}
 
 \item{window}{The length/size of the window to sum
-within (the moving  cutoff)}
+within (the moving  cutoff).}
 }
 \value{
 A vector of the sums of the sliding window for the cumulative sums.
@@ -29,13 +29,11 @@ If \code{window >= length(x)}, a warning is triggered and
 \code{cumsumWindow} reverts to \code{\link[base]{cumsum}}.
 }
 \examples{
-
 cumsumWindow(1:20, 5)
-cumsumWindow(1:20, window=20)
+cumsumWindow(1:20, window = 20)
 cumsum(1:20)
 r.vec <- sample(1:20, 100, replace=TRUE) # random vector
 cumsumWindow(r.vec, 5)
-
 }
 \seealso{
 \code{\link[base]{cumsum}}

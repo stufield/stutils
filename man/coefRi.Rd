@@ -31,11 +31,9 @@ the groups. When ICC is high, it means most of the variation is
 \emph{between} treatment groups.
 }
 \examples{
-
 head(Ri_data)    # internal data
 x <- as.vector(as.matrix(Ri_data))[ !is.na(as.vector(as.matrix(Ri_data))) ]
-coefRi(x, groups=rep(names(Ri_data), c(8, 10, 13, 6)))
-
+coefRi(x, groups = rep(names(Ri_data), c(8, 10, 13, 6)))
 }
 \references{
 Sokal & Rohlf (Biometry; 3rd ed.) 210-214. Sokal & Rohlf

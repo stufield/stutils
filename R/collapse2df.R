@@ -16,24 +16,23 @@
 #' @author Stu Field
 #' @seealso \code{\link[base]{rbind}}, \code{\link[base]{Reduce}}
 #' @examples
-#' 
 #' tmp <- lapply(1:3, function(...) rnorm(4))
 #' names(tmp) <- head(LETTERS, 3)
 #' collapse2df(tmp)
-#' tmp2 <- lapply(tmp, function(x) { names(x) <- head(letters,4); x })
+#' tmp2 <- lapply(tmp, function(x) { names(x) <- head(letters, 4); x })
 #' collapse2df(tmp2)
-#' 
 #' @export collapse2df
 collapse2df <- function(x) {
-
-   if ( is.null(names(x)) )
-      stop("Must provide a named list as input argument [x]", call.=FALSE)
-   nm  <- names(x)
-   out <- Reduce(function(...) rbind(...), x)
-   rownames(out) <- nm
-   if ( !inherits(out, "data.frame") ) {
-      as.data.frame(out)
-   } else {
-      out
-   }
+  if ( is.null(names(x)) ) {
+    stop("Must provide a named list as input argument `x`.",
+         call. = FALSE)
+  }
+  nm  <- names(x)
+  out <- Reduce(function(...) rbind(...), x)
+  rownames(out) <- nm
+  if ( !inherits(out, "data.frame") ) {
+    as.data.frame(out)
+  } else {
+    out
+  }
 }

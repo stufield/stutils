@@ -7,7 +7,7 @@
 cumulative(x)
 }
 \arguments{
-\item{x}{A numeric vector}
+\item{x}{A numeric vector.}
 }
 \value{
 A list containing:
@@ -25,10 +25,8 @@ Returns cumulative vector values of neighboring vector elements.
 Used as a mere exercise in function writing for the R tutorial.
 }
 \examples{
-
 ?cumsum
 cumulative(1:10)
-
 }
 \seealso{
 \code{\link{cumsum}}, \code{\link{cumprod}}
@@ -36,6 +34,3 @@ cumulative(1:10)
 \author{
 Stu Field
 }
-\keyword{cumulative}
-\keyword{product}
-\keyword{sum}

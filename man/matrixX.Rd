@@ -27,13 +27,11 @@ This is a mimic of the MatLab version of matrix multiplication, A * B,
 where here is it is \code{matrixX(A, B)}.
 }
 \examples{
-
 M <- diag(1:4)
 N <- matrix(1:16, ncol = 4)
 M\%*\%N            # R syntax
 matrixX(M, N)    # using function
 M * N            # Hadamard Product
-
 }
 \seealso{
 \code{\%*\%}

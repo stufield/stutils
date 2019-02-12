@@ -11,13 +11,13 @@ analyzeProjectionMatrix(A, initial, Gen = 25, key.thresh = 0.1,
 \item{A}{A population projection matrix.}
 
 \item{initial}{A numeric vector of the initial stage structured population.
-Must be the same length as the number of columns of \code{A}}
+Must be the same length as the number of columns of \code{A}.}
 
 \item{Gen}{An integer of the number of generations to run the projection in
-calculating matrix solutions}
+calculating matrix solutions.}
 
 \item{key.thresh}{Numeric. The cutoff for how to limit most influential
-parameters. Based on Elasticities}
+parameters. Based on Elasticities.}
 
 \item{plots}{Should plots be included with the output?}
 }
@@ -56,13 +56,11 @@ matrix. Includes sensitivity and elasticity of a linear
 (projection) matrix model.
 }
 \examples{
-
 A <- diag(1:5 / 10)
 A[cbind(2:5, 1:4)] <- 3:6 / 10
 A[1, 5] <- 5
-analyzeProjectionMatrix(A, initial=c(1,3,5,2,1), Gen=100)
-analyzeProjectionMatrix(A, initial=c(1,3,5,2,1), key.thresh=0.05, Gen=25, plots=FALSE)
-
+analyzeProjectionMatrix(A, initial = c(1, 3, 5, 2, 1), Gen = 100)
+analyzeProjectionMatrix(A, initial = c(1, 3, 5, 2, 1), key.thresh = 0.05, Gen = 25, plots = FALSE)
 }
 \references{
 Caswell, H. Matrix Population Models. 2001.

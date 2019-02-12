@@ -22,10 +22,8 @@ connection. Useful for sharing data only results with collaborators or
 medical group.
 }
 \examples{
-
 tab <- crossTab(test_data, c("Pop", "Sample"))
-print2file(tab, file="table_file.txt")
-
+print2file(tab, file = "table_file.txt")
 }
 \seealso{
 \code{\link[base]{sink}}, \code{\link[base]{print}}

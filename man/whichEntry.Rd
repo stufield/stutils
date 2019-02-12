@@ -12,7 +12,7 @@ whichEntry(x, match)
 \item{match}{Index to be matched}
 }
 \value{
-A matrix indicating which entries agree with \code{match=}. Rows are
+A matrix indicating which entries agree with \code{match}. Rows are
 the number of different match(es) and column 1 is the row of a positive
 match and column 2 is the column of the positive match.
 }
@@ -23,12 +23,10 @@ vector of the matrix columns. Not ideal. This function provides row x column
 addressing of the entries which agree with the \code{match} argument.
 }
 \examples{
-
 M <- matrix(1:25, ncol=5)
 M[5,1]  <- 17
 M[4, 2] <- 17
 whichEntry(M, 17)
-
 }
 \seealso{
 \code{\link{which}}

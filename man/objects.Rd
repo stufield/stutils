@@ -41,10 +41,9 @@ it is known.
 \section{Functions}{
 \itemize{
 \item \code{TreeData}: Data set containing tree characteristic metric data,
-that has been blinded
-and anonymized from its original source. Used heavily in the \code{R}
-tutorial and for general data frame usage (e.g. package testing).
-The format is "tibble" data frame containing 20 cases and numerous random variables
+that has been blinded and anonymized from its original source.
+Used heavily in the \code{R} tutorial and for general data
+frame usage (e.g. package testing). The format is "tibble" data
 
 \item \code{popdata}: A data set it the data produced by the
 projection for the 6 class example used in the EEID R tutorial.

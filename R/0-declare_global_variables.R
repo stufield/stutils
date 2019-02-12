@@ -5,6 +5,4 @@
 # packages, or objects in the data/ directory
 # Reference: https://github.com/tidyverse/magrittr/issues/29
 ################################## 
-
 utils::globalVariables(c("."))
-

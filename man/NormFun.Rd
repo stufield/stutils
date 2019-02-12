@@ -33,9 +33,7 @@ Neat function for making histogram with density line as well.
 Used as an example to demo how to create functions in the R tutorial.
 }
 \examples{
-
 NormFun()
-
 }
 \seealso{
 \code{\link{hist}}, \code{\link{rnorm}}, \code{\link{dnorm}}, \code{\link{curve}}

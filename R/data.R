@@ -1,5 +1,4 @@
 
-
 #' Package Objects
 #'
 #' @description Below is a listing of all the objects contained in the
@@ -13,12 +12,13 @@ NULL
 
 # Tree Data
 
-#' @describeIn objects Data set containing tree characteristic metric data,
-#' that has been blinded
-#' and anonymized from its original source. Used heavily in the \code{R}
-#' tutorial and for general data frame usage (e.g. package testing).
-#' The format is "tibble" data frame containing 20 cases and numerous random variables
-#' @references \code{TreeData}: originally from Sala et al., but heavily modified to be
+#' @describeIn objects
+#' Data set containing tree characteristic metric data,
+#' that has been blinded and anonymized from its original source.
+#' Used heavily in the `R` tutorial and for general data 
+#' frame usage (e.g. package testing). The format is "tibble" data
+#" frame containing 20 cases and numerous random variables
+#' @references `TreeData`: originally from Sala et al., but heavily modified to be
 #' unrecognizable and used as the main example data set for the EEID R tutorial.
 #' @source TreeData: Stu Field
 #' @examples
@@ -33,11 +33,12 @@ TreeData <- function() NULL
 
 # 6 Class Population Projection
 
-#' @describeIn objects A data set it the data produced by the
+#' @describeIn objects
+#' A data set it the data produced by the
 #' projection for the 6 class example used in the EEID R tutorial.
 #' The format is a matrix of the 6-class population projection with classes
 #' as columns and the map/step solutions as the rows
-#' @references \code{popdata}: Stu Field (The EEID R Tutorial)
+#' @references `popdata`: Stu Field (The EEID R Tutorial)
 #' @source popdata: Stu Field
 #' @examples
 #' head(popdata, 10)
@@ -49,11 +50,12 @@ popdata <- function() NULL
 
 # Coefficient Interclass Correlation Data Example
 
-#' @describeIn objects Coefficient Interclass Correlation Data Example
+#' @describeIn objects
+#' Coefficient Interclass Correlation Data Example
 #' from Sokal & Rohlf (Biometry; 3rd ed.), pages 210-214.
 #' The format is a data frame of data with treatments as
 #' columns and rows as  cases.
-#' @references \code{Ri_data}: Sokal & Rohlf (Biometry; 3rd ed.), p. 210-214.
+#' @references `Ri_data`: Sokal & Rohlf (Biometry; 3rd ed.), p. 210-214.
 #' @examples
 #' Ri_data
 #'
@@ -64,12 +66,13 @@ Ri_data <- function() NULL
 
 # Monte-Carlo Integration Simulation
 
-#' @describeIn objects A vector containing 1000 Monte-Carlo simulation
+#' @describeIn objects
+#' A vector containing 1000 Monte-Carlo simulation
 #' estimates of the integral estimate (area under curve) for a
 #' given function. The simulation is time greedy so these
 #' data are saved as an object.
 #' The format is a numeric vector of length = 1000.
-#' @references \code{MC_sims}: Bill Black IV
+#' @references `MC_sims`: Bill Black IV
 #' @examples
 #' head(MC_sims)
 #' tail(MC_sims)
@@ -82,7 +85,8 @@ MC_sims <- function() NULL
 
 # Infection data by US County
 
-#' @describeIn objects Infection data describing the infections
+#' @describeIn objects
+#' Infection data describing the infections
 #' count data of an infectious disease
 #' by geographic position. Includes the following headings: \cr
 #' \itemize{
@@ -100,7 +104,7 @@ MC_sims <- function() NULL
 #'   \item Infected
 #' }
 #' A "tibble" data frame containing 3082 individual cases/records.
-#' @references \code{InfectionByCounty}: originally from Dylan George and
+#' @references `InfectionByCounty`: originally from Dylan George and
 #' used for an exercise data set in the EEID R tutorial (2010).
 #' @source InfectionByCounty: Dylan George
 #' @examples
@@ -112,9 +116,10 @@ InfectionByCounty <- function() NULL
 
 # Sample Test Data Frame
 
-#' @describeIn objects A quick sample tibble data frame for
+#' @describeIn objects
+#' A quick sample tibble data frame for
 #' running examples and checking data frame functionalities.
-#' See \code{?tibble}.
+#' See `?tibble`.
 #' \tabular{lr}{
 #'   Variable       \tab Definition \cr
 #'   pid            \tab 1041:1080  \cr

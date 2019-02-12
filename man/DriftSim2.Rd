@@ -27,12 +27,10 @@ Performs a simulation of genetic drift according to the one described in the
 Evolution & Ecology Excel spreadsheets manuals
 }
 \examples{
-
 \dontrun{
 set.seed(501)
-DriftSim2(p=0.5, Gen=100, n=10, trials=20)
+DriftSim2(p = 0.5, Gen = 100, n = 10, trials = 20)
 }
-
 }
 \references{
 Evolutionary Ecology Tutorials in Excel - Workbook.

@@ -1,4 +1,4 @@
-#' 
+ 
 #' Plot Error Bars
 #' 
 #' Produce a barplot (or points) containing plot error bars.
@@ -9,27 +9,26 @@
 #' Must be computed externally and passed into the function.
 #' @param up Numeric. A vector of heights of the \emph{upper} error bars to be drawn.
 #' Must be computed externally and passed into the function.
-#' @param plotfun Currently one of: \code{barplot, points, or plot}. Note:
+#' @param plotfun Currently one of: `barplot, points, or plot`. Note:
 #' plot or points produce the same output.
 #' @param bar.col Color of the error bars and lines.
 #' @param bar.lty Line type for the error bars. Argument is passed eventually
-#' to \code{\link[graphics]{lines}}, \code{options=1:5}.
+#' to \code{\link[graphics]{lines}}, `options = 1:5`.
 #' @param bar.cex Character expansion for the width of the error bars
 #' (hat/base) in units of \emph{bar widths}.
-#' @param bar.lwd Line width for the error bars (\code{=lwd}) passed to
+#' @param bar.lwd Line width for the error bars (`lwd`) passed to
 #' \code{\link[graphics]{lines}}.
 #' @param pad Additional spacing, as a proportion of the y-value range, 
 #' to pad the y-axis limits.
-#' @param ylims The y-axis limits to pass to \code{plotfun}.
+#' @param ylims The y-axis limits to pass to `plotfun`.
 #' @param ... Additional arguments passed to either \code{\link[graphics]{barplot}}
 #' , \code{\link[graphics]{plot}}, or \code{\link[graphics]{plot}}.
-#' @return A plot with error bars plotted on top defined by \code{up} and
-#' \code{lo}.
+#' @return A plot with error bars plotted on top defined by `up` and
+#' `lo`.
 #' @author Stu Field
 #' @seealso \code{\link[gplots]{plotCI}}, \code{\link[graphics]{barplot}}, \code{\link[graphics]{plot}}, \code{\link[graphics]{lines}}
 #' @references Heavily modified from The R Book. 2007. Michael Crowley.
 #' @examples
-#' 
 #' set.seed(101)
 #' x <- rnorm(10)
 #' plotErrorBars(x, lo = x - sd(x), up = x + sd(x))
@@ -51,7 +50,6 @@
 #' # Points with Error Bars
 #' plotErrorBars(GroupMeans, lo = GroupMeans - sem, up = GroupMeans+sem, plotfun = plot,
 #'               bar.col = 2, bar.lwd = 2, pch = 21, bg = 4, cex = 2)
-#' 
 #' @importFrom graphics lines barplot plot
 #' @export plotErrorBars
 plotErrorBars <- function(x, lo, up, plotfun = graphics::barplot,
@@ -59,9 +57,10 @@ plotErrorBars <- function(x, lo, up, plotfun = graphics::barplot,
                           bar.lty = 1, bar.cex = 0.33, bar.lwd = 1,
                           pad = 0.05, ...) {
 
-  if ( length(x) != length(lo) || length(x) != length(up) )
+  if ( length(x) != length(lo) || length(x) != length(up) ) {
     stop("Lengths of values and confidence intervals must all be equal",
          call. = FALSE)
+  }
 
   if ( is.null(ylims) ) {
     rng     <- range(c(lo, up))
@@ -91,5 +90,3 @@ plotErrorBars <- function(x, lo, up, plotfun = graphics::barplot,
           col = bar.col, lty = bar.lty, lwd= bar.lwd)    # bottom bar
   }
 }
-
-

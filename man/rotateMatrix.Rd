@@ -20,12 +20,10 @@ Function rotates a matrix 90 degrees. Direction can be either
 clockwise or counter-clockwise
 }
 \examples{
-
 m <- matrix(1:9, ncol=3)
 m
 rotateMatrix(m, "clock")
 rotateMatrix(m, "counter")
-
 }
 \seealso{
 \code{\link{match.arg}}, \code{\link{t}}

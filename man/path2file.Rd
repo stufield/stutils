@@ -8,19 +8,19 @@ path2file(file, root.dir = Sys.getenv("HOME"), switchDir = FALSE)
 }
 \arguments{
 \item{file}{Character string of the desired file, typically \code{"*.R"}
-or \code{"*.csv"}}
+or \code{"*.csv"}.}
 
 \item{root.dir}{The path of the root directory. The higher
 up the root to travel the longer the search will take
 If you narrow down the path, more specific, it will take less
 time. The default is a Mac/Unix formulation. For Windows/PC machines,
-\code{root.dir} must be specified}
+\code{root.dir} must be specified.}
 
 \item{switchDir}{Logical. Set the working directory to the path of the file in
 \code{file}, if found. Uses \code{\link{setwd}}.}
 }
 \value{
-The path of the file specified in \code{file}
+The path of the file specified in \code{file}.
 }
 \description{
 Determine the path of a defined file via brute force search of root
@@ -33,14 +33,12 @@ If the file in \code{filename} is not found, function is
 stopped and warning printed.
 }
 \examples{
-
 \dontrun{
 filename <- "TreeData.csv"
 path2file(filename)
 path2file(filename, switchDir = TRUE)
 read.csv(filename)
 }
-
 }
 \references{
 Assistance from Steven Mosher via StackOverflow

@@ -1,11 +1,12 @@
-tests
 .gitignore
 .gitattributes
 ^\.travis.yml$
 ^\.Rproj\.user$
 ^\.lintr$
-^README\.md$
 ^_pkgdown\.yml$
+^codecov\.yml$
+^README\.Rmd$
+^docs$
 ^filter_clean$
 ^filter_smudge$
 ^.*\.Rproj$

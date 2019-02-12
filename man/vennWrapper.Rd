@@ -6,11 +6,12 @@
 \title{Venn Diagram Plotting Routine}
 \usage{
 vennWrapper(x, ..., edge.col = "transparent", colors = seq(length(x)),
-  num.cex = 1, alpha = 0.25, label.col = "gray35", fontfamily = "sans",
-  main.fontface = "bold", sub.fontface = "bold", main.col = 1,
-  sub.col = "gray35", main.cex = 3, sub.cex = 1.5, margin = 0.01,
-  cat.fontface = "bold", cat.cex = 2, cat.col = "black",
-  cat.fontfamily = "sans", rotation.degree = 0, filename = NULL)
+  num.cex = 1, alpha = 0.25, label.col = "gray35",
+  fontfamily = "sans", main.fontface = "bold", sub.fontface = "bold",
+  main.col = 1, sub.col = "gray35", main.cex = 3, sub.cex = 1.5,
+  margin = 0.01, cat.fontface = "bold", cat.cex = 2,
+  cat.col = "black", cat.fontfamily = "sans", rotation.degree = 0,
+  filename = NULL)
 }
 \arguments{
 \item{x}{A named list of vectors containing strings to match intersections.}
@@ -66,18 +67,16 @@ A wrapper function for plotting Venn diagrams comprising 1 - 5
 intersections.
 }
 \details{
-More details if necessary
+More details \dots
 }
 \note{
 I stole this ...
 }
 \examples{
-
-int.list <- lapply(1:3, function(...) sample(LETTERS[1:10], 6))
-names(int.list) <- c("Larry", "Curly", "Mo")
-vennWrapper(int.list, num.cex=seq(0.5,2,length=7), cat.cex=c(1,1.5,2),
-            main="Title Here", sub="Subtitle")
-
+int_list <- lapply(1:3, function(...) sample(LETTERS[1:10], 6)) \%>\%
+  purrr::set_names(c("Larry", "Curly", "Mo"))
+vennWrapper(int_list, num.cex = seq(0.5, 2, length = 7), cat.cex = c(1, 1.5, 2),
+            main = "Title Here", sub = "Subtitle")
 }
 \references{
 See the \code{\link{VennDiagram}} package.
@@ -88,5 +87,4 @@ See the \code{\link{VennDiagram}} package.
 \author{
 Stu Field
 }
-\keyword{~kwd1}
-\keyword{~kwd2}
+\keyword{venn}

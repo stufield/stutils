@@ -20,14 +20,12 @@ A character string with "title case" conversion.
 Change case to capitalize first letter of each word in a character string.
 }
 \examples{
-
 capwords("using AIC for model selection")
 ## ->  [1] "Using AIC For Model Selection"
-capwords(c("using AIC", "for MODEL selection"), strict=TRUE)
+capwords(c("using AIC", "for MODEL selection"), strict = TRUE)
 ## ->  [1] "Using Aic"  "For Model Selection"
 ##                ^^^        ^^^^^
 ##               "bad"       "good"
-
 }
 \seealso{
 \code{\link[base]{toupper}}, \code{\link[base]{tolower}}, \code{\link[base]{strsplit}}

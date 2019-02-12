@@ -27,13 +27,11 @@ in the population}
 Sensitivity analysis of linear maps, all in one function.
 }
 \examples{
-
 A <- diag(1:5 / 10)
 A[cbind(2:5, 1:4)] <- 3:6 / 10
 A[1, 5] <- 5
 
 calcMatrixSensitivity(A)
-
 }
 \references{
 Caswell, H. Matrix Population Models. 2001. Sensitivity & Elasticity.

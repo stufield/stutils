@@ -7,7 +7,7 @@
 \title{stuRpkg: The Stu R Package}
 \description{
 Small suite of useful functions, subroutines, and data objects for
-data set manipulation and analysis in R.
+  data set manipulation and analysis in R.
 }
 \seealso{
 Useful links:
@@ -17,7 +17,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Stu Field \email{wiki.kimi@gmail.com}
+\strong{Maintainer}: Stu Field \email{stu.g.field@gmail.com}
 
 }
 \keyword{internal}

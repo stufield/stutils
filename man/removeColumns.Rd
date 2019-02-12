@@ -8,16 +8,16 @@
 removeColumns(x, index = 2, search)
 }
 \arguments{
-\item{x}{A matrix or data frame}
+\item{x}{A matrix or data frame.}
 
-\item{index}{Numeric (1,2). The margin to index (columns = 2; rows = 1)}
+\item{index}{Numeric in \verb{[1,2]}. The margin to index (columns = 2; rows = 1).}
 
 \item{search}{Numeric or character. The exact match to be searched.
-If contained within any column or row, it will be removed}
+If contained within any column or row, it will be removed.}
 }
 \value{
 Matrix or data frame with either row(s) or column(s) removed as
-a result of matching \code{search}
+a result of matching \code{search}.
 }
 \description{
 Remove an entire column of a matrix of data frame whose
@@ -27,17 +27,15 @@ are removed is a match occurs in that margin.
 }
 \note{
 Used in SNP analysis to remove nucleotide positions containing a given
-character
+character.
 }
 \examples{
-
-M <- matrix(1:25, ncol=5)
-removeColumns(M, index=2, search=20)
+M <- matrix(1:25, ncol = 5)
+removeColumns(M, index = 2, search = 20)
 M <- as.data.frame(M)
 M[4, 4] <- "A"
 M
-removeColumns(M, search=c("A", 17, 23))
-
+removeColumns(M, search = c("A", 17, 23))
 }
 \seealso{
 \code{\link{na.omit}}

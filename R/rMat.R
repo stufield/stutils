@@ -15,14 +15,13 @@
 #' @author Stu Field
 #' @seealso \code{\link[base]{sample}}
 #' @examples
-#' 
 #' rMat(5, 6, 35, 75)
 #' rMat(5, 6, 35, 75, replace = TRUE)
-#' 
 #' @export rMat
 rMat <- function(m, n, min, max, replace = FALSE, ...) {
   s <- sample(min:max, size = m * n, replace = replace)
-  if ( m * n != length(s) )
+  if ( m * n != length(s) ) {
     stop("Incorrect dimensions or min/max length", call. = FALSE)
+  }
   matrix(s, nrow = m, ncol = n, ...)
 }

@@ -36,9 +36,7 @@ Based on the Jesse Drendel formulation of the Tribolium model in
 FEScUE for the Tribolium Project.
 }
 \examples{
-
-PunnettPack(1:24, nallele=2, nstages=6)
-
+PunnettPack(1:24, nallele = 2, nstages = 6)
 }
 \author{
 Stu Field, Jesse Drendel

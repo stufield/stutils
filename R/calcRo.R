@@ -12,7 +12,6 @@
 #' @seealso \code{\link{eigen}}, \code{\link{solve}}
 #' @references Calculation of Ro from de-Camino-Beck & Lewis. 2007.
 #' @examples
-#' 
 #' parS <- c(0.75, 0,   0,
 #'           0.2,  0,   0,
 #'           0.33, 0.4, 0)
@@ -28,15 +27,12 @@
 #' eigen(A)$values[1]   # Dom. eigenvalue of A
 #'
 #' calcRo(TM, FM)
-#' 
 #' @export calcRo
 calcRo <- function(TM, FM) {
-
   I  <- diag(ncol(TM))
   N  <- solve((I - TM), I)   # The fundamental matrix N
   R  <- FM %*% N             # The Next Generation matrix R
   Ro <- eigen(R)$values[1]
   return(Ro)
-
 }
 

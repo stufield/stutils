@@ -8,28 +8,23 @@ zeros(x)
 }
 \arguments{
 \item{x}{Numeric. The dimensions (m x n) for the square matrix to
-be produced, or the length of the diagonal of the square matrix}
+be produced, or the length of the diagonal of the square matrix.}
 }
 \value{
 A square matrix of zeros with \code{m x n} dimensions
-where both equal \code{x}
+where both equal \code{x}.
 }
 \description{
 Produce a matrix of zeros of dimensions determined by the
-diagonal argument.
-}
-\details{
-Mimic of the MatLab function of a similar name.
+diagonal argument. Mimic of the \code{MatLab} function of a similar name.
 }
 \note{
 Mimic of MatLab, even though MatLab is bullshit.
 }
 \examples{
-
 zeros(7)
 zeros(15)
 zeros(c(3, 5))
-
 }
 \seealso{
 \code{\link{diag}}, \code{\link{diagR}}

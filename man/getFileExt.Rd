@@ -11,21 +11,18 @@ getFileExt(x)
 path, or just the basename.}
 }
 \value{
-A string containing the extension of the file name passed in
-\code{x}.
+A string containing the extension of the file name passed in \code{x}.
 }
 \description{
-Function to return the file extension of a character string given a path
-name to a file.
+Function to return the file extension of a
+character string given a path name to a file.
 }
 \examples{
-
 getFileExt("file.pdf")
 getFileExt("/home/full/path/to/file.pdf")
-
 }
 \seealso{
-\code{\link[base]{regexpr}}, \code{\link[base]{substring}}
+\code{\link{regexpr}}, \code{\link{basename}}
 }
 \author{
 Stu Field

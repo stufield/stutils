@@ -26,17 +26,14 @@ added and indexed to the appropriate sample IDs.
 }
 \description{
 Merge additional meta data to an existing data frame based on
-unique row sample identifiers.
-This is a wrapper around the existing R function
-\code{\link[dplyr]{left_join}}.
+unique row sample identifiers. This is a wrapper around the
+existing \code{\link[dplyr]{left_join}}.
 }
 \examples{
-
 set.seed(101)
 new <- data.frame(pid = sample(test_data$pid, 10), new.clin = rnorm(10))
 mergeMetaData(test_data, new)            # use default 'by'
-mergeMetaData(test_data, new, by ="pid") # same
-
+mergeMetaData(test_data, new, by = "pid") # same
 }
 \seealso{
 \code{\link[dplyr]{left_join}}, \code{\link[utils]{read.csv}}

@@ -12,11 +12,11 @@ bootstrap(x, boot = 1000, FUN, up = 0.975, lo = 0.025)
 \item{boot}{Number of bootstraps to perform.}
 
 \item{FUN}{Function desired for the point estimate of the original data
-vector (if numeric data)}
+vector (if numeric data).}
 
-\item{up}{Upper confidence limit}
+\item{up}{Upper confidence limit.}
 
-\item{lo}{Lower confidence limit}
+\item{lo}{Lower confidence limit.}
 }
 \value{
 A list containing:
@@ -35,12 +35,10 @@ estimates) of the original vector. Also calculates CI95 using the quantile()
 function.
 }
 \examples{
-
-bootstrap(x=round(runif(25,1,100)), boot=50, FUN=mean) # numeric
-bootstrap(x=LETTERS[1:26], boot=50)                    # character
-z <- factor(sample(c("stu","is","cool"), 10, replace=TRUE))
-# bootstrap(x=z, boot=50)      # factor (ask to convert to character)
-
+bootstrap(x = round(runif(25,1,100)), boot = 50, FUN = mean) # numeric
+bootstrap(x = LETTERS[1:26], boot = 50)                      # character
+z <- factor(sample(c("stu", "is", "cool"), 10, replace = TRUE))
+# bootstrap(x = z, boot = 50)      # factor (ask to convert to character)
 }
 \seealso{
 \code{\link{CI95se}}, \code{\link{quantile}}

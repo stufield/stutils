@@ -2,7 +2,6 @@
 % Please edit documentation in R/mapVector.R
 \name{mapVector}
 \alias{mapVector}
-\alias{map.vector}
 \title{Map Vector}
 \usage{
 mapVector(v, from.list, to.vec, nomatch = NULL)
@@ -16,8 +15,7 @@ value is of the same class (character/factor) as the input vector.}
 will be mapped to in \code{to.vec}. Alternatively, a character vector of the
 same length as \code{to.vec} of only 1-to-1 mapping is desired.}
 
-\item{to.vec}{The new mapping in the same order as they appear in
-\code{from.list}.}
+\item{to.vec}{The new mapping in the same order as they appear in \code{from.list}.}
 
 \item{nomatch}{Value that unmapped values in the source vector should take.
 By default, \code{NULL}, unmapped values are themselves returned unchanged.}
@@ -40,26 +38,25 @@ factor -> factor
 character -> factor, numeric, or integer
 }
 \examples{
-
 # factor
 mapVector(test_data$TimePoint,
-          list(c("baseline","24 months"),c("6 months","12 months")),
-          c("one","two"))
+          list(c("baseline", "24 months"), c("6 months", "12 months")),
+          c("one", "two"))
 
 # numeric -> character (with warning)
-mapVector(rep(1:4, each=10), list(c(1,2), c(3,4)), c("one","two"))
+mapVector(rep(1:4, each = 10), list(c(1, 2), c(3, 4)), c("one", "two"))
 
 # character ("C" is un-mapped)
-mapVector(head(LETTERS, 5), list(c("A","B"), c("D","E")), c("one","two"))
+mapVector(head(LETTERS, 5), list(c("A", "B"), c("D", "E")), c("one", "two"))
 
 # character with missing (nomatch)
-mapVector(head(LETTERS, 5), list(c("A","B"), c("D","E")), c("one","two"), nomatch="No")
+mapVector(head(LETTERS, 5), list(c("A", "B"), c("D", "E")), c("one", "two"), nomatch = "No")
 
 # integer
-mapVector(1:5, list(c(1,3,5), c(2,4)), c(10,100))
+mapVector(1:5, list(c(1, 3, 5), c(2, 4)), c(10, 100))
 
 # character -> integer
-mapVector(head(LETTERS, 5), list(c("A","B"), c("C","D","E")), 1:2)
+mapVector(head(LETTERS, 5), list(c("A", "B"), c("C", "D", "E")), 1:2)
 
 }
 \seealso{

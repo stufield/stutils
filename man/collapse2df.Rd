@@ -27,13 +27,11 @@ the collapse.
 Functions similarly to \code{\link[base]{do.call}}.
 }
 \examples{
-
 tmp <- lapply(1:3, function(...) rnorm(4))
 names(tmp) <- head(LETTERS, 3)
 collapse2df(tmp)
-tmp2 <- lapply(tmp, function(x) { names(x) <- head(letters,4); x })
+tmp2 <- lapply(tmp, function(x) { names(x) <- head(letters, 4); x })
 collapse2df(tmp2)
-
 }
 \seealso{
 \code{\link[base]{rbind}}, \code{\link[base]{Reduce}}

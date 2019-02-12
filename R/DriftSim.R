@@ -15,11 +15,9 @@
 #' @references Department of Biology, Colorado State University,
 #' Fort Collins, CO 80523-1878.
 #' @examples
-#' 
 #' \dontrun{
 #' DriftSim()
 #' }
-#' 
 #' @importFrom graphics hist legend plot
 #' @importFrom stats median
 #' @export DriftSim
@@ -32,14 +30,14 @@ DriftSim <- function(p.star = 0.5, n = 50, nsim = 50, plot = "b") {
   for ( i in 1:nsim ) {
     Gametes <- c(rep("A", 2 * n * p.star), rep("a", 2 * n * (1 - p.star))) 
     p     <- p.star
-    p.vec <- p.star
+    p_vec <- p.star
     while ( p > 0 && p < 1 ) {
       s <- sample(Gametes, 2*n, replace = TRUE)
       p <- length(which(s == "A")) / (2 * n) 
-      p.vec <- c(p.vec, p)
+      p_vec <- c(p_vec, p)
       Gametes <- s
     }
-    pMat[1:length(p.vec), i] <- p.vec
+    pMat[1:length(p_vec), i] <- p_vec
   }
 
   # Mean time to fixation/extinction
@@ -85,6 +83,5 @@ DriftSim <- function(p.star = 0.5, n = 50, nsim = 50, plot = "b") {
       lines(1:clip, pMat[, n], col = n)
     }
   }
-
 }
 

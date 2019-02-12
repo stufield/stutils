@@ -1,8 +1,8 @@
 
 #' Matrix Power
 #' 
-#' Calculate the result of exponentiation of a matrix of the form X^n, where X
-#' is a matrix and n is an integer.
+#' Calculate the result of exponentiation of a matrix of 
+#' the form X^n, where X is a matrix and n is an integer.
 #' 
 #' This technique is referred to the Power Method and is sometimes
 #' used to estimate Lambda, the growth rate of a projection matrix.
@@ -13,20 +13,19 @@
 #' @author Stu Field
 #' @references Stolen from somewhere online.
 #' @examples
-#' 
 #' M <- diag(c(1.3, 0.4, 0.5, 0.9))
 #' matPower(M, 10)
-#' 
 #' @export matPower
 matPower <- function(X, n) {
 
-	if ( n != round(n) ) {
-		n <- round(n)
-		warning("rounding exponent n to", n)
-	}
+  if ( n != round(n) ) {
+	  n <- round(n)
+		warning("rounding exponent n to", n, call. = FALSE)
+  }
 
-	if ( n == 0 )
-      return(diag(nrow = nrow(X)))
+  if ( n == 0 ) {
+    return(diag(nrow = nrow(X)))
+  }
 
 	n   <- n - 1
 	phi <- X
@@ -39,7 +38,5 @@ matPower <- function(X, n) {
 		n <- n %/% 2
 		X <- X %*% X
 	}
-
 	return(phi)
-
 }

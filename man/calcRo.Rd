@@ -20,7 +20,6 @@ The scalar Net Reproductive Rate (Ro)
 Calculate the Ro of a matrix, the basic reproductive ratio.
 }
 \examples{
-
 parS <- c(0.75, 0,   0,
           0.2,  0,   0,
           0.33, 0.4, 0)
@@ -36,7 +35,6 @@ A
 eigen(A)$values[1]   # Dom. eigenvalue of A
 
 calcRo(TM, FM)
-
 }
 \references{
 Calculation of Ro from de-Camino-Beck & Lewis. 2007.

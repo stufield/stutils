@@ -26,11 +26,9 @@ Performs an illustrative simulation of genetic drift.
 Simulation written for FEScUE class
 }
 \examples{
-
 \dontrun{
 DriftSim()
 }
-
 }
 \references{
 Department of Biology, Colorado State University,

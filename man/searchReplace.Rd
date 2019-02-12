@@ -22,12 +22,9 @@ An object of the same dimensions and class as \code{x}, with the
 }
 \description{
 A global search & replace of entries within a vector, matrix, or data frame
-}
-\details{
-\bold{Warning:} The lengths of \code{s} and \code{r} \emph{must} be identical.
+\strong{Note:} The lengths of \code{s} and \code{r} \emph{must} be identical.
 }
 \examples{
-
 # matrix
 Y <- matrix(1:25, ncol = 5)
 Y
@@ -44,7 +41,6 @@ searchReplace(1:10, s = 4, r = 19)
 
 # character
 searchReplace(head(LETTERS, 10), s = "G", r = "Z")
-
 }
 \seealso{
 \code{\link{replace}}

@@ -31,7 +31,7 @@ Returns a table.}
 
 \item{sum.field}{Character. The summary field column name in the
 returned data frame that summarizes the function called upon each
-subset of the data. Ignored if \code{longform=FALSE}.}
+subset of the data. Ignored if \code{longform = FALSE}.}
 }
 \value{
 A data frame with summary data, and the result of the applied
@@ -49,13 +49,12 @@ supplied and corresponds to a column in \code{x}.
 THIS FUNCTION WILL EVENTUALLY BE REPLACED BY \code{\link[dplyr]{summarise}}.
 }
 \examples{
-
 # S3 numeric
 subapply(test_data$z, index = test_data$Sample, .fun = mean)
 
 # S3 character
 set.seed(10)
-y <- sample(LETTERS, 10, replace=TRUE)
+y <- sample(LETTERS, 10, replace = TRUE)
 subapply(y, rep("a",length(y)), duplicated)
 
 # S3 data.frame
@@ -70,9 +69,8 @@ subapply(test_data, index = c("Sample","Response"), .fun = mean, y = "z",
 
 # S3 matrix
 test_data$Sample \%<>\% as.numeric
-m <- test_data[, c(1, 3, 11)] \%>\% data.matrix
+m <- test_data[, c(1, 3, 11)] \%>\% data.matrix()
 subapply(m, index = "Sample", .fun = mean, y = "z", longform = TRUE) # same as data.frame
-
 }
 \seealso{
 \code{\link{tapply}}, \code{\link[dplyr]{select}}

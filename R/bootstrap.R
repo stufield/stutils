@@ -8,9 +8,9 @@
 #' @param x Character or Numeric. The original data to be bootstrapped.
 #' @param boot Number of bootstraps to perform.
 #' @param FUN Function desired for the point estimate of the original data
-#' vector (if numeric data)
-#' @param up Upper confidence limit
-#' @param lo Lower confidence limit
+#' vector (if numeric data).
+#' @param up Upper confidence limit.
+#' @param lo Lower confidence limit.
 #' @return A list containing:
 #' \item{BootSamples }{List of the bootstrap populations created during
 #' the simulation.}
@@ -23,41 +23,39 @@
 #' @author Stu Field
 #' @seealso \code{\link{CI95se}}, \code{\link{quantile}}
 #' @examples
-#' 
-#' bootstrap(x=round(runif(25,1,100)), boot=50, FUN=mean) # numeric
-#' bootstrap(x=LETTERS[1:26], boot=50)                    # character
-#' z <- factor(sample(c("stu","is","cool"), 10, replace=TRUE))
-#' # bootstrap(x=z, boot=50)      # factor (ask to convert to character)
-#' 
+#' bootstrap(x = round(runif(25,1,100)), boot = 50, FUN = mean) # numeric
+#' bootstrap(x = LETTERS[1:26], boot = 50)                      # character
+#' z <- factor(sample(c("stu", "is", "cool"), 10, replace = TRUE))
+#' # bootstrap(x = z, boot = 50)      # factor (ask to convert to character)
 #' @importFrom stats quantile var
 #' @export bootstrap
-bootstrap <- function(x, boot=1000, FUN, up=0.975, lo=0.025){
+bootstrap <- function(x, boot = 1000, FUN, up = 0.975, lo = 0.025){
 
-   if ( inherits(x, c("numeric","character")) ) {
-      if ( is.numeric(x) ) {
-         est <- FUN(x)      # calculate point estimate
-         bootsamples <- lapply(1:boot, function(i) sample(x, replace=TRUE))
-         boot.est <- sapply(bootsamples, FUN)      # pt. estimates of bootstraps
-         upper    <- quantile(boot.est, probs=up)  # upper CI
-         lower    <- quantile(boot.est, probs=lo)  # lower CI
-         se       <- sqrt(var(boot.est))           # standard error of pt. estimate
-         ret <- list(BootSamples=bootsamples,
-                     BootEstimates=boot.est,
-                     CI95=c(lower, estimate=est, upper),
-                     SE=se)
-     }
-     if ( is.character(x) ) {
-       ret <- lapply(1:boot, function(i) sample(x, replace=TRUE))
-     }
-   } else {
-   	 input <- readline("x must be numeric or character! Coerce to character (y/n)? ")
-   	 if ( grepl("y", input, ignore.case=TRUE) ) {
-   	   y   <- as.character(x)
-   	   ret <- lapply(1:boot, function(i) sample(y, replace=TRUE))
-   	 } else {
-          stop("Function aborted ... please try again ...", call.=FALSE)
-       }
-   }
-   return(ret)
+  if ( inherits(x, c("numeric", "character")) ) {
+    if ( is.numeric(x) ) {
+      est <- FUN(x)      # calculate point estimate
+      bootsamples <- lapply(1:boot, function(i) sample(x, replace = TRUE))
+      boot_est <- sapply(bootsamples, FUN)      # pt. estimates of bootstraps
+      upper    <- quantile(boot_est, probs = up)  # upper CI
+      lower    <- quantile(boot_est, probs = lo)  # lower CI
+      se       <- sqrt(var(boot_est))           # standard error of pt. estimate
+      ret <- list(BootSamples = bootsamples,
+                  BootEstimates = boot_est,
+                  CI95 = c(lower, estimate = est, upper),
+                  SE = se)
+    }
+    if ( is.character(x) ) {
+      ret <- lapply(1:boot, function(i) sample(x, replace = TRUE))
+    }
+  } else {
+   	input <- readline("x must be numeric or character! Coerce to character (y/n)? ")
+   	if ( grepl("y", input, ignore.case = TRUE) ) {
+   	  y   <- as.character(x)
+   	  ret <- lapply(1:boot, function(i) sample(y, replace = TRUE))
+    } else {
+      stop("Function aborted ... please try again ...", call. = FALSE)
+    }
+  }
+  return(ret)
 }
 

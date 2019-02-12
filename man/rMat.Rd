@@ -30,10 +30,8 @@ Generate a matrix with random numbers in its entries.
 Never know when you need a matrix of random numbers!
 }
 \examples{
-
 rMat(5, 6, 35, 75)
 rMat(5, 6, 35, 75, replace = TRUE)
-
 }
 \seealso{
 \code{\link[base]{sample}}

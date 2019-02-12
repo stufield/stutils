@@ -18,20 +18,16 @@
 #' @author Stu Field
 #' @seealso \code{\link{hist}}, \code{\link{rnorm}}, \code{\link{dnorm}}, \code{\link{curve}}
 #' @examples
-#' 
 #' NormFun()
-#' 
 #' @importFrom stats density dnorm rnorm
 #' @importFrom graphics hist lines box
 #' @export NormFun
 NormFun <- function(n = 1000, mu = 400, sd = 25, bks = 25, ...) {
-
-	Y <- rnorm(n, mean = mu, sd = sd)
-	H <- hist(Y, main = "", xlab = "", prob = TRUE, col = "gray88", breaks = bks, ...)
-	x <- seq(min(Y), max(Y), length = 100)
-	y <- dnorm(x, mean = mu, sd = sd)
-	lines(x, y, lwd = 1.5, col = "navy")
-	lines(density(Y), col = 2, lty = "dotted")
+  Y <- rnorm(n, mean = mu, sd = sd)
+  H <- hist(Y, main = "", xlab = "", prob = TRUE, col = "gray88", breaks = bks, ...)
+  x <- seq(min(Y), max(Y), length = 100)
+  y <- dnorm(x, mean = mu, sd = sd)
+  lines(x, y, lwd = 1.5, col = "navy")
+  lines(density(Y), col = 2, lty = "dotted")
   box()
-
 }

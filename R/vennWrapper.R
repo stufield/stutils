@@ -1,10 +1,10 @@
-#' 
+ 
 #' Venn Diagram Plotting Routine
 #' 
 #' A wrapper function for plotting Venn diagrams comprising 1 - 5
 #' intersections.
 #' 
-#' More details if necessary
+#' More details \dots
 #' 
 #' @aliases vennWrapper venn_default
 #' @param x A named list of vectors containing strings to match intersections.
@@ -29,41 +29,38 @@
 #' @param cat.fontfamily describe
 #' @param rotation.degree Numeric (0-360). Rotation for the entire diagram.
 #' @param filename Character. Path and file name to which to print the figure.
-#' Default of \code{NULL} or \code{NA} prints to the null device.
+#' Default of `NULL` or `NA` prints to the null device.
 #' @return A grob class object which can be plotting to a device of printed to
-#' file if \code{filename} is not \code{NULL}.
+#' file if `filename` is not `NULL`.
 #' @note I stole this ...
 #' @author Stu Field
 #' @seealso \code{\link{VennDiagram}}, \code{\link{grid}}
 #' @references See the \code{\link{VennDiagram}} package.
-#' @keywords ~kwd1 ~kwd2
+#' @keywords venn
 #' @examples
-#' 
-#' int.list <- lapply(1:3, function(...) sample(LETTERS[1:10], 6))
-#' names(int.list) <- c("Larry", "Curly", "Mo")
-#' vennWrapper(int.list, num.cex=seq(0.5,2,length=7), cat.cex=c(1,1.5,2),
-#'             main="Title Here", sub="Subtitle")
-#' 
+#' int_list <- lapply(1:3, function(...) sample(LETTERS[1:10], 6)) %>%
+#'   purrr::set_names(c("Larry", "Curly", "Mo"))
+#' vennWrapper(int_list, num.cex = seq(0.5, 2, length = 7), cat.cex = c(1, 1.5, 2),
+#'             main = "Title Here", sub = "Subtitle")
 #' @importFrom VennDiagram draw.triple.venn draw.pairwise.venn draw.single.venn draw.quad.venn draw.quintuple.venn add.title adjust.venn
 #' @importFrom grid grid.draw unit gpar gList textGrob
 #' @importFrom grDevices dev.list dev.new dev.off pdf png tiff svg
 #' @export vennWrapper venn_default
-vennWrapper <- function(x, ..., edge.col="transparent",
-								 colors=seq(length(x)), num.cex=1,
-                         alpha=0.25, label.col="gray35",
-                         fontfamily="sans",
-								 main.fontface="bold",
-                         sub.fontface="bold",
-								 main.col=1, sub.col="gray35",
-                         main.cex=3, sub.cex=1.5, margin=0.01,
-								 cat.fontface="bold", cat.cex=2,
-                         cat.col="black", cat.fontfamily="sans",
-								 rotation.degree=0, filename=NULL) {
+vennWrapper <- function(x, ..., edge.col = "transparent",
+                        colors = seq(length(x)), num.cex = 1,
+                        alpha = 0.25, label.col = "gray35",
+                        fontfamily = "sans", main.fontface = "bold",
+                        sub.fontface = "bold", main.col = 1, sub.col = "gray35",
+                         main.cex = 3, sub.cex = 1.5, margin = 0.01,
+                        cat.fontface = "bold", cat.cex = 2,
+                        cat.col = "black", cat.fontfamily = "sans",
+                        rotation.degree = 0, filename = NULL) {
 
-	if ( is.null(names(x)) )
+	if ( is.null(names(x)) ) {
 		stop(sprintf("Must pass a *named* list ... please name [%s] and retry",
                    deparse(substitute(x))), call.=FALSE)
-	.call      <- match.call(expand.dots=TRUE)
+  }
+	.call      <- match.call(expand.dots = TRUE)
 	.call$col  <- edge.col
 	.call$cex  <- num.cex
 	.call$fill <- colors
@@ -77,7 +74,8 @@ vennWrapper <- function(x, ..., edge.col="transparent",
 
 
 
-venn_default <- function(x, filename, height=9, width=9, scale=1, resolution=500,
+venn_default <- function(x, filename, height = 9, width = 9, scale = 1,
+                         resolution = 500,
                          compression="lzw", na=c("stop","none","remove"), 
                          main=NULL, sub=NULL,
                          main.pos=c(0.5,1.05), main.fontface, sub.fontface,
@@ -90,14 +88,14 @@ venn_default <- function(x, filename, height=9, width=9, scale=1, resolution=500
                          hyper.test=FALSE, total.population=NULL, ...) {
 
 	if ( direct.area ) {
-		if (1 == length(area.vector)) {
+		if ( 1 == length(area.vector) ) {
 			list.names <- category.names
 			if ( is.null(list.names) ) {
             list.names <- ""
          }
-			grob.list <- VennDiagram::draw.single.venn(area=area.vector[1], 
-																	 category=list.names, 
-																	 ind=FALSE, ...)
+			grob.list <- VennDiagram::draw.single.venn(area = area.vector[1], 
+																	 category = list.names, 
+																	 ind = FALSE, ...)
 		}
 		if (3 == length(area.vector)) {
 			grob.list <- VennDiagram::draw.pairwise.venn(area1=area.vector[1], 

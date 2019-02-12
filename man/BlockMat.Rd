@@ -8,13 +8,13 @@ BlockMat(x, b)
 }
 \arguments{
 \item{x}{A list of the sub-matrices written in order
-they are to appear by row}
+they are to appear by row.}
 
 \item{b}{Numeric. The number of "block" columns. The list
 \code{length(x)} must be a multiple of \code{b}.}
 }
 \value{
-The assembled block matrix
+The assembled block matrix.
 }
 \description{
 Assembles a block matrix from sub-matrices mimicking
@@ -22,21 +22,19 @@ coding capabilities of Matlab.
 }
 \note{
 Combine sub-Matrices into larger matrix; a
-mimic of Matlab. Matrices \emph{must} be as a list
+mimic of \code{Matlab}. Matrices \emph{must} be as a list.
 }
 \examples{
-
 A <- diag(1:4)
 A
 B <- diag(9:12)
 B
 I <- diag(4)
 I
-blocks <- list(A, B, A*B, B-I)
+blocks <- list(A, B, A * B, B - I)
 blocks
-BlockMat(blocks, b=2)
-BlockMat(blocks, b=4)
-
+BlockMat(blocks, b = 2)
+BlockMat(blocks, b = 4)
 }
 \author{
 Stu Field

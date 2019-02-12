@@ -25,8 +25,8 @@ time (format="hh:mm:ss.ss") from the value in seconds or vice versa. Two
 digit hour precision optional.
 }
 \examples{
-
 seconds2time(159.72)
+
 time2seconds("3:44:12.04")
 time2seconds("15:44:12.04")
 

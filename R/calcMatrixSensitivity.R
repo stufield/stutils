@@ -1,4 +1,4 @@
-#'
+
 #' Linear Sensitivity Analysis
 #' 
 #' Sensitivity analysis of linear maps, all in one function.
@@ -21,13 +21,11 @@
 #' \code{\link[popbio]{eigen.analysis}}, \code{\link[popbio]{popbio}}
 #' @references Caswell, H. Matrix Population Models. 2001. Sensitivity & Elasticity.
 #' @examples
-#' 
 #' A <- diag(1:5 / 10)
 #' A[cbind(2:5, 1:4)] <- 3:6 / 10
 #' A[1, 5] <- 5
 #' 
 #' calcMatrixSensitivity(A)
-#' 
 #' @export calcMatrixSensitivity
 calcMatrixSensitivity <- function(A) {
 
@@ -44,5 +42,4 @@ calcMatrixSensitivity <- function(A) {
 
   list(Matrix = A, Sensitivity = S, Elasticity = E,
        lambda = lambda, w = w, v = v)
-
 }

@@ -7,13 +7,13 @@
 CI95se(x)
 }
 \arguments{
-\item{x}{Numeric. A vector of data to calculate the CI95}
+\item{x}{Numeric. A vector of data to calculate the CI95.}
 }
 \value{
-A vector with 3 entries:
-\item{lower }{the lower CI95}
-\item{mean }{the arithmetic mean}
-\item{upper }{the upper CI95}
+A numeric vector with 3 entries:
+\item{lower}{the lower CI95.}
+\item{mean}{the arithmetic mean.}
+\item{upper}{the upper CI95.}
 }
 \description{
 Uses standard error (of the mean) calculation to determine the 95% CI
@@ -21,9 +21,7 @@ of a vector of data. Does not use a bootstrapping of empirical data,
 but the Gaussian approximation.
 }
 \examples{
-
 CI95se(rnorm(100))
-
 }
 \seealso{
 \code{\link{bootstrap}} to create CI95 via bootstrapping method.

@@ -5,8 +5,8 @@
 \title{Plot Error Bars}
 \usage{
 plotErrorBars(x, lo, up, plotfun = graphics::barplot, bar.col = 1,
-  ylims = NULL, bar.lty = 1, bar.cex = 0.33, bar.lwd = 1, pad = 0.05,
-  ...)
+  ylims = NULL, bar.lty = 1, bar.cex = 0.33, bar.lwd = 1,
+  pad = 0.05, ...)
 }
 \arguments{
 \item{x}{Summary data to plot into a barplot, typically a vector of the bar
@@ -26,12 +26,12 @@ plot or points produce the same output.}
 \item{ylims}{The y-axis limits to pass to \code{plotfun}.}
 
 \item{bar.lty}{Line type for the error bars. Argument is passed eventually
-to \code{\link[graphics]{lines}}, \code{options=1:5}.}
+to \code{\link[graphics]{lines}}, \code{options = 1:5}.}
 
 \item{bar.cex}{Character expansion for the width of the error bars
 (hat/base) in units of \emph{bar widths}.}
 
-\item{bar.lwd}{Line width for the error bars (\code{=lwd}) passed to
+\item{bar.lwd}{Line width for the error bars (\code{lwd}) passed to
 \code{\link[graphics]{lines}}.}
 
 \item{pad}{Additional spacing, as a proportion of the y-value range,
@@ -48,7 +48,6 @@ A plot with error bars plotted on top defined by \code{up} and
 Produce a barplot (or points) containing plot error bars.
 }
 \examples{
-
 set.seed(101)
 x <- rnorm(10)
 plotErrorBars(x, lo = x - sd(x), up = x + sd(x))
@@ -70,7 +69,6 @@ plotErrorBars(GroupMeans, lo = GroupMeans - ci, up = GroupMeans+ci)
 # Points with Error Bars
 plotErrorBars(GroupMeans, lo = GroupMeans - sem, up = GroupMeans+sem, plotfun = plot,
               bar.col = 2, bar.lwd = 2, pch = 21, bg = 4, cex = 2)
-
 }
 \references{
 Heavily modified from The R Book. 2007. Michael Crowley.

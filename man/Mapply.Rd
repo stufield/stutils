@@ -2,7 +2,7 @@
 % Please edit documentation in R/Mapply.R
 \name{Mapply}
 \alias{Mapply}
-\title{Convenience Wrapper for mapply()}
+\title{Convenience Wrapper for mapply() (deprecate -> purrr::pmap())}
 \usage{
 Mapply(...)
 }
@@ -14,9 +14,9 @@ passed sequentially to the \code{FUN} argument, which is typically the final
 argument (but does not have to be).}
 }
 \value{
-If \code{SIMPLIFY=FALSE}, typically a list object with each entry
+If \code{SIMPLIFY = FALSE}, typically a list object with each entry
 the result of applying the function argument to each element of the
-\code{...}. If \code{SIMPLIFY=TRUE}, an attempt is made to reduce the
+\code{...}. If \code{SIMPLIFY = TRUE}, an attempt is made to reduce the
 result to a vector or matrix in a similar fashion to the \code{simplify=}
 argument of \code{\link[base]{sapply}}.
 }
@@ -27,7 +27,7 @@ includes built in checks for argument formation and function arguments.
 }
 \details{
 To ensure fidelity to the original structure of the data in the output, the
-\code{SIMPLIFY=FALSE} argument is hard coded but can be set by the user.
+\code{SIMPLIFY = FALSE} argument is hard coded but can be set by the user.
 
 From the \code{\link[base]{mapply}} description: \code{mapply()} calls
 \code{FUN} for the values of \code{...} which are re-cycled to the
@@ -35,12 +35,10 @@ length of the longest, unless any have length zero. In this wrapper,
 recycling is \emph{not} allowed, and all arguments must have equal length.
 }
 \examples{
-
 tmp <- list(A = 5, B = 8, C = 10)
 f <- function(x, y, z) { print(sprintf("\%s-\%s", z, y)); x + y }
 out <- Mapply(tmp, 1:length(tmp), names(tmp), f)
 out
-
 }
 \seealso{
 \code{\link[base]{mapply}}, \code{\link[base]{sapply}}

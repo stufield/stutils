@@ -23,33 +23,30 @@
 #' @references Sokal & Rohlf (Biometry; 3rd ed.) 210-214. Sokal & Rohlf
 #' (Biometry; 2rd ed.) 211-216.
 #' @examples
-#' 
 #' head(Ri_data)    # internal data
 #' x <- as.vector(as.matrix(Ri_data))[ !is.na(as.vector(as.matrix(Ri_data))) ]
-#' coefRi(x, groups=rep(names(Ri_data), c(8, 10, 13, 6)))
-#' 
+#' coefRi(x, groups = rep(names(Ri_data), c(8, 10, 13, 6)))
 #' @importFrom stats aov
 #' @importFrom magrittr "%<>%" "%>%"
 #' @export coefRi
-coefRi <- function(x, groups, do.log=TRUE) {
+coefRi <- function(x, groups, do.log = TRUE) {
+  groups <- factor(groups)
 
-   groups <- factor(groups)
+  if ( do.log ) {
+    x %<>% log10()
+  }
 
-   if ( do.log )
-      x %<>% log10
+  model <- summary(aov(x ~ groups))
 
-   model <- summary(aov(x ~ groups))
+  # Calculate average sample size
+  n_i <- table(groups)
+  n_o <- (1 / (length(n_i) - 1)) * ( sum(n_i) - (sum(n_i^2) / sum(n_i)) )
 
-   # Calculate average sample size
-   n_i <- table(groups)
-   n_o <- (1 / (length(n_i)-1)) * ( sum(n_i) - (sum(n_i^2) / sum(n_i)) )
-
-   # Calculate r_i
-   MS.among  <- model[[1]][1, "Mean Sq"]
-   MS.within <- model[[1]][2, "Mean Sq"]
-   s.Asq <- (MS.among - MS.within) / n_o
-   r_i   <- s.Asq / (MS.within + s.Asq)
-   list(Model=model, ICC=r_i)
-
+  # Calculate r_i
+  MS.among  <- model[[1]][1, "Mean Sq"]
+  MS.within <- model[[1]][2, "Mean Sq"]
+  s.Asq <- (MS.among - MS.within) / n_o
+  r_i   <- s.Asq / (MS.within + s.Asq)
+  list(Model = model, ICC = r_i)
 }
 

@@ -21,11 +21,9 @@ global environment. Useful for avoiding unexpected collisions
 with variables in the current global environment.
 }
 \examples{
-
 \dontrun{
 assignRData("path/to/myfile.rda")
 }
-
 }
 \seealso{
 \code{\link{load}}.

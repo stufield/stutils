@@ -16,22 +16,20 @@ Default = 0, which reverts to \code{\link[base]{diag}}.}
 }
 \value{
 A matrix with vector "x" along a diagonal, or the
-sub- super-diagonal if \code{k!=0}
+sub- super-diagonal if \code{k != 0}.
 }
 \description{
 Matlab mimic function for producing matrices with vectors
-along the sub- or super-diagonal
+along the sub- or super-diagonal.
 }
 \note{
 Matlab style matrix diag()
 }
 \examples{
-
-diagR(1:7, k=-1)     # sub-diagonal
-diagR(1:15, k=0)     # same as diag()
-vec <- seq(15, 30, by=3)
-diagR(vec, 1)        # super-diagonal
-
+diagR(1:7, k = -1)     # sub-diagonal
+diagR(1:15, k = 0)     # same as diag()
+vec <- seq(15, 30, by = 3)
+diagR(vec, 1)          # super-diagonal
 }
 \seealso{
 \code{\link{diag}}, \code{\link{zeros}}

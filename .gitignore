@@ -5,10 +5,6 @@
 # no dropbox attributes files
 *dropbox.attr
 
-# ignore all packrat and RStudio project related files
-.project
-packrat/lib*/
-
 # R stuff
 .Rhistory
 .Rapp.history

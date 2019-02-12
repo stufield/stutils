@@ -2,7 +2,6 @@
 % Please edit documentation in R/tryNULL.R
 \name{tryNULL}
 \alias{tryNULL}
-\alias{try.null}
 \title{Try NULL Function}
 \usage{
 tryNULL(expr, default = NULL, quiet = TRUE)
@@ -28,17 +27,15 @@ returned if an error is encountered. This makes it easier to test the status
 of the returned object later in the code with \code{\link{is.null}}.
 }
 \examples{
-
 tryNULL(log("a"))
 tryNULL(log("a"), quiet = FALSE)
 tryNULL(log("a"), default = 0)
-
 }
 \references{
-More or less stolen from the \code{plyr} package, with some modifications.
+More or less stolen from the \code{plyr} package.
 }
 \seealso{
-\code{\link{try}}, \code{\link{tryCatch}}, \code{\link[plyr]{tryNULL}}
+\code{\link{try}}, \code{\link{tryCatch}}
 }
 \author{
 Stu Field
