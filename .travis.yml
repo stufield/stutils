@@ -1,7 +1,7 @@
 # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
 
-language: R
-sudo: required
+language: r
+sudo: false
 cache: packages
 warnings_are_errors: true
 
@@ -13,8 +13,5 @@ addons:
 r_packages:
   - covr
 
-before_script:
-  - Rscript -e 'devtools::install_github("jimhester/covr")'
-
 after_success:
-  - Rscript -e 'covr::codecov(); codecov()'
+  - Rscript -e 'covr::codecov()'
