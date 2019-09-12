@@ -12,17 +12,16 @@ Description: Small suite of useful functions, subroutines, and
 License: GPL-3 | file LICENSE
 URL: https://github.com/stufield/stuRpkg
 Depends:
-    magrittr (>= 1.5.0),
     R (>= 3.4.0)
 Imports:
     dplyr (>= 0.8.0),
+    magrittr (>= 1.5.0),
     grid,
     purrr (>= 0.3.0),
     tibble (>= 2.0.1),
     VennDiagram
 Suggests:
     covr,
-    dbplyr (>= 1.2.1),
     devtools (>= 2.0.1),
     ggplot2 (>= 3.0.0),
     knitr (>= 1.17),

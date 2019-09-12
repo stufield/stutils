@@ -10,7 +10,7 @@ Status](https://ci.appveyor.com/api/projects/status/github/stufield/stuRpkg?bran
 
 -----
 
-# The R `stuRpkg` library
+# The `stuRpkg` library
 
 ## Overview
 
@@ -122,6 +122,6 @@ General Public License.
 
 -----
 
-Created on 2019-02-11 by
+Created on 2019-09-12 by
 [Rmarkdown](https://github.com/rstudio/rmarkdown) (v1.11) and R version
 3.5.2 (2018-12-20).

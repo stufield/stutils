@@ -1,5 +1,7 @@
 ---
-output: github_document
+output:
+  github_document:
+    html_preview: false
 ---
 
 
@@ -19,12 +21,15 @@ knitr::opts_chunk$set(
 [![CRAN_Status](http://www.r-pkg.org/badges/version/stuRpkg)](https://cran.r-project.org/package=stuRpkg)
 [![codecov](https://codecov.io/gh/stufield/stuRpkg/branch/master/graph/badge.svg)](https://codecov.io/gh/stufield/stuRpkg)
 
+
 --------------------
 
-# The R `stuRpkg` library
+
+# The `stuRpkg` library
 
 
 ## Overview
+
 Small suite of useful functions, subroutines, and data objects for
 data set manipulation and analysis in R.
 

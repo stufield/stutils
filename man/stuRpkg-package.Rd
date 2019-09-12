@@ -6,8 +6,10 @@
 \alias{stuRpkg-package}
 \title{stuRpkg: The Stu R Package}
 \description{
-Small suite of useful functions, subroutines, and data objects for
-  data set manipulation and analysis in R.
+\if{html}{\figure{logo.png}{options: align='right'}}
+
+Small suite of useful functions, subroutines, and
+    data objects for data set manipulation and analysis in R.
 }
 \seealso{
 Useful links:

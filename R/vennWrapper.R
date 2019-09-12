@@ -1,11 +1,11 @@
- 
+
 #' Venn Diagram Plotting Routine
-#' 
+#'
 #' A wrapper function for plotting Venn diagrams comprising 1 - 5
 #' intersections.
-#' 
+#'
 #' More details \dots
-#' 
+#'
 #' @aliases vennWrapper venn_default
 #' @param x A named list of vectors containing strings to match intersections.
 #' @param ... Additional arguments passed to the internal
@@ -76,7 +76,7 @@ vennWrapper <- function(x, ..., edge.col = "transparent",
 
 venn_default <- function(x, filename, height = 9, width = 9, scale = 1,
                          resolution = 500,
-                         compression="lzw", na=c("stop","none","remove"), 
+                         compression="lzw", na=c("stop","none","remove"),
                          main=NULL, sub=NULL,
                          main.pos=c(0.5,1.05), main.fontface, sub.fontface,
                          main.fontfamily="sans", main.col="black", main.cex=1,
@@ -93,41 +93,41 @@ venn_default <- function(x, filename, height = 9, width = 9, scale = 1,
 			if ( is.null(list.names) ) {
             list.names <- ""
          }
-			grob.list <- VennDiagram::draw.single.venn(area = area.vector[1], 
-																	 category = list.names, 
+			grob.list <- VennDiagram::draw.single.venn(area = area.vector[1],
+																	 category = list.names,
 																	 ind = FALSE, ...)
 		}
 		if (3 == length(area.vector)) {
-			grob.list <- VennDiagram::draw.pairwise.venn(area1=area.vector[1], 
-																		area2=area.vector[2], 
-																		cross.area=area.vector[3], 
-																		category=category.names, 
-																		ind=FALSE, print.mode=print.mode, 
+			grob.list <- VennDiagram::draw.pairwise.venn(area1=area.vector[1],
+																		area2=area.vector[2],
+																		cross.area=area.vector[3],
+																		category=category.names,
+																		ind=FALSE, print.mode=print.mode,
 																		sigdigs=sigdigs, ...)
 		}
 		if (7 == length(area.vector)) {
-			grob.list <- VennDiagram::draw.triple.venn(area1=0, area2=0, area3=0, n12=0, n23=0, n13=0, 
-																	 n123=0, category=category.names, ind=FALSE, 
-																	 list.order=1:3, print.mode=print.mode, sigdigs=sigdigs, 
+			grob.list <- VennDiagram::draw.triple.venn(area1=0, area2=0, area3=0, n12=0, n23=0, n13=0,
+																	 n123=0, category=category.names, ind=FALSE,
+																	 list.order=1:3, print.mode=print.mode, sigdigs=sigdigs,
 																	 area.vector=area.vector, direct.area=TRUE, ...)
 		}
 		if (15 == length(area.vector)) {
-			grob.list <- VennDiagram::draw.quad.venn(area1=0, area2=0, area3=0, area4=0, n12=0, n13=0, 
-																  n14=0, n23=0, n24=0, n34=0, n123=0, 
-																  n124=0, n134=0, n234=0, n1234=0, category=category.names, 
-																  ind=FALSE, print.mode=print.mode, sigdigs=sigdigs, 
+			grob.list <- VennDiagram::draw.quad.venn(area1=0, area2=0, area3=0, area4=0, n12=0, n13=0,
+																  n14=0, n23=0, n24=0, n34=0, n123=0,
+																  n124=0, n134=0, n234=0, n1234=0, category=category.names,
+																  ind=FALSE, print.mode=print.mode, sigdigs=sigdigs,
 																  area.vector=area.vector, direct.area=TRUE, ...)
 		}
 		if (31 == length(area.vector)) {
-			grob.list <- VennDiagram::draw.quintuple.venn(area1=0, area2=0, area3=0, area4=0, area5=0, n12=0, 
-																		 n13=0, n14=0, n15=0, n23=0, n24=0, 
-																		 n25=0, n34=0, n35=0, n45=0, n123=0, 
-																		 n124=0, n125=0, n134=0, n135=0, n145=0, 
-																		 n234=0, n235=0, n245=0, n345=0, n1234=0, 
-																		 n1235=0, n1245=0, n1345=0, n2345=0, n12345=0, 
-																		 category=category.names, ind=FALSE, 
-																		 print.mode=print.mode, sigdigs=sigdigs, 
-																		 area.vector=area.vector, 
+			grob.list <- VennDiagram::draw.quintuple.venn(area1=0, area2=0, area3=0, area4=0, area5=0, n12=0,
+																		 n13=0, n14=0, n15=0, n23=0, n24=0,
+																		 n25=0, n34=0, n35=0, n45=0, n123=0,
+																		 n124=0, n125=0, n134=0, n135=0, n145=0,
+																		 n234=0, n235=0, n245=0, n345=0, n1234=0,
+																		 n1235=0, n1245=0, n1345=0, n2345=0, n12345=0,
+																		 category=category.names, ind=FALSE,
+																		 print.mode=print.mode, sigdigs=sigdigs,
+																		 area.vector=area.vector,
 																		 direct.area=TRUE, ...)
 		}
 	} else {
@@ -161,13 +161,13 @@ venn_default <- function(x, filename, height = 9, width = 9, scale = 1,
 
 		if (1 == length(x)) {
 			list.names <- category.names
-			if (is.null(list.names)) { list.names <- "" } 
+			if (is.null(list.names)) { list.names <- "" }
 			grob.list <- VennDiagram::draw.single.venn(area=length(x[[1]]), category=list.names, ind=FALSE, ...)
 		}
 		else if (2 == length(x)) {
-			grob.list <- VennDiagram::draw.pairwise.venn(area1=length(x[[1]]), area2=length(x[[2]]), 
-																		cross.area=length(intersect(x[[1]], x[[2]])), 
-																		category=category.names, ind=FALSE, 
+			grob.list <- VennDiagram::draw.pairwise.venn(area1=length(x[[1]]), area2=length(x[[2]]),
+																		cross.area=length(intersect(x[[1]], x[[2]])),
+																		category=category.names, ind=FALSE,
 																		print.mode=print.mode, sigdigs=sigdigs, ...)
 		}
 		else if (3 == length(x)) {
@@ -179,10 +179,10 @@ venn_default <- function(x, filename, height = 9, width = 9, scale = 1,
 			nbc <- intersect(B, C)
 			nac <- intersect(A, C)
 			nabc <- intersect(nab, C)
-			grob.list <- VennDiagram::draw.triple.venn(area1=length(A), 
-																	 area2=length(B), area3=length(C), n12=length(nab), 
-																	 n23=length(nbc), n13=length(nac), n123=length(nabc), 
-																	 category=list.names, ind=FALSE, list.order=1:3, 
+			grob.list <- VennDiagram::draw.triple.venn(area1=length(A),
+																	 area2=length(B), area3=length(C), n12=length(nab),
+																	 n23=length(nbc), n13=length(nac), n123=length(nabc),
+																	 category=list.names, ind=FALSE, list.order=1:3,
 																	 print.mode=print.mode, sigdigs=sigdigs, ...)
 		}
 		else if (4 == length(x)) {
@@ -192,7 +192,7 @@ venn_default <- function(x, filename, height = 9, width = 9, scale = 1,
 			D <- x[[4]]
 			list.names <- category.names
 			n12 <- intersect(A, B)
-		 	n13 <- intersect(A, C) 
+		 	n13 <- intersect(A, C)
 			n14 <- intersect(A, D)
 			n23 <- intersect(B, C)
 			n24 <- intersect(B, D)
@@ -202,12 +202,12 @@ venn_default <- function(x, filename, height = 9, width = 9, scale = 1,
 			n134 <- intersect(n13, D)
 			n234 <- intersect(n23, D)
 			n1234 <- intersect(n123, D)
-			grob.list <- VennDiagram::draw.quad.venn(area1=length(A), 
-																  area2=length(B), area3=length(C), area4=length(D), 
-																  n12=length(n12), n13=length(n13), n14=length(n14), 
-																  n23=length(n23), n24=length(n24), n34=length(n34), 
-																  n123=length(n123), n124=length(n124), n134=length(n134), 
-																  n234=length(n234), n1234=length(n1234), category=list.names, 
+			grob.list <- VennDiagram::draw.quad.venn(area1=length(A),
+																  area2=length(B), area3=length(C), area4=length(D),
+																  n12=length(n12), n13=length(n13), n14=length(n14),
+																  n23=length(n23), n24=length(n24), n34=length(n34),
+																  n123=length(n123), n124=length(n124), n134=length(n134),
+																  n234=length(n234), n1234=length(n1234), category=list.names,
 																  ind=FALSE, print.mode=print.mode, sigdigs=sigdigs, ...)
 		}
 		else if (5 == length(x)) {
@@ -246,22 +246,22 @@ venn_default <- function(x, filename, height = 9, width = 9, scale = 1,
 			grob.list <- VennDiagram::draw.quintuple.venn(area1=length(A),
 																		 area2=length(B),
 																		 area3=length(C),
-																		 area4=length(D), 
-																		 area5=length(E), 
-																		 n12=length(n12), n13=length(n13), 
-																		 n14=length(n14), n15=length(n15), 
-																		 n23=length(n23), n24=length(n24), 
-																		 n25=length(n25), n34=length(n34), 
-																		 n35=length(n35), n45=length(n45), 
-																		 n123=length(n123), n124=length(n124), 
-																		 n125=length(n125), n134=length(n134), 
-																		 n135=length(n135), n145=length(n145), 
-																		 n234=length(n234), n235=length(n235), 
-																		 n245=length(n245), n345=length(n345), 
-																		 n1234=length(n1234), n1235=length(n1235), 
-																		 n1245=length(n1245), n1345=length(n1345), 
-																		 n2345=length(n2345), n12345=length(n12345), 
-																		 category=list.names, ind=FALSE, 
+																		 area4=length(D),
+																		 area5=length(E),
+																		 n12=length(n12), n13=length(n13),
+																		 n14=length(n14), n15=length(n15),
+																		 n23=length(n23), n24=length(n24),
+																		 n25=length(n25), n34=length(n34),
+																		 n35=length(n35), n45=length(n45),
+																		 n123=length(n123), n124=length(n124),
+																		 n125=length(n125), n134=length(n134),
+																		 n135=length(n135), n145=length(n145),
+																		 n234=length(n234), n235=length(n235),
+																		 n245=length(n245), n345=length(n345),
+																		 n1234=length(n1234), n1235=length(n1235),
+																		 n1245=length(n1245), n1345=length(n1345),
+																		 n2345=length(n2345), n12345=length(n12345),
+																		 category=list.names, ind=FALSE,
 																		 print.mode=print.mode, sigdigs=sigdigs, ...)
 		}
 		else {
@@ -271,13 +271,13 @@ venn_default <- function(x, filename, height = 9, width = 9, scale = 1,
 
 	if ( !is.null(sub) ) {
 		grob.list <- add.title(gList=grob.list, x=sub, pos=sub.pos,
-									  fontface=sub.fontface, fontfamily=sub.fontfamily, 
+									  fontface=sub.fontface, fontfamily=sub.fontfamily,
 									  col=sub.col, cex=sub.cex)
 	}
 
 	if ( !is.null(main) ) {
 		grob.list <- add.title(gList=grob.list, x=main, pos=main.pos,
-									  fontface=main.fontface, fontfamily=main.fontfamily, 
+									  fontface=main.fontface, fontfamily=main.fontfamily,
 									  col=main.col, cex=main.cex)
 	}
 
@@ -297,7 +297,7 @@ venn_default <- function(x, filename, height = 9, width = 9, scale = 1,
 		width  <- width * scale
 
 		if ( "tiff" == imagetype ) {
-			tiff(filename=filename, height=height, width=width, 
+			tiff(filename=filename, height=height, width=width,
 				  units="in", res=resolution, compression=compression)
 		} else if ( "pdf" == imagetype ) {
 			pdf(file=filename, height=height, width=width, useDingbats=FALSE, title=basename(filename))
@@ -308,15 +308,13 @@ venn_default <- function(x, filename, height = 9, width = 9, scale = 1,
 		} else {
 			stop("Unknown imagetype in file extension ... please check filename argument", call.=FALSE)
 		}
-
 		on.exit(dev.off())
-		on.exit(options(bitmapType=current.type), add=TRUE)
-	} else {
-		if ( !is.null(dev.list()) )
-         dev.new()
+		on.exit(options(bitmapType = current.type), add = TRUE)
 	}
+
 	grid::grid.draw(grob.list)
 	invisible(grob.list)
+
 }
 
 

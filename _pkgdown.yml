@@ -1,0 +1,121 @@
+template:
+  params:
+    bootswatch: cerulean
+    ganalytics: UA-000000-01
+
+home:
+  strip_header: true
+  links:
+  - text: Report a bug
+    href: stu.g.field@gmail.com
+  - text: The tidyverse
+    href: https://www.tidyverse.org
+
+navbar:
+  type: inverse
+  left:
+  - icon: fa-home fa-lg
+    href: index.html
+  - text: Reference
+    href: reference/index.html
+  - text: Get Started
+    href: articles/stuRpkg.html
+  - text: News
+    menu:
+    - text: "Release Notes"
+      href: news/index.html
+    - text: "------------------"
+    - text: "Links"
+    - text: "------------------"
+    - text: "The Tidyverse"
+      href: https://www.tidyverse.org
+  right:
+  - icon: fa-github fa-lg
+    href: https://github.com/stufield/
+
+development:
+  mode: devel
+  version_label: default   # grey
+  #version_label: info     # blue
+  #version_label: danger   # red
+
+reference:
+  - title: Matrices
+    desc: General functions for dealing with matrices.
+    contents:
+    - BlockMat
+    - rotateMatrix
+    - analyzeProjectionMatrix
+    - calcMatrixSensitivity
+    - matPower
+    - zeros
+    - diagR
+    - matrixX
+    - rMat
+    - calcRo
+    - TribMate
+    - PunnettPack
+
+  - title: Genetic Drift
+    desc: Drift simulations
+    contents:
+    - starts_with("DriftSim")
+
+  - title: Data Manipulation
+    desc: This was before dplyr.
+    contents:
+    - removeColumns
+    - searchReplace
+    - subapply
+    - mergeMetaData
+    - Mapply
+    - mapVector
+    - capwords
+    - seconds2time
+    - whichEntry
+    - collapse2df
+
+  - title: Exploring
+    desc: This was before dplyr.
+    contents:
+    - crossTab
+    - cumsumWindow
+    - cumulative
+
+  - title: Calculating Things
+    desc: This was before the tidyverse.
+    contents:
+    - CI95se
+    - coefRi
+    - optimizer
+    - MonteCarloIntegral
+    - NormFun
+    - bootstrap
+
+  - title: Plotting
+    desc: This was before the ggplot2.
+    contents:
+    - plotErrorBars
+    - vennWrapper
+
+  - title: File System Utilities
+    desc: This was before the fs.
+    contents:
+    - print2file
+    - path2file
+    - getFileExt
+    - assignRData
+    - tryNULL
+
+  - title: Package Objects
+    desc: Exported objects/data.
+    contents:
+    - objects
+
+#  - title: Deprecated
+#    desc: Functions that have been deprecated in the current release.
+#    contents:
+#    - stuRpkg-deprecated
+
+news:
+  - one_page: true
