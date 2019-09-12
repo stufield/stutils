@@ -1,42 +1,43 @@
-Package: stuRpkg
 Type: Package
+Package: stuRpkg
 Title: The Stu R Package
 Version: 1.3
 Authors@R: 
-  person(given = "Stu",
-         family = "Field",
-         email = "stu.g.field@gmail.com",
-         role = c("aut", "cre"))
-Description: Small suite of useful functions, subroutines, and data objects for
-  data set manipulation and analysis in R.
+    person(given = "Stu",
+           family = "Field",
+           role = c("aut", "cre"),
+           email = "stu.g.field@gmail.com")
+Description: Small suite of useful functions, subroutines, and
+    data objects for data set manipulation and analysis in R.
 License: GPL-3 | file LICENSE
-Depends:
-  R (>= 3.4.0),
-  magrittr (>= 1.5.0)
-Imports:
-  VennDiagram,
-  dplyr (>= 0.8.0),
-  tibble (>= 2.0.1),
-  purrr (>= 0.3.0),
-  grid
-Suggests:
-  spelling (>= 1.2),
-  usethis (>= 1.4.0),
-  devtools (>= 2.0.1),
-  dbplyr (>= 1.2.1),
-  knitr (>= 1.17),
-  covr,
-  rmarkdown (>= 1.10),
-  roxygen2 (>= 6.1.0),
-  popbio (>= 2.4.4),
-  ggplot2 (>= 3.0.0),
-  testthat (>= 2.0.0)
-X-CRAN-COMMENT: *Extra comments can go here*
-LazyLoad: yes
-LazyData: yes
-Language: en-US
-Encoding: UTF-8
-VignetteBuilder: knitr
 URL: https://github.com/stufield/stuRpkg
-RoxygenNote: 6.1.1
+Depends:
+    magrittr (>= 1.5.0),
+    R (>= 3.4.0)
+Imports:
+    dplyr (>= 0.8.0),
+    grid,
+    purrr (>= 0.3.0),
+    tibble (>= 2.0.1),
+    VennDiagram
+Suggests:
+    covr,
+    dbplyr (>= 1.2.1),
+    devtools (>= 2.0.1),
+    ggplot2 (>= 3.0.0),
+    knitr (>= 1.17),
+    popbio (>= 2.4.4),
+    rmarkdown (>= 1.10),
+    roxygen2 (>= 6.1.0),
+    spelling (>= 1.2),
+    testthat (>= 2.0.0),
+    usethis (>= 1.4.0)
+VignetteBuilder: 
+    knitr
+Encoding: UTF-8
+Language: en-US
+LazyData: yes
+LazyLoad: yes
 Roxygen: list(markdown = TRUE)
+RoxygenNote: 6.1.1
+X-CRAN-COMMENT: *Extra comments can go here*
