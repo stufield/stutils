@@ -2,7 +2,7 @@
 % Please edit documentation in R/Mapply.R
 \name{Mapply}
 \alias{Mapply}
-\title{Convenience Wrapper for mapply() (deprecate -> purrr::pmap())}
+\title{Thin Wrapper Around mapply() (deprecate -> \code{purrr::pmap()})}
 \usage{
 Mapply(...)
 }

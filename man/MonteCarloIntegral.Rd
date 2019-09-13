@@ -53,9 +53,9 @@ Integration works. Includes an iteration counter & a run time indicator.
 
 mysteryFun <- function(x) {
   20*dnorm(x, mean=-1, sd=5) +
-    ifelse(x > -1.1, 
-    6*dgamma(x=x+1,shape=2,scale=0.5), 
-    1.5*dgamma(x=-x,shape=5,scale=0.2)) + 
+    ifelse(x > -1.1,
+    6*dgamma(x=x+1,shape=2,scale=0.5),
+    1.5*dgamma(x=-x,shape=5,scale=0.2)) +
     2*dgamma(x=2.75-x, shape=3, scale=0.25)
 }
 
@@ -77,7 +77,7 @@ lines(density(MC_sims))
 lines(density(MC_sims, adjust = 1.75), lty = "dotted", col = 2)
 par <- density(MC_sims)$x[which.max(density(MC_sims)$y)]
 abline(v = par, col = 4, lty = "dotted")
-legend("topleft", legend=sprintf("Area Est ~ 0.3\%f", par), 
+legend("topleft", legend=sprintf("Area Est ~ 0.3\%f", par),
        bg = "gray75", cex = 0.75)
 
 # check that histogram sums to 1
@@ -93,5 +93,3 @@ put references to the literature/web site here
 \author{
 Stu Field, William Black IV!
 }
-\keyword{~kwd1}
-\keyword{~kwd2}

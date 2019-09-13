@@ -31,7 +31,7 @@ devtools::install_github("stufield/stuRpkg")
 ### Datasets
 
   - **nyflights13**
-      - new york city airport flight data from 2013 (**must install**)
+      - New York city airport flight data from 2013 (**must install**)
       - install with `install.packages("nyflights13",
         repos="http://cran.rstudio.com")`
   - **TreeData**
@@ -93,15 +93,15 @@ PDFs](https://github.com/rstudio/cheatsheets)
 
 ### Vignettes:
 
-  - [dplyr](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html)
-  - [tidyr](http://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html)
+  - [`dplyr`](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html)
+  - [`tidyr`](http://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html)
 
-### What is the Tidyverse?
+### What is the `tidyverse`?
 
   - The [tidyverse](https://www.tidyverse.org/)
   - The tidyverse [packages](https://www.tidyverse.org/packages/)
   - Converting to the
-    [Tidyverse](http://www.significantdigits.org/2017/10/switching-from-base-r-to-tidyverse/)
+    [tidyverse](http://www.significantdigits.org/2017/10/switching-from-base-r-to-tidyverse/)
 
 -----
 
@@ -110,18 +110,15 @@ PDFs](https://github.com/rstudio/cheatsheets)
 This package (suite of programs) is free software; you can redistribute
 it and/or modify it under the terms of the GNU General Public License as
 published by the Free Software Foundation, either version 3 of the
-License, or (at your option) any later version.
-
-This program is distributed in the hope that it will be useful, but
-WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
-Public License (GPL-3) for more details.
+License, or (at your option) any later version. See please see the a
+[LICENSE](LICENSE). By using in this package you agree to abide by its
+terms.
 
 See [GNU licenses](http://www.gnu.org/licenses/) for a copy of the GNU
 General Public License.
 
 -----
 
-Created on 2019-09-12 by
+Created on 2019-09-13 by
 [Rmarkdown](https://github.com/rstudio/rmarkdown) (v1.11) and R version
 3.5.2 (2018-12-20).

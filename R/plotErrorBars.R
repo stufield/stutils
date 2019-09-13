@@ -5,9 +5,9 @@
 #' 
 #' @param x Summary data to plot into a barplot, typically a vector of the bar
 #' heights or points.
-#' @param lo Numeric. A vector of heights of the \emph{lower} error bars to be drawn.
+#' @param lo Numeric. A vector of heights of the *lower* error bars to be drawn.
 #' Must be computed externally and passed into the function.
-#' @param up Numeric. A vector of heights of the \emph{upper} error bars to be drawn.
+#' @param up Numeric. A vector of heights of the *upper* error bars to be drawn.
 #' Must be computed externally and passed into the function.
 #' @param plotfun Currently one of: `barplot, points, or plot`. Note:
 #' plot or points produce the same output.
@@ -15,7 +15,7 @@
 #' @param bar.lty Line type for the error bars. Argument is passed eventually
 #' to \code{\link[graphics]{lines}}, `options = 1:5`.
 #' @param bar.cex Character expansion for the width of the error bars
-#' (hat/base) in units of \emph{bar widths}.
+#' (hat/base) in units of *bar widths*.
 #' @param bar.lwd Line width for the error bars (`lwd`) passed to
 #' \code{\link[graphics]{lines}}.
 #' @param pad Additional spacing, as a proportion of the y-value range, 
@@ -23,10 +23,9 @@
 #' @param ylims The y-axis limits to pass to `plotfun`.
 #' @param ... Additional arguments passed to either \code{\link[graphics]{barplot}}
 #' , \code{\link[graphics]{plot}}, or \code{\link[graphics]{plot}}.
-#' @return A plot with error bars plotted on top defined by `up` and
-#' `lo`.
+#' @return A plot with error bars plotted on top defined by `up` and `lo`.
 #' @author Stu Field
-#' @seealso \code{\link[gplots]{plotCI}}, \code{\link[graphics]{barplot}}, \code{\link[graphics]{plot}}, \code{\link[graphics]{lines}}
+#' @seealso \code{\link[graphics]{barplot}}
 #' @references Heavily modified from The R Book. 2007. Michael Crowley.
 #' @examples
 #' set.seed(101)
@@ -43,7 +42,7 @@
 #' sem <- GroupSD / sqrt(length(GroupMeans))
 #' ci <- (GroupMeans + (sem * 1.96)) - (GroupMeans - (sem * 1.96))
 #'
-#' par(mfrow=c(1, 2))
+#' par(mfrow = c(1, 2))
 #' plotErrorBars(GroupMeans, lo = GroupMeans - sem, up = GroupMeans+sem)
 #' plotErrorBars(GroupMeans, lo = GroupMeans - ci, up = GroupMeans+ci)
 #' 

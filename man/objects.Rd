@@ -85,18 +85,18 @@ running examples and checking data frame functionalities.
 See \code{?tibble}.
 \tabular{lr}{
 Variable       \tab Definition \cr
-pid            \tab 1041:1080  \cr
-Pop            \tab rep(head(LETTERS, 10), 4) \cr
-Sample         \tab factor(sample(c("small", "medium", "large"), 20)) \cr
-TimePoint      \tab factor(rep(c("baseline", "6 mths", "12 mths", "24 mths"), each = 10)) \cr
-a              \tab round(rnorm(40, mean = 25, sd = 3.5), 0) \cr
-b              \tab sampel(0:6, 40, replace = TRUE) \cr
-ABCD.1234.56.8 \tab rnorm(40, mean = 25, sd = 3.5) \cr
-XYZZ.6969.4.7  \tab rnorm(40, mean = 25, sd = 1.5) \cr
-x              \tab rnorm(40, mean = 25, sd = 3) \cr
-y              \tab round(runif(40, 10, 20), 0) \cr
-z              \tab round(rnrom(40, mean = 1, sd = 0.5), 3) \cr
-Response       \tab factor(sample(c("control", "disease"), 40, replace = TRUE))) \cr
+pid            \tab \code{1041:1080}  \cr
+Pop            \tab \code{rep(head(LETTERS, 10), 4)} \cr
+Sample         \tab \code{factor(sample(c("small", "medium", "large"), 20))} \cr
+TimePoint      \tab \code{factor(rep(c("baseline", "6 mths", "12 mths", "24 mths"), each = 10))} \cr
+a              \tab \code{round(rnorm(40, mean = 25, sd = 3.5), 0)} \cr
+b              \tab \code{sample(0:6, 40, replace = TRUE)} \cr
+ABCD.1234.56.8 \tab \code{rnorm(40, mean = 25, sd = 3.5)} \cr
+XYZZ.6969.4.7  \tab \code{rnorm(40, mean = 25, sd = 1.5)} \cr
+x              \tab \code{rnorm(40, mean = 25, sd = 3)} \cr
+y              \tab \code{round(runif(40, 10, 20), 0)} \cr
+z              \tab \code{round(rnrom(40, mean = 1, sd = 0.5), 3)} \cr
+Response       \tab \code{factor(sample(c("control", "disease"), 40, replace = TRUE)))} \cr
 }
 }}
 

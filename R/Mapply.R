@@ -1,5 +1,5 @@
 
-#' Convenience Wrapper for mapply() (deprecate -> purrr::pmap())
+#' Thin Wrapper Around mapply() (deprecate -> `purrr::pmap()`)
 #'
 #' A simple wrapper for \code{\link[base]{mapply}} that enables similar syntax
 #' to the \code{\link[base]{lapply}} and \code{\link[base]{sapply}} format and
@@ -11,7 +11,7 @@
 #' From the \code{\link[base]{mapply}} description: `mapply()` calls
 #' `FUN` for the values of `...` which are re-cycled to the
 #' length of the longest, unless any have length zero. In this wrapper,
-#' recycling is \emph{not} allowed, and all arguments must have equal length.
+#' recycling is *not* allowed, and all arguments must have equal length.
 #'
 #' @param ... Arguments passed to \code{\link[base]{mapply}}.
 #' Typically the first argument is a named list, followed by additional

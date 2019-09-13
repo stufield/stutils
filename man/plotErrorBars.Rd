@@ -41,8 +41,7 @@ to pad the y-axis limits.}
 , \code{\link[graphics]{plot}}, or \code{\link[graphics]{plot}}.}
 }
 \value{
-A plot with error bars plotted on top defined by \code{up} and
-\code{lo}.
+A plot with error bars plotted on top defined by \code{up} and \code{lo}.
 }
 \description{
 Produce a barplot (or points) containing plot error bars.
@@ -62,7 +61,7 @@ GroupSD <- tapply(data$x, data$f, sd)
 sem <- GroupSD / sqrt(length(GroupMeans))
 ci <- (GroupMeans + (sem * 1.96)) - (GroupMeans - (sem * 1.96))
 
-par(mfrow=c(1, 2))
+par(mfrow = c(1, 2))
 plotErrorBars(GroupMeans, lo = GroupMeans - sem, up = GroupMeans+sem)
 plotErrorBars(GroupMeans, lo = GroupMeans - ci, up = GroupMeans+ci)
 
@@ -74,7 +73,7 @@ plotErrorBars(GroupMeans, lo = GroupMeans - sem, up = GroupMeans+sem, plotfun = 
 Heavily modified from The R Book. 2007. Michael Crowley.
 }
 \seealso{
-\code{\link[gplots]{plotCI}}, \code{\link[graphics]{barplot}}, \code{\link[graphics]{plot}}, \code{\link[graphics]{lines}}
+\code{\link[graphics]{barplot}}
 }
 \author{
 Stu Field
