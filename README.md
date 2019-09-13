@@ -28,6 +28,15 @@ To install the latest `development` version of `stuRpkg` from
 devtools::install_github("stufield/stuRpkg")
 ```
 
+## pkgdown
+
+[stuRpkg website](docs/dev/index.html)
+
+
+---------
+
+
+
 ### Datasets
 
   - **nyflights13**
@@ -57,20 +66,20 @@ devtools::install_github("stufield/stuRpkg")
       - The format of `test_data`
 is:
 
-|         Column | Definition                                                                    |
-| -------------: | :---------------------------------------------------------------------------- |
-|            pid | `1041:1080`                                                                   |
-|            Pop | `rep(head(LETTERS, 10), 4)`                                                   |
-|         Sample | `factor(sample(c("small", "medium", "large"), 40, replace = TRUE))`           |
-|      TimePoint | `factor(rep(c("baseline", "6 months", "12 months", "24 months"), each = 10))` |
-|              a | `round(rnorm(40, mean = 25, sd = 3.5), 0)`                                    |
-|              b | `sample(0:6, 40, replace = TRUE)`                                             |
-| ABCD.1234.56.8 | `rnorm(40, 25, 3.5)`                                                          |
-|  XYZZ.6969.4.7 | `rnorm(40, 25, 1.5)`                                                          |
-|              x | `rnorm(40, mean = 5, sd = 3)`                                                 |
-|              y | `round(runif(40, 10, 20), 0)`                                                 |
-|              z | `round(rnorm(40, mean = 1, sd = 0.5), 3))`                                    |
-|       Response | `factor(sample(c("control", "disease"), 40, replace = TRUE)))`                |
+|      Column | Definition                                                                    |
+| ----------: | :---------------------------------------------------------------------------- |
+|         pid | `1041:1080`                                                                   |
+|         Pop | `rep(head(LETTERS, 10), 4)`                                                   |
+|      Sample | `factor(sample(c("small", "medium", "large"), 40, replace = TRUE))`           |
+|   TimePoint | `factor(rep(c("baseline", "6 months", "12 months", "24 months"), each = 10))` |
+|           a | `round(rnorm(40, mean = 25, sd = 3.5), 0)`                                    |
+|           b | `sample(0:6, 40, replace = TRUE)`                                             |
+| seq.1234.56 | `rnorm(40, 25, 3.5)`                                                          |
+|  seq.6969.4 | `rnorm(40, 25, 1.5)`                                                          |
+|           x | `rnorm(40, mean = 5, sd = 3)`                                                 |
+|           y | `round(runif(40, 10, 20), 0)`                                                 |
+|           z | `round(rnorm(40, mean = 1, sd = 0.5), 3))`                                    |
+|    Response | `factor(sample(c("control", "disease"), 40, replace = TRUE)))`                |
 
 -----
 
@@ -78,7 +87,8 @@ is:
 
 ### Hadley Wickham Book
 
-[R for Data Science](http://r4ds.had.co.nz/)
+- [R for Data Science](http://r4ds.had.co.nz/)
+- [Advanced R](https://adv-r.hadley.nz)
 
 ### RStudio Cheatsheets:
 
