@@ -73,8 +73,8 @@ MonteCarloIntegral <- function(n = 10000, interval, FUN, force = FALSE,
                                quick = TRUE, plot = FALSE) {
 
   time1 <- Sys.time()                    # timer 1
-  l     <- interval[1]
-  r     <- interval[2]                   # left & right limits
+  l     <- interval[1L]
+  r     <- interval[2L]                   # left & right limits
   MaxY  <- stats::optimize(f = FUN, interval = interval, maximum = TRUE)$objective
   cols <- c("dodgerblue", "darkred")
 
