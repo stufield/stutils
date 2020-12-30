@@ -1,4 +1,3 @@
-
 #' Apply Function to Subsets of Data
 #'
 #' Apply a function, written on the fly (`.fun`), to the subsets of data

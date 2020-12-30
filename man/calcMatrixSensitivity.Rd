@@ -37,8 +37,8 @@ calcMatrixSensitivity(A)
 Caswell, H. Matrix Population Models. 2001. Sensitivity & Elasticity.
 }
 \seealso{
-\code{\link{analyzeProjectionMatrix}}, \code{\link{eigen}},
-\code{\link[popbio]{eigen.analysis}}, \code{\link[popbio]{popbio}}
+\code{\link[=analyzeProjectionMatrix]{analyzeProjectionMatrix()}}, \code{\link[=eigen]{eigen()}},
+\code{\link[popbio:eigen.analysis]{popbio::eigen.analysis()}}
 }
 \author{
 Stu Field

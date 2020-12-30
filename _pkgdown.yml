@@ -1,43 +1,40 @@
 template:
   params:
-    bootswatch: cerulean
-    ganalytics: UA-000000-01
+    docsearch:
+      api_key: fbd8d79ed49f21fc9ca7b2cf601a3f5b
+      index_name: pkgdown
+    ganalytics: UA-115082821-1
+
+
+authors:
+  Stu Field:
+    href: https://github.com/stufield/
+
 
 home:
-  strip_header: true
+  strip_header: false
   links:
+  - text: GitHub
+    href: https://github.com/stufield/
   - text: Report a bug
     href: stu.g.field@gmail.com
   - text: The tidyverse
     href: https://www.tidyverse.org
 
-navbar:
-  type: inverse
-  left:
-  - icon: fa-home fa-lg
-    href: index.html
-  - text: Reference
-    href: reference/index.html
-  - text: Get Started
-    href: articles/stuRpkg.html
-  - text: News
-    menu:
-    - text: "Release Notes"
-      href: news/index.html
-    - text: "------------------"
-    - text: "Links"
-    - text: "------------------"
-    - text: "The Tidyverse"
-      href: https://www.tidyverse.org
-  right:
-  - icon: fa-github fa-lg
-    href: https://github.com/stufield/
+
+articles:
+  - title: Getting Started
+    navbar: ~
+    contents:
+    - stuRpkg
+
 
 development:
   mode: devel
   version_label: default   # grey
   #version_label: info     # blue
   #version_label: danger   # red
+
 
 reference:
   - title: Matrices
@@ -111,11 +108,6 @@ reference:
     desc: Exported objects/data.
     contents:
     - objects
-
-#  - title: Deprecated
-#    desc: Functions that have been deprecated in the current release.
-#    contents:
-#    - stuRpkg-deprecated
 
 news:
   - one_page: true

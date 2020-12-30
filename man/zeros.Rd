@@ -7,11 +7,11 @@
 zeros(x)
 }
 \arguments{
-\item{x}{Numeric. The dimensions (m x n) for the square matrix to
+\item{x}{Numeric. The dimensions (\verb{m x n}) for the square matrix to
 be produced, or the length of the diagonal of the square matrix.}
 }
 \value{
-A square matrix of zeros with \code{m x n} dimensions
+A square matrix of zeros with \verb{m x n} dimensions
 where both equal \code{x}.
 }
 \description{
@@ -27,7 +27,7 @@ zeros(15)
 zeros(c(3, 5))
 }
 \seealso{
-\code{\link{diag}}, \code{\link{diagR}}
+\code{\link[=diag]{diag()}}, \code{\link[=diagR]{diagR()}}
 }
 \author{
 Stu Field

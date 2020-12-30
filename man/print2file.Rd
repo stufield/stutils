@@ -12,21 +12,19 @@ print2file(..., file, width = 250)
 \item{file}{File name for the output.}
 
 \item{width}{Numeric. Controls the maximum number of columns on a line used
-in printing vectors, matrices and arrays, and when filling by \code{cat}.
+in printing vectors, matrices and arrays, and when filling by \code{\link[=cat]{cat()}}.
 See also \code{getOption("width")}.}
 }
 \description{
-A convenient wrapper around the \code{\link[base]{sink}} function to print
-the resulting \code{\link[base]{print}} command to a corresponding file
-connection. Useful for sharing data only results with collaborators or
-medical group.
+A thin wrapper around the \code{\link[=sink]{sink()}} function to print
+the corresponding object to a file connection.
 }
 \examples{
-tab <- crossTab(test_data, c("Pop", "Sample"))
+tab <- crossTab(mtcars, c("cyl", "carb"))
 print2file(tab, file = "table_file.txt")
 }
 \seealso{
-\code{\link[base]{sink}}, \code{\link[base]{print}}
+\code{\link[=sink]{sink()}}
 }
 \author{
 Stu Field

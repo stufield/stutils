@@ -12,7 +12,7 @@ of a matrix along a diagonal.}
 
 \item{k}{Numeric. The offset from the diagonal.
 +1 = super-diagonal, -1 = sub-diagonal.
-Default = 0, which reverts to \code{\link[base]{diag}}.}
+Default = 0, which reverts to \code{\link[=diag]{diag()}}.}
 }
 \value{
 A matrix with vector "x" along a diagonal, or the
@@ -23,7 +23,7 @@ Matlab mimic function for producing matrices with vectors
 along the sub- or super-diagonal.
 }
 \note{
-Matlab style matrix diag()
+Matlab style matrix \code{\link[=diag]{diag()}}
 }
 \examples{
 diagR(1:7, k = -1)     # sub-diagonal
@@ -32,7 +32,7 @@ vec <- seq(15, 30, by = 3)
 diagR(vec, 1)          # super-diagonal
 }
 \seealso{
-\code{\link{diag}}, \code{\link{zeros}}
+\code{\link[=diag]{diag()}}, \code{\link[=zeros]{zeros()}}
 }
 \author{
 Stu Field

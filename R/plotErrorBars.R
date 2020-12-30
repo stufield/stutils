@@ -1,4 +1,3 @@
- 
 #' Plot Error Bars
 #' 
 #' Produce a barplot (or points) containing plot error bars.

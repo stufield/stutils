@@ -1,4 +1,3 @@
-
 #' Determine Path to File
 #' 
 #' Determine the path of a defined file via brute force search of root

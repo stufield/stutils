@@ -2,29 +2,31 @@
 % Please edit documentation in R/tryNULL.R
 \name{tryNULL}
 \alias{tryNULL}
-\title{Try NULL Function}
+\title{Try Catch Returns NULL}
 \usage{
 tryNULL(expr, default = NULL, quiet = TRUE)
 }
 \arguments{
-\item{expr}{an R expression to try.}
+\item{expr}{An R expression to try.}
 
-\item{default}{The value to return if an error is encountered. By default,
-and according to the function name, \code{NULL}. This option is included for
-the rare case when something other than \code{NULL} is desired.}
+\item{default}{The value to return if an error is encountered.
+By default, and according to the function name, \code{NULL}.
+This option is included for the rare case when something other
+than \code{NULL} is desired.}
 
-\item{quiet}{Logical. Should the error message (if encountered) be printed
-to the console?}
+\item{quiet}{Logical. Should the error message
+(if encountered) be printed to the console?}
 }
 \value{
-Either the value of the expression in \code{expr} or, if an error is
-encountered, the value in \code{default}.
+Either the value of the expression in \code{expr} or,
+if an error is encountered, the value in \code{default}.
 }
 \description{
-A convenient wrapper around either \code{\link{try}} or \code{\link{tryCatch}}.
-However, rather than of returning the an error signal/warning, \code{NULL} is
-returned if an error is encountered. This makes it easier to test the status
-of the returned object later in the code with \code{\link{is.null}}.
+A convenient wrapper around either \code{\link[=try]{try()}} or \code{\link[=tryCatch]{tryCatch()}}.
+However, rather than of returning the an error signal/warning,
+\code{NULL} is returned if an error is encountered.
+This simplifies error catching for downstream functionalit via
+\code{\link[=is.null]{is.null()}}.
 }
 \examples{
 tryNULL(log("a"))
@@ -32,10 +34,10 @@ tryNULL(log("a"), quiet = FALSE)
 tryNULL(log("a"), default = 0)
 }
 \references{
-More or less stolen from the \code{plyr} package.
+More or less "borrowed" from the \pkg{plyr} package.
 }
 \seealso{
-\code{\link{try}}, \code{\link{tryCatch}}
+\code{\link[=try]{try()}}, \code{\link[=tryCatch]{tryCatch()}}
 }
 \author{
 Stu Field

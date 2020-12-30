@@ -1,4 +1,3 @@
-
 #' Packing Punnett Map Solutions (FEScUE)
 #' 
 #' Used to pack and unpack the "Punnett Square" formulation for 
@@ -29,7 +28,7 @@ PunnettPack <- function(x, nallele, nstages) {
   if ( length(x) != nallele^2 * nstages ) {   # dim check 
     stop("Error in dimensions", call. = FALSE)
   }
-  A  <- array(0, dim=c(nallele, nallele, nstages))    # empty array
+  A  <- array(0, dim = c(nallele, nallele, nstages))    # empty array
   lo <- seq(1, length(x) - nallele^2 + 1, nallele^2)  # lower vector
   hi <- seq(nallele^2, length(x), nallele^2)          # upper vector
   for ( i in 1:nstages ) {

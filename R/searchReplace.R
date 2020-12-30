@@ -1,4 +1,3 @@
-
 #' Search & Replace
 #' 
 #' A global search & replace of entries within a vector, matrix, or data frame
@@ -8,11 +7,9 @@
 #' can be a vector of character or numeric class.
 #' @param s The search index.
 #' @param r The replace with. Must be same length as `s`.
-#' @param ... Pass through to various S3 methods.
 #' @return An object of the same dimensions and class as `x`, with the
 #' \code{s=} matches replaced with `r=`.
 #' @author Stu Field
-#' @seealso \code{\link{replace}}
 #' @examples
 #' # matrix
 #' Y <- matrix(1:25, ncol = 5)
@@ -35,75 +32,68 @@ searchReplace <- function(x, s, r) UseMethod("searchReplace")
 
 
 #' S3 default method searchReplace
-#'
 #' @noRd
 #' @export
 searchReplace.default <- function(x, ...) {
-  stop("Could not find the appropriate S3 method definition for this object: ",
-       class(x))
+  usethis::ui_stop(
+    "Could not find the appropriate S3 method definition for this object: \\
+    {class(x)}"
+  )
 }
 
 
-
 #' S3 searchReplace method for data.frame 
-#'
 #' @noRd
 #' @export
 searchReplace.data.frame <- function(x, s, r) {
   if ( length(s) != length(r) ) {
-    stop("Search & Replace Are Unequal Lengths", call. = FALSE)
+    usethis::ui_stop("Search & Replace Are Unequal Lengths")
   }
   for ( i in 1:length(s) ) {
-    cat("Replacing:", s[i], "->", r[i], "\n")
+    usethis::ui_done("Replacing: {s[i]} -> {r[i]}")
     x <- apply(x, 2, function(.c) {
                .c[ .c == s[i] ] <- r[i]
-               .c
-       })
+               .c})
   }
-  return(as.data.frame(x))
+  data.frame(x)
 }
 
 
 #' S3 searchReplace method for matrix
-#'
 #' @noRd
 #' @export
 searchReplace.matrix <- function(x, s, r) {
   if ( length(s) != length(r) ) {
-    stop("Search & Replace Are Unequal Lengths", call. = FALSE)
+    usethis::ui_stop("Search & Replace Are Unequal Lengths")
   }
   for ( i in 1:length(s) ) {
-    cat("Replacing:", s[i], "->", r[i], "\n")
+    usethis::ui_done("Replacing: {s[i]} -> {r[i]}")
     x <- apply(x, 2, function(.c) {
               .c[ .c == s[i] ] <- r[i]
-              .c
-       })
+              .c})
   }
-  return(x)
+  x
 }
 
 
 #' S3 searchReplace method for numeric
-#'
 #' @noRd
 #' @export
 searchReplace.numeric <- function(x, s, r) {
   if ( length(s) != length(r) ) {
-    stop("Search & Replace Are Unequal Lengths", call. = FALSE)
+    usethis::ui_stop("Search & Replace Are Unequal Lengths")
   }
   for ( i in 1:length(s) ) {
-    cat("Replacing:", s[i], "->", r[i], "\n")
+    usethis::ui_done("Replacing: {s[i]} -> {r[i]}")
     x[ x == s[i] ] <- r[i]
   }
-  return(x)
+  x
 }
 
 
 #' S3 searchReplace method for character
-#'
 #' @noRd
 #' @method searchReplace character
 #' @export
-searchReplace.character <- function(...) searchReplace.numeric(...)
-
+searchReplace.character <- searchReplace.numeric
 

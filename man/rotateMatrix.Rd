@@ -7,26 +7,23 @@
 rotateMatrix(x, direction = c("clock", "counter-clock"))
 }
 \arguments{
-\item{x}{A matrix object}
+\item{x}{A matrix object.}
 
 \item{direction}{Character. Which direction to rotate 90 degrees.
-Partial matching allowed}
+Partial matching allowed.}
 }
 \value{
-A matrix rotated 90 degrees from the original matrix
+A matrix rotated 90 degrees from the original matrix.
 }
 \description{
 Function rotates a matrix 90 degrees. Direction can be either
-clockwise or counter-clockwise
+clockwise or counter-clockwise.
 }
 \examples{
-m <- matrix(1:9, ncol=3)
+m <- matrix(1:9, ncol = 3)
 m
 rotateMatrix(m, "clock")
-rotateMatrix(m, "counter")
-}
-\seealso{
-\code{\link{match.arg}}, \code{\link{t}}
+rotateMatrix(m, "cou")
 }
 \author{
 Stu Field

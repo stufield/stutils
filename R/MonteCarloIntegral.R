@@ -1,4 +1,3 @@
-
 #' Monte-Carlo Integration
 #'
 #' Solving indefinite integrals via Monte-Carlo Monte-Carlo integration
@@ -30,27 +29,27 @@
 #' @note This demo is for students to visually see how the Monte-Carlo
 #' Integration works. Includes an iteration counter & a run time indicator.
 #' @author Stu Field, William Black IV!
-#' @seealso \code{\link{optimize}}
+#' @seealso [optimize()]
 #' @references put references to the literature/web site here
 #' @examples
 #' # set objective function to optimize
 #'
 #' mysteryFun <- function(x) {
-#'   20*dnorm(x, mean=-1, sd=5) +
+#'   20*dnorm(x, mean = -1, sd = 5) +
 #'     ifelse(x > -1.1,
-#'     6*dgamma(x=x+1,shape=2,scale=0.5),
-#'     1.5*dgamma(x=-x,shape=5,scale=0.2)) +
-#'     2*dgamma(x=2.75-x, shape=3, scale=0.25)
+#'     6 * dgamma(x = x + 1, shape = 2, scale = 0.5),
+#'     1.5 * dgamma(x = -x, shape = 5,scale= 0.2)) +
+#'     2* dgamma(x = 2.75 - x, shape = 3, scale = 0.25)
 #' }
 #'
-#' # compare quick=T vs. quick=F
+#' # compare `quick =`
 #'
 #' \dontrun{
 #' MonteCarloIntegral(n = 10000, interval = c(-2.98, 2.98), FUN = mysteryFun, quick = FALSE)
 #' MonteCarloIntegral(n = 10000, interval = c(-2.98, 2.98), FUN = mysteryFun)
 #' }
 #'
-#' # 1000 simulations
+#' # 1000 simulations; package object
 #' head(MC_sims)
 #' mean(MC_sims)
 #'
@@ -70,8 +69,8 @@
 #' @importFrom graphics points title curve abline par box
 #' @importFrom stats runif optimize
 #' @export MonteCarloIntegral
-MonteCarloIntegral <- function(n = 10000, interval, FUN,
-                               force = FALSE, quick = TRUE, plot = FALSE) {
+MonteCarloIntegral <- function(n = 10000, interval, FUN, force = FALSE,
+                               quick = TRUE, plot = FALSE) {
 
   time1 <- Sys.time()                    # timer 1
   l     <- interval[1]
@@ -83,7 +82,7 @@ MonteCarloIntegral <- function(n = 10000, interval, FUN,
     MaxY <- max(FUN(seq(l, r, by = 0.0001))) # using brute force method
   }
 
-  tot_area <- MaxY * (interval[2] - interval[1])  # total area (box)
+  tot_area <- MaxY * (interval[2L] - interval[1L])  # total area (box)
 
   if ( quick ) {
     x <- runif(n, l, r)                 # random x between l & r
@@ -106,9 +105,9 @@ MonteCarloIntegral <- function(n = 10000, interval, FUN,
       f_x <- FUN(x)                       # y at random x (point on curve)
       if ( y < f_x ) {
         count <- count + 1               # count if below curve
-        points(x, y, cex = 0.2, pch = 20, col = cols[1])
+        points(x, y, cex = 0.2, pch = 20, col = cols[1L])
       } else {
-        points(x, y, cex = 0.2, pch = 20, col = cols[2])
+        points(x, y, cex = 0.2, pch = 20, col = cols[2L])
       }
     }
     p_hits   <- count / n                  # proportion hits
@@ -117,6 +116,7 @@ MonteCarloIntegral <- function(n = 10000, interval, FUN,
   }
 
   runTime  <- Sys.time() - time1            # timer 2
+  usethis::ui_done("Run Time = {runTime} seconds")
 
   if ( plot && quick ) {
     par(bg = "thistle")
@@ -124,11 +124,11 @@ MonteCarloIntegral <- function(n = 10000, interval, FUN,
           ylab = "f(x)", xlab = "", lwd = 1.5, col = "navy")
     abline(v = interval, lty = 2, lwd = 1.5)
     box()
-    points(x[which(y < f_x)], y[which(y < f_x)], cex = 0.2, pch = 20, col = cols[1])
-    points(x[which(y > f_x)], y[which(y > f_x)], cex = 0.2, pch = 20, col = cols[2])
+    points(x[which(y < f_x)], y[which(y < f_x)], cex = 0.2, pch = 20, col = cols[1L])
+    points(x[which(y > f_x)], y[which(y > f_x)], cex = 0.2, pch = 20, col = cols[2L])
     title(main = sprintf("Integral (Area) = %0.4f", tot_area * p_hits),
           font.lab = 4, cex.lab = 1.5)
   }
-  cat("Run Time =", runTime, "seconds", "\n")
-  return(tot_area * p_hits)       # return area under curve (integral)
+  # return area under curve (integral)
+  return(tot_area * p_hits)
 }

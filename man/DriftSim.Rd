@@ -35,7 +35,7 @@ Department of Biology, Colorado State University,
 Fort Collins, CO 80523-1878.
 }
 \seealso{
-\code{\link{DriftSim2}}
+\code{\link[=DriftSim2]{DriftSim2()}}
 }
 \author{
 Stu Field

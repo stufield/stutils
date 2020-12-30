@@ -1,4 +1,3 @@
-
 #' Genetic Drift Simulation
 #' 
 #' Performs an illustrative simulation of genetic drift.
@@ -11,7 +10,7 @@
 #' @return A plot of the simulation is returned.
 #' @note Simulation written for FEScUE class
 #' @author Stu Field
-#' @seealso \code{\link{DriftSim2}}
+#' @seealso [DriftSim2()]
 #' @references Department of Biology, Colorado State University,
 #' Fort Collins, CO 80523-1878.
 #' @examples
@@ -29,8 +28,8 @@ DriftSim <- function(p.star = 0.5, n = 50, nsim = 50, plot = "b") {
   # Run the simulation
   for ( i in 1:nsim ) {
     Gametes <- c(rep("A", 2 * n * p.star), rep("a", 2 * n * (1 - p.star))) 
-    p     <- p.star
-    p_vec <- p.star
+    p       <- p.star
+    p_vec   <- p.star
     while ( p > 0 && p < 1 ) {
       s <- sample(Gametes, 2*n, replace = TRUE)
       p <- length(which(s == "A")) / (2 * n) 
@@ -42,27 +41,24 @@ DriftSim <- function(p.star = 0.5, n = 50, nsim = 50, plot = "b") {
 
   # Mean time to fixation/extinction
   # vector of fix.ext times
-  Fit.Ext   <- apply(pMat, 2, function(x) min(which(x == 0 | x == 1)))
-  MeanFix   <- mean(Fit.Ext)
-  MedianFix <- median(Fit.Ext)
+  Fit_Ext   <- apply(pMat, 2, function(x) min(which(x == 0 | x == 1)))
+  MeanFix   <- mean(Fit_Ext, na.rm = TRUE)
+  MedianFix <- median(Fit_Ext, na.rm = TRUE)
 
-  ##############################
-  ### Clip off matrix at point #
-  ### where alleles are ########
-  ### either fixed or extinct ##
-  ##############################
-  clip <- max(Fit.Ext)
+  # Clip off matrix at point
+  # where alleles are
+  # either fixed or extinct
+  clip <- max(Fit_Ext)
   pMat <- pMat[1:clip, ]
 
   runTime <- Sys.time() - time1
-  cat("Sim Time =", runTime, "s", "\n")
-  ######################################
-  ### Plot simulations #################
-  ######################################
-  ### Histogram of the time to fixation
-  ######################################
+  usethis::ui_done("Sim Time = {runTime} s")
+
+  # Plot simulations
+  # Histogram of the time to fixation
   if ( plot == "h" || plot == "b" ) {
-    hist(Fit.Ext, col="gray75",
+    hist(Fit_Ext,
+         col = "gray75",
          xlab = "Time (generations)",
          main = "Time to fixation/extinction via Drift")
     legend("topright",
@@ -76,7 +72,7 @@ DriftSim <- function(p.star = 0.5, n = 50, nsim = 50, plot = "b") {
 
   # Plotting drift of the p-allele by simulation
   if ( plot == "l" || plot == "b" ) {
-    plot(1:clip, pMat[,1], type = "n", ylab = "Allele Frequency (p)",
+    plot(1:clip, pMat[, 1L], type = "n", ylab = "Allele Frequency (p)",
          xlab = "time", ylim = c(0, 1), main = "Genetic Drift Simulation",
          sub = paste("nsim =", format(nsim)))
     for ( n in 1:nsim ) {
@@ -84,4 +80,3 @@ DriftSim <- function(p.star = 0.5, n = 50, nsim = 50, plot = "b") {
     }
   }
 }
-

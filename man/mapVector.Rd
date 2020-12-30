@@ -19,8 +19,6 @@ same length as \code{to.vec} of only 1-to-1 mapping is desired.}
 
 \item{nomatch}{Value that unmapped values in the source vector should take.
 By default, \code{NULL}, unmapped values are themselves returned unchanged.}
-
-\item{...}{Additional arguments passed to internals of specific S3 methods.}
 }
 \value{
 A factor (or character) vector with the new mapping applied.
@@ -57,7 +55,6 @@ mapVector(1:5, list(c(1, 3, 5), c(2, 4)), c(10, 100))
 
 # character -> integer
 mapVector(head(LETTERS, 5), list(c("A", "B"), c("C", "D", "E")), 1:2)
-
 }
 \seealso{
 \code{\link[base]{setdiff}}, \code{\link[base]{factor}}

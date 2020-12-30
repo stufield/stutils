@@ -1,5 +1,4 @@
-*.tar.gz binary
 *.txt ident
 *.txt filter=kwd
-*.R ident
-*.R filter=kwd
+#*.R ident
+#*.R filter=kwd

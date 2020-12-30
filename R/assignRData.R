@@ -1,4 +1,3 @@
- 
 #' Assign Rdata Contents to a Variable
 #' 
 #' Assigns the contents of a binary `*.Rdata` or `*.rda` 

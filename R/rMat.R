@@ -1,4 +1,3 @@
-
 #' Create Random Matrix
 #' 
 #' Generate a matrix with random numbers in its entries.

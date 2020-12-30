@@ -4,9 +4,19 @@
 \alias{plotErrorBars}
 \title{Plot Error Bars}
 \usage{
-plotErrorBars(x, lo, up, plotfun = graphics::barplot, bar.col = 1,
-  ylims = NULL, bar.lty = 1, bar.cex = 0.33, bar.lwd = 1,
-  pad = 0.05, ...)
+plotErrorBars(
+  x,
+  lo,
+  up,
+  plotfun = graphics::barplot,
+  bar.col = 1,
+  ylims = NULL,
+  bar.lty = 1,
+  bar.cex = 0.33,
+  bar.lwd = 1,
+  pad = 0.05,
+  ...
+)
 }
 \arguments{
 \item{x}{Summary data to plot into a barplot, typically a vector of the bar
@@ -18,7 +28,7 @@ Must be computed externally and passed into the function.}
 \item{up}{Numeric. A vector of heights of the \emph{upper} error bars to be drawn.
 Must be computed externally and passed into the function.}
 
-\item{plotfun}{Currently one of: \code{barplot, points, or plot}. Note:
+\item{plotfun}{Currently one of: \verb{barplot, points, or plot}. Note:
 plot or points produce the same output.}
 
 \item{bar.col}{Color of the error bars and lines.}

@@ -16,15 +16,16 @@ A numeric vector with 3 entries:
 \item{upper}{the upper CI95.}
 }
 \description{
-Uses standard error (of the mean) calculation to determine the 95% CI
-of a vector of data. Does not use a bootstrapping of empirical data,
+Uses standard error (of the mean) calculation to
+determine the 95\% CI of a vector of data.
+Does not use a bootstrapping of empirical data,
 but the Gaussian approximation.
 }
 \examples{
 CI95se(rnorm(100))
 }
 \seealso{
-\code{\link{bootstrap}} to create CI95 via bootstrapping method.
+\code{\link[=bootstrap]{bootstrap()}} for CI95 via bootstrapping.
 }
 \author{
 Stu Field

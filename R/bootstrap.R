@@ -1,61 +1,55 @@
-
 #' Generic Bootstrapping Subroutine
 #' 
-#' Provide a numeric or character vector and create bootstrap samples (with
-#' estimates) of the original vector. Also calculates CI95 using the quantile()
-#' function.
+#' Provide a numeric or character vector and create bootstrap samples 
+#' (with estimates) of the original vector. Also calculates CI95 
+#' using [quantile()].
 #' 
 #' @param x Character or Numeric. The original data to be bootstrapped.
 #' @param boot Number of bootstraps to perform.
 #' @param FUN Function desired for the point estimate of the original data
-#' vector (if numeric data).
+#' vector (if numeric data). Must return a scalar.
 #' @param up Upper confidence limit.
 #' @param lo Lower confidence limit.
 #' @return A list containing:
-#' \item{BootSamples }{List of the bootstrap populations created during
-#' the simulation.}
-#' \item{BootEstimates }{List of the various point estimates of each of 
-#' the bootstrap samples.}
-#' \item{CI95 }{Vector of the point estimate and upper & lower CI95 
-#' produced via the bootstrap samples.}
-#' \item{SE }{The standard error based on the original data.
-#' Could be used to calculate CI95 via 1.96*SE if so desired.}
+#' \item{BootSamples}{List of the bootstrap populations created during
+#'   the simulation.}
+#' \item{BootEstimates}{List of the various point estimates of each of 
+#'   the bootstrap samples.}
+#' \item{CI95}{Vector of the point estimate and upper & lower CI95 
+#'   produced via the bootstrap samples.}
+#' \item{SE}{The standard error based on the original data.
+#'   Could be used to calculate CI95 via 1.96*SE if so desired.}
 #' @author Stu Field
-#' @seealso \code{\link{CI95se}}, \code{\link{quantile}}
+#' @seealso [CI95se()], [quantile()]
 #' @examples
 #' bootstrap(x = round(runif(25,1,100)), boot = 50, FUN = mean) # numeric
 #' bootstrap(x = LETTERS[1:26], boot = 50)                      # character
 #' z <- factor(sample(c("stu", "is", "cool"), 10, replace = TRUE))
 #' # bootstrap(x = z, boot = 50)      # factor (ask to convert to character)
 #' @importFrom stats quantile var
+#' @importFrom usethis ui_stop
 #' @export bootstrap
-bootstrap <- function(x, boot = 1000, FUN, up = 0.975, lo = 0.025){
+bootstrap <- function(x, boot = 1000, FUN, up = 0.975, lo = 0.025) {
 
-  if ( inherits(x, c("numeric", "character")) ) {
-    if ( is.numeric(x) ) {
-      est <- FUN(x)      # calculate point estimate
-      bootsamples <- lapply(1:boot, function(i) sample(x, replace = TRUE))
-      boot_est <- sapply(bootsamples, FUN)      # pt. estimates of bootstraps
-      upper    <- quantile(boot_est, probs = up)  # upper CI
-      lower    <- quantile(boot_est, probs = lo)  # lower CI
-      se       <- sqrt(var(boot_est))           # standard error of pt. estimate
-      ret <- list(BootSamples = bootsamples,
-                  BootEstimates = boot_est,
-                  CI95 = c(lower, estimate = est, upper),
-                  SE = se)
-    }
-    if ( is.character(x) ) {
-      ret <- lapply(1:boot, function(i) sample(x, replace = TRUE))
-    }
+  stopifnot(inherits(x, c("numeric", "character")))
+  if ( is.numeric(x) ) {
+    est <- FUN(x)      # calculate point estimate
+    bootsamples <- lapply(1:boot, function(i) sample(x, replace = TRUE))
+    boot_est <- sapply(bootsamples, FUN)        # pt. estimates of bootstraps
+    upper    <- quantile(boot_est, probs = up)  # upper CI
+    lower    <- quantile(boot_est, probs = lo)  # lower CI
+    se       <- sqrt(var(boot_est))             # standard error of pt. estimate
+    ret <- list(BootSamples = bootsamples,
+                BootEstimates = boot_est,
+                CI95 = c(lower, estimate = est, upper),
+                SE = se)
+  } else if ( is.character(x) ) {
+    ret <- lapply(1:boot, function(i) sample(x, replace = TRUE))
   } else {
-   	input <- readline("x must be numeric or character! Coerce to character (y/n)? ")
-   	if ( grepl("y", input, ignore.case = TRUE) ) {
-   	  y   <- as.character(x)
-   	  ret <- lapply(1:boot, function(i) sample(y, replace = TRUE))
-    } else {
-      stop("Function aborted ... please try again ...", call. = FALSE)
-    }
+    usethis::ui_stop(
+      "`x` must be either numeric or character class: {class(x)}."
+    )
   }
-  return(ret)
+  ret
 }
 

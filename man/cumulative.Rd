@@ -21,9 +21,6 @@ A list containing:
 \description{
 Returns cumulative vector values of neighboring vector elements.
 }
-\note{
-Used as a mere exercise in function writing for the R tutorial.
-}
 \examples{
 \dontrun{
 ?cumsum
@@ -31,7 +28,7 @@ Used as a mere exercise in function writing for the R tutorial.
 cumulative(1:10)
 }
 \seealso{
-\code{\link{cumsum}}, \code{\link{cumprod}}
+\code{\link[=cumsum]{cumsum()}}, \code{\link[=cumprod]{cumprod()}}
 }
 \author{
 Stu Field

@@ -1,4 +1,3 @@
-
 #' Get File Extension
 #' 
 #' Function to return the file extension of a

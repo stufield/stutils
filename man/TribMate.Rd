@@ -25,15 +25,9 @@ A sub-routine used to determine the number of offspring produced by the
 current population according to Hardy-Weinberg predictions. Used in
 \code{Tribolium9()} where only the top class (adults) mates.
 }
-\note{
-Used in FEScUE for \code{Tribolium9()}.
-}
 \references{
 Tribolium Example from Caswell (2008); pg 71. Perturbation
-analysis of nonlinear matrix popn models. Demographic Research 18: 59-116
-}
-\seealso{
-\code{Tribolium9}
+analysis of nonlinear matrix populationn models. Demographic Research 18: 59-116
 }
 \author{
 Stu Field, Jesse Drendel

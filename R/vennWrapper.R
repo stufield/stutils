@@ -1,4 +1,3 @@
-
 #' Venn Diagram Plotting Routine
 #'
 #' A wrapper function for plotting Venn diagrams comprising 1 - 5
@@ -9,7 +8,7 @@
 #' @aliases vennWrapper venn_default
 #' @param x A named list of vectors containing strings to match intersections.
 #' @param ... Additional arguments passed to the internal
-#' \code{venn_default}, which was stolen mostly from \code{\link{VennDiagram}}.
+#' \code{venn_default}, which was stolen mostly from [VennDiagram()].
 #' @param edge.col describe
 #' @param num.cex describe
 #' @param colors describe
@@ -34,15 +33,16 @@
 #' file if `filename` is not `NULL`.
 #' @note I stole this ...
 #' @author Stu Field
-#' @seealso \code{\link{VennDiagram}}, \code{\link{grid}}
-#' @references See the \code{\link{VennDiagram}} package.
-#' @keywords venn
+#' @seealso [VennDiagram()]
+#' @references See the \pkg{VennDiagram} package.
 #' @examples
 #' int_list <- lapply(1:3, function(...) sample(LETTERS[1:10], 6)) %>%
 #'   purrr::set_names(c("Larry", "Curly", "Mo"))
 #' vennWrapper(int_list, num.cex = seq(0.5, 2, length = 7), cat.cex = c(1, 1.5, 2),
 #'             main = "Title Here", sub = "Subtitle")
-#' @importFrom VennDiagram draw.triple.venn draw.pairwise.venn draw.single.venn draw.quad.venn draw.quintuple.venn add.title adjust.venn
+#' @importFrom VennDiagram draw.triple.venn draw.pairwise.venn 
+#' @importFrom VennDiagram draw.single.venn draw.quad.venn 
+#' @importFrom VennDiagram draw.quintuple.venn add.title adjust.venn
 #' @importFrom grid grid.draw unit gpar gList textGrob
 #' @importFrom grDevices dev.list dev.new dev.off pdf png tiff svg
 #' @export vennWrapper venn_default

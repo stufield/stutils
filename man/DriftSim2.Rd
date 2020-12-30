@@ -7,24 +7,25 @@
 DriftSim2(p, Gen, n, trials)
 }
 \arguments{
-\item{p}{Numeric. Initial allelic frequency in for each of the simulations}
+\item{p}{Numeric. Initial allelic frequency in for each of the simulations.}
 
-\item{Gen}{Integer. Generations to run each simulation}
+\item{Gen}{Integer. Generations to run each simulation.}
 
-\item{n}{Integer. Number of individuals in each of the trials}
+\item{n}{Integer. Number of individuals in each of the trials.}
 
-\item{trials}{Integer. Number of simulations to run}
+\item{trials}{Integer. Number of simulations to run.}
 }
 \value{
 A list containing:
-\item{p.mat }{A matrix composed of the simulation of each of the
+\item{p_mat}{A matrix composed of the simulation of each of the
 drift simulations following the allelic frequency p.}
-\item{P.fix }{The proportion of the time the p allele becomes fixed
+\item{P_fix}{The proportion of the time the p allele becomes fixed
 in the population. Should approach 0.5 when trials increases.}
 }
 \description{
-Performs a simulation of genetic drift according to the one described in the
-Evolution & Ecology Excel spreadsheets manuals
+Performs a simulation of genetic drift according to
+the one described in the
+Evolution & Ecology Excel spreadsheets manuals.
 }
 \examples{
 \dontrun{
@@ -32,11 +33,8 @@ set.seed(501)
 DriftSim2(p = 0.5, Gen = 100, n = 10, trials = 20)
 }
 }
-\references{
-Evolutionary Ecology Tutorials in Excel - Workbook.
-}
 \seealso{
-\code{\link{DriftSim}}
+\code{\link[=DriftSim]{DriftSim()}}
 }
 \author{
 Stu Field

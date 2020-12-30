@@ -1,10 +1,9 @@
- 
 #' Tribolium Mating Subroutine
-#' 
+#'
 #' A sub-routine used to determine the number of offspring produced by the
 #' current population according to Hardy-Weinberg predictions. Used in
 #' `Tribolium9()` where only the top class (adults) mates.
-#' 
+#'
 #' @param Y A matrix containing an intermediate population with the classes as
 #' rows & genotypes as cols. Columns should be ordered AA, Aa, aa. Only the
 #' final class mates.
@@ -14,11 +13,9 @@
 #' the first row only representing the newly produced offspring (eggs) in the
 #' population. This matrix can then simply be added to the current, or
 #' intermediate, solution to obtain the current solution.
-#' @note Used in FEScUE for `Tribolium9()`.
 #' @author Stu Field, Jesse Drendel
 #' @references Tribolium Example from Caswell (2008); pg 71. Perturbation
-#' analysis of nonlinear matrix popn models. Demographic Research 18: 59-116
-#' @seealso `Tribolium9`
+#' analysis of nonlinear matrix populationn models. Demographic Research 18: 59-116
 #' @export TribMate
 TribMate <- function(Y, f) {
 
@@ -40,9 +37,7 @@ TribMate <- function(Y, f) {
     FAa <- q * (fnAa / 2 + fnAA) + p * (fnAa / 2 + fnaa) # heterozygotes
     Faa <- q * (fnAa / 2 + fnaa)
     # ---------------------------
-    Offspring[1,] <- c(FAA, FAa, Faa)
+    Offspring[1L, ] <- c(FAA, FAa, Faa)
   }
-
-  return(Offspring)
-
+  Offspring
 }

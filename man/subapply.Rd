@@ -7,8 +7,15 @@
 \usage{
 subapply(x, index, .fun, ...)
 
-\method{subapply}{data.frame}(x, index, .fun, y, longform = FALSE,
-  sum.field = deparse(substitute(.fun)), ...)
+\method{subapply}{data.frame}(
+  x,
+  index,
+  .fun,
+  y,
+  longform = FALSE,
+  sum.field = deparse(substitute(.fun)),
+  ...
+)
 }
 \arguments{
 \item{x}{A vector, data frame, of matrix of values evaluate.}
@@ -19,7 +26,7 @@ column name(s) in \code{x} to use as indices. Character string currently
 cannot be more than length 2.}
 
 \item{.fun}{The function to apply to each subset of the data. Can be
-written on the fly using the \code{function(x)} syntax.}
+written on the fly using the \verb{function(x)} syntax.}
 
 \item{...}{Additional arguments passed to \code{\link{tapply}}}
 

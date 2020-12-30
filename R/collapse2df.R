@@ -1,4 +1,3 @@
-
 #' Collapse Vector List to Data Frame
 #' 
 #' Function collapses a list of vectors, or a list of 1-row data frames, into a

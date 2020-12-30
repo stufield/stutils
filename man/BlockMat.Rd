@@ -18,7 +18,7 @@ The assembled block matrix.
 }
 \description{
 Assembles a block matrix from sub-matrices mimicking
-coding capabilities of Matlab.
+coding capabilities of \code{Matlab}.
 }
 \note{
 Combine sub-Matrices into larger matrix; a

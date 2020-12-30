@@ -4,8 +4,7 @@
 \alias{analyzeProjectionMatrix}
 \title{Linear Matrix Analysis}
 \usage{
-analyzeProjectionMatrix(A, initial, Gen = 25, key.thresh = 0.1,
-  plots = TRUE)
+analyzeProjectionMatrix(A, initial, Gen = 25, key.thresh = 0.1, plots = TRUE)
 }
 \arguments{
 \item{A}{A population projection matrix.}
@@ -23,30 +22,30 @@ parameters. Based on Elasticities.}
 }
 \value{
 A list containing:
-\item{Matrix }{The projection matrix}
-\item{Projection }{The population projection of solutions}
-\item{StageProportions }{The proportion each stage of the total population}
-\item{lambda }{The dominant eigenvalue corresponding to the
+\item{Matrix}{The projection matrix}
+\item{Projection}{The population projection of solutions}
+\item{StageProportions}{The proportion each stage of the total population}
+\item{lambda}{The dominant eigenvalue corresponding to the
 growth rate of the population}
-\item{SDD }{The Stable Stage Distribution corresponding to the
+\item{SDD}{The Stable Stage Distribution corresponding to the
 right eigenvector of the dominant eigenvalue}
-\item{RV }{The reproductive value corresponding to the left eigenvector
+\item{RV}{The reproductive value corresponding to the left eigenvector
 of the dominant eigenvalue}
-\item{DampingRatio }{Ratio of the dominant eigenvalue to the sub-dominant
+\item{DampingRatio}{Ratio of the dominant eigenvalue to the sub-dominant
 eigenvalue}
-\item{Time2Eqm }{How long does it take for the population to
+\item{Time2Eqm}{How long does it take for the population to
 reach equilibrium, defined as when the dominant eigenvalue is 20x the
 sub-dominant eigenvalue}
-\item{Sensitivity }{Entry-wise sensitivities of each of the matrix
+\item{Sensitivity}{Entry-wise sensitivities of each of the matrix
 parameter entries, the absolute change in lambda with
 changes in the parameter}
-\item{SensitivityZero }{Entry-wise sensitivities as above, for \emph{only}
+\item{SensitivityZero}{Entry-wise sensitivities as above, for \emph{only}
 non-zero entries with respect to \code{A}, i.e. parameters with an actual
 value in the projection matrix}
-\item{Elasticity }{Entry-wise elasticities of each of the matrix
+\item{Elasticity}{Entry-wise elasticities of each of the matrix
 parameter entries, the proportional change in lambda with
 changes in the parameter}
-\item{KeyPars }{Which parameters have Elasticities greater than
+\item{KeyPars}{Which parameters have Elasticities greater than
 the argument determined by \code{key.thresh}, sorted by decreasing "values".
 Theta is the vector of model parameters}
 }
@@ -60,13 +59,16 @@ A <- diag(1:5 / 10)
 A[cbind(2:5, 1:4)] <- 3:6 / 10
 A[1, 5] <- 5
 analyzeProjectionMatrix(A, initial = c(1, 3, 5, 2, 1), Gen = 100)
-analyzeProjectionMatrix(A, initial = c(1, 3, 5, 2, 1), key.thresh = 0.05, Gen = 25, plots = FALSE)
+analyzeProjectionMatrix(A, initial = c(1, 3, 5, 2, 1),
+                        key.thresh = 0.05, Gen = 25, plots = FALSE)
 }
 \references{
 Caswell, H. Matrix Population Models. 2001.
 }
 \seealso{
-\code{\link{calcMatrixSensitivity}}, \code{\link{eigen}}, \code{\link[popbio]{eigen.analysis}}, \code{\link[popbio]{popbio}}
+\code{\link[=calcMatrixSensitivity]{calcMatrixSensitivity()}}, \code{\link[=eigen]{eigen()}}
+
+\code{\link[popbio:eigen.analysis]{popbio::eigen.analysis()}}, \code{\link[popbio:01Introduction]{popbio::popbio()}}
 }
 \author{
 Stu Field

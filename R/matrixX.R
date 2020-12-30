@@ -1,7 +1,7 @@
-
 #' Matrix Multiplication
 #' 
-#' Mimic of proper matrix multiplication without using the R syntax of %*%.
+#' Mimic of proper matrix multiplication without
+#' using the R syntax of %*%.
 #' 
 #' For matrix multiplication, the ncol(A) must equal nrow(B)! and you get a
 #' nrow(A) x ncol(B) matrix as a result. Must be matrices not vectors. If
@@ -10,25 +10,27 @@
 #' @param A The pre-multiplied matrix.
 #' @param B The post-multiplied matrix.
 #' @return A matrix (or vector) result of matrix multiplication.
-#' @note This is a mimic of the MatLab version of matrix multiplication, A * B,
-#' where here is it is `matrixX(A, B)`.
 #' @author Stu Field
 #' @seealso \code{\%*\%}
 #' @examples
 #' M <- diag(1:4)
 #' N <- matrix(1:16, ncol = 4)
-#' M%*%N            # R syntax
-#' matrixX(M, N)    # using function
-#' M * N            # Hadamard Product
-#' @export matrixX
-matrixX <- function(A, B) {
+#'
+#' # Standard R syntax
+#' M%*%N            
+#'
+#' matrixProd(M, N) # using function
+#'
+#' # Hadamard Product
+#' M * N            
+#' @export matrixProd
+matrixProd <- function(A, B) {
   if ( ncol(A) != nrow(B) ) {
-    stop("You can't multiply those together ... wrong dimensions!",
-         call. = FALSE)
+    usethis::ui_stop(
+      "You can't multiply those together ... bad dimensions!"
+    )
   }
-
   Mat <- matrix(0, nrow(A), ncol(B))
-
   for ( a in 1:nrow(A) ) {
     for ( b in 1:ncol(B) ) {
       sum <- 0

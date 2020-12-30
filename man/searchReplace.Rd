@@ -13,12 +13,10 @@ can be a vector of character or numeric class.}
 \item{s}{The search index.}
 
 \item{r}{The replace with. Must be same length as \code{s}.}
-
-\item{...}{Pass through to various S3 methods.}
 }
 \value{
 An object of the same dimensions and class as \code{x}, with the
-\code{s=} matches replaced with \code{r=}.
+\code{s=} matches replaced with \verb{r=}.
 }
 \description{
 A global search & replace of entries within a vector, matrix, or data frame
@@ -41,9 +39,6 @@ searchReplace(1:10, s = 4, r = 19)
 
 # character
 searchReplace(head(LETTERS, 10), s = "G", r = "Z")
-}
-\seealso{
-\code{\link{replace}}
 }
 \author{
 Stu Field

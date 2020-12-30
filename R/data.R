@@ -1,4 +1,3 @@
-
 #' Package Objects
 #'
 #' @description Below is a listing of all the objects contained in the
@@ -9,8 +8,6 @@
 #' @name objects
 NULL
 
-
-# Tree Data
 
 #' @describeIn objects
 #' Data set containing tree characteristic metric data,
@@ -26,12 +23,9 @@ NULL
 #' summary(TreeData)
 #' suppressWarnings(sapply(TreeData, mean))
 #'
-#' @keywords Rtutorial
 #' @usage TreeData
 TreeData <- function() NULL
 
-
-# 6 Class Population Projection
 
 #' @describeIn objects
 #' A data set it the data produced by the
@@ -43,12 +37,9 @@ TreeData <- function() NULL
 #' @examples
 #' head(popdata, 10)
 #'
-#' @keywords Rtutorial
 #' @usage popdata
 popdata <- function() NULL
 
-
-# Coefficient Interclass Correlation Data Example
 
 #' @describeIn objects
 #' Coefficient Interclass Correlation Data Example
@@ -59,12 +50,9 @@ popdata <- function() NULL
 #' @examples
 #' Ri_data
 #'
-#' @keywords Ri
 #' @usage Ri_data
 Ri_data <- function() NULL
 
-
-# Monte-Carlo Integration Simulation
 
 #' @describeIn objects
 #' A vector containing 1000 Monte-Carlo simulation
@@ -82,8 +70,6 @@ Ri_data <- function() NULL
 #' @usage MC_sims
 MC_sims <- function() NULL
 
-
-# Infection data by US County
 
 #' @describeIn objects
 #' Infection data describing the infections
@@ -113,8 +99,6 @@ MC_sims <- function() NULL
 #' @usage InfectionByCounty
 InfectionByCounty <- function() NULL
 
-
-# Sample Test Data Frame
 
 #' @describeIn objects
 #' A quick sample tibble data frame for

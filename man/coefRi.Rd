@@ -4,20 +4,18 @@
 \alias{coefRi}
 \title{Calculate Interclass Correlation Coefficient (ICC)}
 \usage{
-coefRi(x, groups, do.log = TRUE)
+coefRi(x, groups)
 }
 \arguments{
 \item{x}{A matrix or data frame containing the raw data of the various
-treatments you are testing in the ANOVA}
+treatments you are testing in the ANOVA.}
 
-\item{groups}{A vector of the factor groupings for x}
-
-\item{do.log}{Should data be performed on log10-transformed?}
+\item{groups}{A vector of the factor groupings for \code{x}.}
 }
 \value{
 A list containing:
-\item{model }{Resulting ANOVA table}
-\item{ICC }{The intraclass correlation coefficient, the measure of
+\item{model}{Resulting ANOVA table}
+\item{ICC}{The intraclass correlation coefficient, the measure of
 similarity among individuals \emph{within} a treatment
 group relative to the differences found \emph{among} groups}
 }
@@ -40,7 +38,7 @@ Sokal & Rohlf (Biometry; 3rd ed.) 210-214. Sokal & Rohlf
 (Biometry; 2rd ed.) 211-216.
 }
 \seealso{
-\code{\link{aov}}
+\code{\link[=aov]{aov()}}
 }
 \author{
 Stu Field

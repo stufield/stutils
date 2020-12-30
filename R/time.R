@@ -1,9 +1,8 @@
-
 #' Determine Time from Seconds (& vice versa)
 #' 
-#' \code{\link{time2seconds}} and \code{\link{seconds2time}} determine the
-#' time (format="hh:mm:ss.ss") from the value in seconds or vice versa. Two
-#' digit hour precision optional.
+#' [time2seconds()] and [seconds2time()] determine the
+#' time (format="hh:mm:ss.ss") from the value in seconds or vice versa.
+#' Two digit hour precision optional.
 #' 
 #' @rdname time
 #' @aliases time2seconds seconds2time
@@ -14,8 +13,7 @@
 #' @return Either number of seconds (\code{numeric} or the time format
 #' (\code{string}) in "hh:mm:ss.ss".
 #' @author Stu Field
-#' @seealso \code{\link[base]{strsplit}}, \code{\link[base]{gsub}},
-#' \code{\link[base]{grepl}}, \code{\link[base]{sprintf}}
+#' @seealso [strsplit()], [grep()]
 #' @examples
 #' seconds2time(159.72)
 #'
@@ -41,14 +39,15 @@ seconds2time <- function(x) {
 time2seconds <- function(x) {
   format_check <- grepl("^[0-9]{1,2}:[0-9]{2}:[0-9]{2}[.][0-9]{1,2}$", x)
   if ( !format_check ) {
-    stop("Incorrect time format ... check time format is 'hh:mm:ss.ss'",
-         call. = FALSE)
+    usethis::ui_stop(
+      "Incorrect time format ... check time format is 'hh:mm:ss.ss'"
+    )
   }
-  char.split <- strsplit(x, split = ":", fixed = TRUE)[[1]]
-  convert    <- as.numeric(char.split)
-  hr  <- convert[1]
-  min <- convert[2]
-  sec <- convert[3]
+  char_split <- strsplit(x, split = ":", fixed = TRUE)[[1]]
+  convert    <- as.numeric(char_split)
+  hr  <- convert[1L]
+  min <- convert[2L]
+  sec <- convert[3L]
   return(hr * 60 + min * 60 + sec)
 }
 

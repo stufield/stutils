@@ -4,20 +4,21 @@
 \alias{capwords}
 \title{Capitalize Title Format}
 \usage{
-capwords(s, strict = FALSE)
+capwords(x, strict = FALSE)
 }
 \arguments{
-\item{s}{A character string in the form of a sentence to be converted to
-"title case" (i.e. first letter capitalized).}
+\item{x}{A character string in the form of a sentence
+to be converted to "title case" (i.e. first letter capitalized).}
 
-\item{strict}{Logical. Should first letter capitalization be \emph{strictly}
-applied? See example.}
+\item{strict}{Logical. Should first letter capitalization
+be \emph{strictly} applied? See example.}
 }
 \value{
 A character string with "title case" conversion.
 }
 \description{
-Change case to capitalize first letter of each word in a character string.
+Change case to capitalize first letter of
+each word in a character string.
 }
 \examples{
 capwords("using AIC for model selection")
@@ -28,7 +29,7 @@ capwords(c("using AIC", "for MODEL selection"), strict = TRUE)
 ##               "bad"       "good"
 }
 \seealso{
-\code{\link[base]{toupper}}, \code{\link[base]{tolower}}, \code{\link[base]{strsplit}}
+\code{\link[=toupper]{toupper()}}, \code{\link[=tolower]{tolower()}}, \code{\link[=strsplit]{strsplit()}}
 }
 \author{
 Stu Field

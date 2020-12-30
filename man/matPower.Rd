@@ -16,7 +16,7 @@ A matrix, the result of X^n.
 }
 \description{
 Calculate the result of exponentiation of a matrix of
-the form X^n, where X is a matrix and n is an integer.
+the form \deqn{X^n}, where \code{X} is a matrix and \code{n} is an integer.
 }
 \details{
 This technique is referred to the Power Method and is sometimes
@@ -25,9 +25,6 @@ used to estimate Lambda, the growth rate of a projection matrix.
 \examples{
 M <- diag(c(1.3, 0.4, 0.5, 0.9))
 matPower(M, 10)
-}
-\references{
-Stolen from somewhere online.
 }
 \author{
 Stu Field

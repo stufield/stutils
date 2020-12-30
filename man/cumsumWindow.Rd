@@ -17,16 +17,15 @@ A vector of the sums of the sliding window for the cumulative sums.
 }
 \description{
 Calculate the cumulative sum of a set of numbers within a vector. The
-difference between this and \code{\link[base]{cumsum}} is that it is a
+difference between this and \code{\link[=cumsum]{cumsum()}} is that it is a
 sliding window approach, so sums are not necessarily calculated over the
 entire length of the vector. When \code{cut == length(x)} then it is the
-same as \code{\link[base]{cumsum}}. Also, for entries \code{<} window, i.e.
-the beginning, the entries returned will be identical to
-\code{\link[base]{cumsum}}.
+same as \code{\link[=cumsum]{cumsum()}}. Also, for entries \code{<} window, i.e.
+the beginning, the entries returned will be identical to \code{\link[=cumsum]{cumsum()}}.
 }
 \details{
 If \code{window >= length(x)}, a warning is triggered and
-\code{cumsumWindow} reverts to \code{\link[base]{cumsum}}.
+\code{cumsumWindow} reverts to \code{\link[=cumsum]{cumsum()}}.
 }
 \examples{
 cumsumWindow(1:20, 5)
@@ -36,7 +35,7 @@ r.vec <- sample(1:20, 100, replace=TRUE) # random vector
 cumsumWindow(r.vec, 5)
 }
 \seealso{
-\code{\link[base]{cumsum}}
+\code{\link[=cumsum]{cumsum()}}
 }
 \author{
 Stu Field

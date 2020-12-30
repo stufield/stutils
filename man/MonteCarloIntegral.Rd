@@ -4,8 +4,14 @@
 \alias{MonteCarloIntegral}
 \title{Monte-Carlo Integration}
 \usage{
-MonteCarloIntegral(n = 10000, interval, FUN, force = FALSE,
-  quick = TRUE, plot = FALSE)
+MonteCarloIntegral(
+  n = 10000,
+  interval,
+  FUN,
+  force = FALSE,
+  quick = TRUE,
+  plot = FALSE
+)
 }
 \arguments{
 \item{n}{Integer. How many points to use in the estimation. Defaults to 10000}
@@ -52,21 +58,21 @@ Integration works. Includes an iteration counter & a run time indicator.
 # set objective function to optimize
 
 mysteryFun <- function(x) {
-  20*dnorm(x, mean=-1, sd=5) +
+  20*dnorm(x, mean = -1, sd = 5) +
     ifelse(x > -1.1,
-    6*dgamma(x=x+1,shape=2,scale=0.5),
-    1.5*dgamma(x=-x,shape=5,scale=0.2)) +
-    2*dgamma(x=2.75-x, shape=3, scale=0.25)
+    6 * dgamma(x = x + 1, shape = 2, scale = 0.5),
+    1.5 * dgamma(x = -x, shape = 5,scale= 0.2)) +
+    2* dgamma(x = 2.75 - x, shape = 3, scale = 0.25)
 }
 
-# compare quick=T vs. quick=F
+# compare `quick =`
 
 \dontrun{
 MonteCarloIntegral(n = 10000, interval = c(-2.98, 2.98), FUN = mysteryFun, quick = FALSE)
 MonteCarloIntegral(n = 10000, interval = c(-2.98, 2.98), FUN = mysteryFun)
 }
 
-# 1000 simulations
+# 1000 simulations; package object
 head(MC_sims)
 mean(MC_sims)
 
@@ -88,7 +94,7 @@ print(sum((H$breaks[2]-H$breaks[1]) * H$density), digits = 10)
 put references to the literature/web site here
 }
 \seealso{
-\code{\link{optimize}}
+\code{\link[=optimize]{optimize()}}
 }
 \author{
 Stu Field, William Black IV!

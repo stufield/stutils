@@ -21,7 +21,6 @@
 #' @param to.vec The new mapping in the same order as they appear in `from.list`.
 #' @param nomatch Value that unmapped values in the source vector should take.
 #' By default, `NULL`, unmapped values are themselves returned unchanged.
-#' @param ... Additional arguments passed to internals of specific S3 methods.
 #' @return A factor (or character) vector with the new mapping applied.
 #' @author Stu Field
 #' @seealso \code{\link[base]{setdiff}}, \code{\link[base]{factor}}
@@ -45,13 +44,11 @@
 #'
 #' # character -> integer
 #' mapVector(head(LETTERS, 5), list(c("A", "B"), c("C", "D", "E")), 1:2)
-#'
 #' @export
-mapVector <- function(v, from.list, to.vec, nomatch=NULL) UseMethod("mapVector")
+mapVector <- function(v, from.list, to.vec, nomatch = NULL) UseMethod("mapVector")
 
 
 #' S3 mapVector default method
-#'
 #' @noRd
 #' @export
 mapVector.default <- function(v, ...) {
@@ -60,7 +57,6 @@ mapVector.default <- function(v, ...) {
 
 
 #' S3 mapVector method for character factor
-#'
 #' @noRd
 #' @export
 mapVector.factor <- function(v, from.list, to.vec, nomatch = NULL) {
@@ -92,7 +88,6 @@ mapVector.factor <- function(v, from.list, to.vec, nomatch = NULL) {
 
 
 #' S3 mapVector method for character class
-#'
 #' @noRd
 #' @export
 mapVector.character <- function(v, from.list, to.vec, nomatch = NULL) {
@@ -136,7 +131,6 @@ mapVector.character <- function(v, from.list, to.vec, nomatch = NULL) {
 
 
 #' S3 mapVector method for numeric class
-#'
 #' @noRd
 #' @export
 mapVector.numeric <- function(v, from.list, to.vec, nomatch = NULL) {
@@ -181,10 +175,9 @@ mapVector.numeric <- function(v, from.list, to.vec, nomatch = NULL) {
 
 
 #' S3 mapVector method for integer class
-#'
 #' @noRd
 #' @export
-mapVector.integer <- function(...) mapVector.numeric(...)
+mapVector.integer <- mapVector.numeric
 
 
 #' Internal subfunction for all methods
@@ -215,4 +208,3 @@ mapVsubfun <- function(list.in) {
   }
    return(list_out)
 }
-

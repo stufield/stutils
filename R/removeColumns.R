@@ -1,4 +1,3 @@
-
 #' Remove Column Containing Given Entry(s)
 #'
 #' Remove an entire column of a matrix of data frame whose

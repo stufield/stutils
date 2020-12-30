@@ -7,32 +7,38 @@
 calcRo(TM, FM)
 }
 \arguments{
-\item{TM}{Matrix. The transition matrix, separated transition and
-survivorship probabilities (vital rates)}
+\item{TM}{A matrix representing the transition matrix containing
+survivorship probabilities (vital rates).}
 
-\item{FM}{Matrix. The fecundity matrix, typically non-zero
-entries in the first row}
+\item{FM}{A matrix. The fecundity matrix. Typically non-zero
+entries in the first row.}
 }
 \value{
-The scalar Net Reproductive Rate (Ro)
+The scalar Net Reproductive Rate (Ro).
 }
 \description{
 Calculate the Ro of a matrix, the basic reproductive ratio.
 }
 \examples{
+# Survivorship matrix
 parS <- c(0.75, 0,   0,
           0.2,  0,   0,
           0.33, 0.4, 0)
+
+# Fecundity matrix
 parF <- c(0, 0, 3,
           0, 0, 2,
           0, 0, 1)
+
 TM <- matrix(parS, 3, 3, byrow = TRUE)
 TM
 FM <- matrix(parF, 3, 3, byrow = TRUE)
 FM
 A <- TM + FM
 A
-eigen(A)$values[1]   # Dom. eigenvalue of A
+
+# Dominant eigenvalue of A
+eigen(A)$values[1L]
 
 calcRo(TM, FM)
 }
@@ -40,7 +46,7 @@ calcRo(TM, FM)
 Calculation of Ro from de-Camino-Beck & Lewis. 2007.
 }
 \seealso{
-\code{\link{eigen}}, \code{\link{solve}}
+\code{\link[=eigen]{eigen()}}, \code{\link[=solve]{solve()}}
 }
 \author{
 Stu Field

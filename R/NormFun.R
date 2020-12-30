@@ -1,4 +1,3 @@
-
 #' Normal Distribution Histogram
 #' 
 #' Describes a Gaussian (Normal) distribution given various

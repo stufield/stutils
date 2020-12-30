@@ -12,14 +12,16 @@ Description: Small suite of useful functions, subroutines, and
 License: MIT + file LICENSE
 URL: https://github.com/stufield/stuRpkg
 Depends:
-    R (>= 3.4.0)
+    R (>= 3.5.0)
 Imports:
     dplyr (>= 0.8.0),
     magrittr (>= 1.5.0),
     grid,
     purrr (>= 0.3.0),
     tibble (>= 2.0.1),
-    VennDiagram
+    usethis (>= 1.5.0),
+    VennDiagram,
+    withr
 Suggests:
     covr,
     devtools (>= 2.0.1),
@@ -29,8 +31,7 @@ Suggests:
     rmarkdown (>= 1.10),
     roxygen2 (>= 6.1.0),
     spelling (>= 1.2),
-    testthat (>= 2.0.0),
-    usethis (>= 1.4.0)
+    testthat (>= 2.0.0)
 VignetteBuilder: 
     knitr
 Encoding: UTF-8
@@ -38,5 +39,5 @@ Language: en-US
 LazyData: yes
 LazyLoad: yes
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.1
 X-CRAN-COMMENT: *Extra comments can go here*

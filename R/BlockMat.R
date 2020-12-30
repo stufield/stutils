@@ -1,8 +1,7 @@
-
 #' Create a Block Matrix
 #' 
 #' Assembles a block matrix from sub-matrices mimicking 
-#' coding capabilities of Matlab.
+#' coding capabilities of `Matlab`.
 #' 
 #' @param x A list of the sub-matrices written in order
 #' they are to appear by row.
@@ -24,14 +23,15 @@
 #' BlockMat(blocks, b = 2)
 #' BlockMat(blocks, b = 4)
 #' @importFrom purrr map
+#' @importFrom usethis ui_stop
 #' @export BlockMat
 BlockMat <- function(x, b) {
   L <- length(x)
   if ( L %% b != 0 ) {
-    stop("List length `x` must be multiple of: ", b, call. = FALSE)
+    usethis::ui_stop("List length `x` must be multiple of: {b}")
   }
   hi <- seq(b, L, b)
   lo <- hi - (b - 1)
-  purrr::map(1:(L / b), function(i) do.call(cbind, x[lo[i]:hi[i]])) %>%
+  purrr::map(1:(L / b), ~ do.call(cbind, x[lo[.x]:hi[.x]])) %>%
     do.call(rbind, .)
 }

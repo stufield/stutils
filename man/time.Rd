@@ -20,9 +20,9 @@ Either number of seconds (\code{numeric} or the time format
 (\code{string}) in "hh:mm:ss.ss".
 }
 \description{
-\code{\link{time2seconds}} and \code{\link{seconds2time}} determine the
-time (format="hh:mm:ss.ss") from the value in seconds or vice versa. Two
-digit hour precision optional.
+\code{\link[=time2seconds]{time2seconds()}} and \code{\link[=seconds2time]{seconds2time()}} determine the
+time (format="hh:mm:ss.ss") from the value in seconds or vice versa.
+Two digit hour precision optional.
 }
 \examples{
 seconds2time(159.72)
@@ -32,8 +32,7 @@ time2seconds("15:44:12.04")
 
 }
 \seealso{
-\code{\link[base]{strsplit}}, \code{\link[base]{gsub}},
-\code{\link[base]{grepl}}, \code{\link[base]{sprintf}}
+\code{\link[=strsplit]{strsplit()}}, \code{\link[=grep]{grep()}}
 }
 \author{
 Stu Field

@@ -1,4 +1,3 @@
-
 #' Optimization Function
 #' 
 #' Given a function, determine the set of parameters that maximizes
@@ -23,8 +22,8 @@
 #' @importFrom graphics abline points legend plot
 #' @export optimizer
 optimizer <- function(fn, I, max = TRUE, ...) {
-  l <- I[1]
-  u <- I[2]
+  l <- I[1L]
+  u <- I[2L]
   scale <- 1.2
   x <- seq(l, u, by = 0.01)
   eval <- fn(x, ...)

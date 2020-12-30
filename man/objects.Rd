@@ -96,7 +96,7 @@ XYZZ.6969.4.7  \tab \code{rnorm(40, mean = 25, sd = 1.5)} \cr
 x              \tab \code{rnorm(40, mean = 25, sd = 3)} \cr
 y              \tab \code{round(runif(40, 10, 20), 0)} \cr
 z              \tab \code{round(rnrom(40, mean = 1, sd = 0.5), 3)} \cr
-Response       \tab \code{factor(sample(c("control", "disease"), 40, replace = TRUE)))} \cr
+Response       \tab \verb{factor(sample(c("control", "disease"), 40, replace = TRUE)))} \cr
 }
 }}
 
@@ -132,5 +132,3 @@ unrecognizable and used as the main example data set for the EEID R tutorial.
 \code{InfectionByCounty}: originally from Dylan George and
 used for an exercise data set in the EEID R tutorial (2010).
 }
-\keyword{Ri}
-\keyword{Rtutorial}

@@ -17,7 +17,7 @@ argument (but does not have to be).}
 If \code{SIMPLIFY = FALSE}, typically a list object with each entry
 the result of applying the function argument to each element of the
 \code{...}. If \code{SIMPLIFY = TRUE}, an attempt is made to reduce the
-result to a vector or matrix in a similar fashion to the \code{simplify=}
+result to a vector or matrix in a similar fashion to the \verb{simplify=}
 argument of \code{\link[base]{sapply}}.
 }
 \description{

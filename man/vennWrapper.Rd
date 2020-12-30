@@ -5,19 +5,35 @@
 \alias{venn_default}
 \title{Venn Diagram Plotting Routine}
 \usage{
-vennWrapper(x, ..., edge.col = "transparent", colors = seq(length(x)),
-  num.cex = 1, alpha = 0.25, label.col = "gray35",
-  fontfamily = "sans", main.fontface = "bold", sub.fontface = "bold",
-  main.col = 1, sub.col = "gray35", main.cex = 3, sub.cex = 1.5,
-  margin = 0.01, cat.fontface = "bold", cat.cex = 2,
-  cat.col = "black", cat.fontfamily = "sans", rotation.degree = 0,
-  filename = NULL)
+vennWrapper(
+  x,
+  ...,
+  edge.col = "transparent",
+  colors = seq(length(x)),
+  num.cex = 1,
+  alpha = 0.25,
+  label.col = "gray35",
+  fontfamily = "sans",
+  main.fontface = "bold",
+  sub.fontface = "bold",
+  main.col = 1,
+  sub.col = "gray35",
+  main.cex = 3,
+  sub.cex = 1.5,
+  margin = 0.01,
+  cat.fontface = "bold",
+  cat.cex = 2,
+  cat.col = "black",
+  cat.fontfamily = "sans",
+  rotation.degree = 0,
+  filename = NULL
+)
 }
 \arguments{
 \item{x}{A named list of vectors containing strings to match intersections.}
 
 \item{...}{Additional arguments passed to the internal
-\code{venn_default}, which was stolen mostly from \code{\link{VennDiagram}}.}
+\code{venn_default}, which was stolen mostly from \code{\link[=VennDiagram]{VennDiagram()}}.}
 
 \item{edge.col}{describe}
 
@@ -79,12 +95,11 @@ vennWrapper(int_list, num.cex = seq(0.5, 2, length = 7), cat.cex = c(1, 1.5, 2),
             main = "Title Here", sub = "Subtitle")
 }
 \references{
-See the \code{\link{VennDiagram}} package.
+See the \pkg{VennDiagram} package.
 }
 \seealso{
-\code{\link{VennDiagram}}, \code{\link{grid}}
+\code{\link[=VennDiagram]{VennDiagram()}}
 }
 \author{
 Stu Field
 }
-\keyword{venn}

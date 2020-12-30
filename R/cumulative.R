@@ -1,4 +1,3 @@
-
 #' Cumulative Wrapper
 #'
 #' Returns cumulative vector values of neighboring vector elements.
@@ -11,9 +10,8 @@
 #' \item{cum_sum}{The cumulative sum of the elements of `x`}
 #' \item{prod}{The product of the elements of `x`}
 #' \item{cum_prod}{The cumulative product of the elements of `x`}
-#' @note Used as a mere exercise in function writing for the R tutorial.
 #' @author Stu Field
-#' @seealso \code{\link{cumsum}}, \code{\link{cumprod}}
+#' @seealso [cumsum()], [cumprod()]
 #' @examples
 #' \dontrun{
 #' ?cumsum
