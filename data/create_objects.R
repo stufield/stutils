@@ -1,6 +1,6 @@
 ###############################
 # Create static objects
-# for use within stuRpkg
+# for use within stutile
 ###############################
 
 TreeData <- tibble::tibble(

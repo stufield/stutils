@@ -20,7 +20,7 @@ A thin wrapper around the \code{\link[=sink]{sink()}} function to print
 the corresponding object to a file connection.
 }
 \examples{
-tab <- crossTab(mtcars, c("cyl", "carb"))
+tab <- cross_tabulate(mtcars, cyl, carb)
 print2file(tab, file = "table_file.txt")
 }
 \seealso{

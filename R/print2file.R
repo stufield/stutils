@@ -11,7 +11,7 @@
 #' @author Stu Field
 #' @seealso [sink()]
 #' @examples
-#' tab <- crossTab(mtcars, c("cyl", "carb"))
+#' tab <- cross_tabulate(mtcars, cyl, carb)
 #' print2file(tab, file = "table_file.txt")
 #' @importFrom usethis ui_done
 #' @importFrom withr defer with_options
