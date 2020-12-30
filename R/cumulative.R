@@ -17,7 +17,7 @@
 #' ?cumsum
 #' }
 #' cumulative(1:10)
-#' @export cumulative
+#' @export
 cumulative <- function(x) {
   list(cum_min  = cummin(x),
        cum_max  = cummax(x),

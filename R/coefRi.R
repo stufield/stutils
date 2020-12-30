@@ -25,7 +25,7 @@
 #' x <- as.vector(as.matrix(Ri_data))[ !is.na(as.vector(as.matrix(Ri_data))) ]
 #' coefRi(x, groups = rep(names(Ri_data), c(8, 10, 13, 6)))
 #' @importFrom stats aov
-#' @export coefRi
+#' @export
 coefRi <- function(x, groups) {
 
   groups <- factor(groups)

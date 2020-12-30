@@ -7,27 +7,28 @@ Authors@R:
            family = "Field",
            role = c("aut", "cre"),
            email = "stu.g.field@gmail.com")
-Description: Small suite of useful functions, subroutines, and
-    data objects for data set manipulation and analysis in R.
+Description: Small suite of useful functions and utilities
+    used for data manipulation and coding in the R environment.
 License: MIT + file LICENSE
-URL: https://github.com/stufield/stuRpkg
+URL: https://github.com/stufield/stutils
 Depends:
     R (>= 3.5.0)
 Imports:
-    dplyr (>= 0.8.0),
-    magrittr (>= 1.5.0),
-    grid,
-    purrr (>= 0.3.0),
-    tibble (>= 2.0.1),
-    usethis (>= 1.5.0),
+    dplyr (>= 1.0.0),
+    ggplot2 (>= 3.3.0),
+    gridExtra,
+    magrittr (>= 2.0.0),
+    purrr (>= 0.3.3),
+    rlang (>= 0.4.9),
+    tibble (>= 3.0.1),
+    usethis (>= 2.0.0),
+    fs,
     VennDiagram,
     withr
 Suggests:
     covr,
     devtools (>= 2.0.1),
-    ggplot2 (>= 3.0.0),
     knitr (>= 1.17),
-    popbio (>= 2.4.4),
     rmarkdown (>= 1.10),
     roxygen2 (>= 6.1.0),
     spelling (>= 1.2),

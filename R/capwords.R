@@ -17,7 +17,7 @@
 #' ## ->  [1] "Using Aic"  "For Model Selection"
 #' ##                ^^^        ^^^^^
 #' ##               "bad"       "good"
-#' @export capwords
+#' @export
 capwords <- function(x, strict = FALSE) {
   sapply(strsplit(x, split = " "), function(.s) {
     ss <- substring(.s, 2)

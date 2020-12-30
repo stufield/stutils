@@ -21,7 +21,7 @@
 #' crossTab(test_data, by = "Sample")
 #' crossTab(test_data, by = c("Sample", "TimePoint"))
 #' @importFrom stats addmargins
-#' @export crossTab
+#' @export
 crossTab <- function(x, by) {
   if ( !all(by %in% names(x)) ) {
     stop("Missing or misspelled entry in [by=] argument: ",

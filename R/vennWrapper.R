@@ -1,14 +1,13 @@
 #' Venn Diagram Plotting Routine
 #'
-#' A wrapper function for plotting Venn diagrams comprising 1 - 5
+#' A wrapper function for plotting Venn diagrams comprising 2 -> 5
 #' intersections.
 #'
 #' More details \dots
 #'
-#' @aliases vennWrapper venn_default
 #' @param x A named list of vectors containing strings to match intersections.
-#' @param ... Additional arguments passed to the internal
-#' \code{venn_default}, which was stolen mostly from [VennDiagram()].
+#' @param ... Additional arguments passed to the underlying plotting routine
+#' from [VennDiagram()].
 #' @param edge.col describe
 #' @param num.cex describe
 #' @param colors describe
@@ -40,25 +39,26 @@
 #'   purrr::set_names(c("Larry", "Curly", "Mo"))
 #' vennWrapper(int_list, num.cex = seq(0.5, 2, length = 7), cat.cex = c(1, 1.5, 2),
 #'             main = "Title Here", sub = "Subtitle")
-#' @importFrom VennDiagram draw.triple.venn draw.pairwise.venn 
-#' @importFrom VennDiagram draw.single.venn draw.quad.venn 
+#' @importFrom VennDiagram draw.triple.venn draw.pairwise.venn
+#' @importFrom VennDiagram draw.single.venn draw.quad.venn
 #' @importFrom VennDiagram draw.quintuple.venn add.title adjust.venn
-#' @importFrom grid grid.draw unit gpar gList textGrob
+#' @importFrom grid grid.draw gList textGrob
 #' @importFrom grDevices dev.list dev.new dev.off pdf png tiff svg
-#' @export vennWrapper venn_default
+#' @export
 vennWrapper <- function(x, ..., edge.col = "transparent",
                         colors = seq(length(x)), num.cex = 1,
                         alpha = 0.25, label.col = "gray35",
                         fontfamily = "sans", main.fontface = "bold",
                         sub.fontface = "bold", main.col = 1, sub.col = "gray35",
-                         main.cex = 3, sub.cex = 1.5, margin = 0.01,
+                        main.cex = 3, sub.cex = 1, margin = 0.05,
                         cat.fontface = "bold", cat.cex = 2,
                         cat.col = "black", cat.fontfamily = "sans",
                         rotation.degree = 0, filename = NULL) {
 
 	if ( is.null(names(x)) ) {
-		stop(sprintf("Must pass a *named* list ... please name [%s] and retry",
-                   deparse(substitute(x))), call.=FALSE)
+		usethis::ui_stop(
+		  "Must pass a *named* list ... please name {deparse(substitute(x))} and retry."
+		)
   }
 	.call      <- match.call(expand.dots = TRUE)
 	.call$col  <- edge.col
@@ -66,26 +66,26 @@ vennWrapper <- function(x, ..., edge.col = "transparent",
 	.call$fill <- colors
 	if ( is.null(filename) )
       filename <- NA
-	for ( i in setdiff(ls(), c("x", "edge.col", "num.cex", "colors")) )
+	for ( i in setdiff(ls(), c("x", "edge.col", "num.cex", "colors")) ) {
 		.call[[i]] <- get(i)
+	}
 	.call[[1L]] <- as.name("venn_default")
-	eval.parent(.call)
+	rlang::eval_tidy(.call)
 }
-
 
 
 venn_default <- function(x, filename, height = 9, width = 9, scale = 1,
                          resolution = 500,
-                         compression="lzw", na=c("stop","none","remove"),
-                         main=NULL, sub=NULL,
-                         main.pos=c(0.5,1.05), main.fontface, sub.fontface,
-                         main.fontfamily="sans", main.col="black", main.cex=1,
-                         main.just=c(0.5, 1), sub.pos=c(0.5,1.05),
-                         sub.fontfamily="sans", sub.col="black", sub.cex=1,
-                         sub.just=c(0.5,1), category.names=names(x),
-                         force.unique=TRUE, print.mode="raw", sigdigs=3,
-                         direct.area=FALSE, area.vector=0,
-                         hyper.test=FALSE, total.population=NULL, ...) {
+                         compression = "lzw", na = c("stop", "none", "remove"),
+                         main = NULL, sub = NULL,
+                         main.pos = c(0.5,1.05), main.fontface, sub.fontface,
+                         main.fontfamily = "sans", main.col = "black", main.cex = 1,
+                         main.just = c(0.5, 1), sub.pos = c(0.5, 1.05),
+                         sub.fontfamily = "sans", sub.col = "black", sub.cex = 1,
+                         sub.just = c(0.5, 1), category.names = names(x),
+                         force.unique = TRUE, print.mode = "raw", sigdigs = 3,
+                         direct.area = FALSE, area.vector = 0,
+                         hyper.test = FALSE, total.population = NULL, ...) {
 
 	if ( direct.area ) {
 		if ( 1 == length(area.vector) ) {
@@ -311,10 +311,6 @@ venn_default <- function(x, filename, height = 9, width = 9, scale = 1,
 		on.exit(dev.off())
 		on.exit(options(bitmapType = current.type), add = TRUE)
 	}
-
 	grid::grid.draw(grob.list)
 	invisible(grob.list)
-
 }
-
-

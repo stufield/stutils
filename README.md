@@ -2,15 +2,15 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 [![Travis Build
-Status](https://travis-ci.org/stufield/stuRpkg.svg?branch=master)](https://travis-ci.org/stufield/stuRpkg)
+Status](https://travis-ci.org/stufield/stutils.svg?branch=master)](https://travis-ci.org/stufield/stutils)
 [![AppVeyor Build
-Status](https://ci.appveyor.com/api/projects/status/github/stufield/stuRpkg?branch=master&svg=true)](https://ci.appveyor.com/project/stufield/stuRpkg)
-[![CRAN\_Status](http://www.r-pkg.org/badges/version/stuRpkg)](https://cran.r-project.org/package=stuRpkg)
-[![codecov](https://codecov.io/gh/stufield/stuRpkg/branch/master/graph/badge.svg)](https://codecov.io/gh/stufield/stuRpkg)
+Status](https://ci.appveyor.com/api/projects/status/github/stufield/stutils?branch=master&svg=true)](https://ci.appveyor.com/project/stufield/stutils)
+[![CRAN\_Status](http://www.r-pkg.org/badges/version/stutils)](https://cran.r-project.org/package=stutils)
+[![codecov](https://codecov.io/gh/stufield/stutils/branch/master/graph/badge.svg)](https://codecov.io/gh/stufield/stutils)
 
 -----
 
-# The `stuRpkg` library
+# The `stutils` library
 
 ## Overview
 
@@ -21,21 +21,12 @@ set manipulation and analysis in R.
 
 ## Installation
 
-To install the latest `development` version of `stuRpkg` from
+To install the latest `development` version of `stutils` from
 **GitHub**:
 
 ``` r
-devtools::install_github("stufield/stuRpkg")
+devtools::install_github("stufield/stutils")
 ```
-
-## pkgdown
-
-[stuRpkg website](docs/dev/index.html)
-
-
----------
-
-
 
 ### Datasets
 
@@ -63,23 +54,22 @@ devtools::install_github("stufield/stuRpkg")
   - **test\_data**
       - A quick sample tibble data frame for running examples and
         checking data frame functionalities. See `?tibble`.
-      - The format of `test_data`
-is:
+      - The format of `test_data` is:
 
-|      Column | Definition                                                                    |
-| ----------: | :---------------------------------------------------------------------------- |
-|         pid | `1041:1080`                                                                   |
-|         Pop | `rep(head(LETTERS, 10), 4)`                                                   |
-|      Sample | `factor(sample(c("small", "medium", "large"), 40, replace = TRUE))`           |
-|   TimePoint | `factor(rep(c("baseline", "6 months", "12 months", "24 months"), each = 10))` |
-|           a | `round(rnorm(40, mean = 25, sd = 3.5), 0)`                                    |
-|           b | `sample(0:6, 40, replace = TRUE)`                                             |
-| seq.1234.56 | `rnorm(40, 25, 3.5)`                                                          |
-|  seq.6969.4 | `rnorm(40, 25, 1.5)`                                                          |
-|           x | `rnorm(40, mean = 5, sd = 3)`                                                 |
-|           y | `round(runif(40, 10, 20), 0)`                                                 |
-|           z | `round(rnorm(40, mean = 1, sd = 0.5), 3))`                                    |
-|    Response | `factor(sample(c("control", "disease"), 40, replace = TRUE)))`                |
+|         Column | Definition                                                                    |
+| -------------: | :---------------------------------------------------------------------------- |
+|            pid | `1041:1080`                                                                   |
+|            Pop | `rep(head(LETTERS, 10), 4)`                                                   |
+|         Sample | `factor(sample(c("small", "medium", "large"), 40, replace = TRUE))`           |
+|      TimePoint | `factor(rep(c("baseline", "6 months", "12 months", "24 months"), each = 10))` |
+|              a | `round(rnorm(40, mean = 25, sd = 3.5), 0)`                                    |
+|              b | `sample(0:6, 40, replace = TRUE)`                                             |
+| ABCD.1234.56.8 | `rnorm(40, 25, 3.5)`                                                          |
+|  XYZZ.6969.4.7 | `rnorm(40, 25, 1.5)`                                                          |
+|              x | `rnorm(40, mean = 5, sd = 3)`                                                 |
+|              y | `round(runif(40, 10, 20), 0)`                                                 |
+|              z | `round(rnorm(40, mean = 1, sd = 0.5), 3))`                                    |
+|       Response | `factor(sample(c("control", "disease"), 40, replace = TRUE)))`                |
 
 -----
 
@@ -87,15 +77,13 @@ is:
 
 ### Hadley Wickham Book
 
-- [R for Data Science](http://r4ds.had.co.nz/)
-- [Advanced R](https://adv-r.hadley.nz)
+[R for Data Science](http://r4ds.had.co.nz/)
 
 ### RStudio Cheatsheets:
 
   - [Cheat sheet
     webpage](https://www.rstudio.com/resources/cheatsheets/)
-  - [GitHub Cheatsheet
-PDFs](https://github.com/rstudio/cheatsheets)
+  - [GitHub Cheatsheet PDFs](https://github.com/rstudio/cheatsheets)
 
 ### Fitting Distributions
 
@@ -118,17 +106,11 @@ PDFs](https://github.com/rstudio/cheatsheets)
 ## LICENSE
 
 This package (suite of programs) is free software; you can redistribute
-it and/or modify it under the terms of the GNU General Public License as
-published by the Free Software Foundation, either version 3 of the
-License, or (at your option) any later version. See please see the a
-[LICENSE](LICENSE). By using in this package you agree to abide by its
-terms.
-
-See [GNU licenses](http://www.gnu.org/licenses/) for a copy of the GNU
-General Public License.
+it and/or modify it under the terms of the MIT License. See please see
+the [LICENSE](LICENSE). By using in this package you agree to abide by
+its terms.
 
 -----
 
-Created on 2019-09-13 by
-[Rmarkdown](https://github.com/rstudio/rmarkdown) (v1.11) and R version
-3.5.2 (2018-12-20).
+Created by [Rmarkdown](https://github.com/rstudio/rmarkdown) (v2.6) and
+R version 3.6.3 (2020-02-29).

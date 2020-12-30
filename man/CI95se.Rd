@@ -10,7 +10,7 @@ CI95se(x)
 \item{x}{Numeric. A vector of data to calculate the CI95.}
 }
 \value{
-A numeric vector with 3 entries:
+A numeric vector with 3 named entries:
 \item{lower}{the lower CI95.}
 \item{mean}{the arithmetic mean.}
 \item{upper}{the upper CI95.}

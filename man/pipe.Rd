@@ -3,13 +3,14 @@
 \name{\%>\%}
 \alias{\%>\%}
 \alias{\%<>\%}
-\title{Pipe operator}
+\title{Pipe operators}
 \usage{
 lhs \%>\% rhs
 
 lhs \%<>\% rhs
 }
 \description{
-See \code{magrittr::\link[magrittr]{\%>\%}} for details.
+See \code{magrittr::\link[magrittr]{\%>\%}}
+and \code{magrittr::\link[magrittr]{\%<>\%}} for details.
 }
 \keyword{internal}

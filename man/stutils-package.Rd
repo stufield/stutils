@@ -8,13 +8,13 @@
 \description{
 \if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
 
-Small suite of useful functions, subroutines, and
-    data objects for data set manipulation and analysis in R.
+Small suite of useful functions and utilities
+    used for data manipulation and coding in the R environment.
 }
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/stufield/stuRpkg}
+  \item \url{https://github.com/stufield/stutils}
 }
 
 }

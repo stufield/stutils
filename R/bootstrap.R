@@ -28,7 +28,7 @@
 #' # bootstrap(x = z, boot = 50)      # factor (ask to convert to character)
 #' @importFrom stats quantile var
 #' @importFrom usethis ui_stop
-#' @export bootstrap
+#' @export
 bootstrap <- function(x, boot = 1000, FUN, up = 0.975, lo = 0.025) {
 
   stopifnot(inherits(x, c("numeric", "character")))

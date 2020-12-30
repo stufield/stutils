@@ -1,6 +1,7 @@
-#' Pipe operator
+#' Pipe operators
 #'
-#' See \code{magrittr::\link[magrittr]{\%>\%}} for details.
+#' See \code{magrittr::\link[magrittr]{\%>\%}}
+#' and \code{magrittr::\link[magrittr]{\%<>\%}} for details.
 #'
 #' @name %>%
 #' @rdname pipe
@@ -10,8 +11,6 @@
 #' @usage lhs \%>\% rhs
 NULL
 
-#' Pipe operator
-#'
 #' @name %<>%
 #' @rdname pipe
 #' @keywords internal

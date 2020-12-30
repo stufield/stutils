@@ -22,7 +22,7 @@
 #' cumsum(1:20)
 #' r.vec <- sample(1:20, 100, replace=TRUE) # random vector
 #' cumsumWindow(r.vec, 5)
-#' @export cumsumWindow
+#' @export
 cumsumWindow <- function(x, window) {
   hi <- (window + 1):length(x)
   lo <- hi - (window - 1)

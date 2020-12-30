@@ -17,7 +17,7 @@
 #' @examples
 #' seconds2time(159.72)
 #'
-#' @export seconds2time
+#' @export
 seconds2time <- function(x) {
   hours <- x %/% 3600
   mins  <- (x %% 3600) %/% 60
@@ -35,7 +35,7 @@ seconds2time <- function(x) {
 #' time2seconds("3:44:12.04")
 #' time2seconds("15:44:12.04")
 #'
-#' @export time2seconds
+#' @export
 time2seconds <- function(x) {
   format_check <- grepl("^[0-9]{1,2}:[0-9]{2}:[0-9]{2}[.][0-9]{1,2}$", x)
   if ( !format_check ) {

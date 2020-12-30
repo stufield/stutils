@@ -15,7 +15,7 @@
 #' print2file(tab, file = "table_file.txt")
 #' @importFrom usethis ui_done
 #' @importFrom withr defer with_options
-#' @export print2file
+#' @export
 print2file <- function(..., file, width = 250) {
   usethis::ui_done("Creating text file ... {file}.")
   withr::defer(sink(file = NULL))

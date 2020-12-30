@@ -2,7 +2,6 @@
 % Please edit documentation in R/vennWrapper.R
 \name{vennWrapper}
 \alias{vennWrapper}
-\alias{venn_default}
 \title{Venn Diagram Plotting Routine}
 \usage{
 vennWrapper(
@@ -19,8 +18,8 @@ vennWrapper(
   main.col = 1,
   sub.col = "gray35",
   main.cex = 3,
-  sub.cex = 1.5,
-  margin = 0.01,
+  sub.cex = 1,
+  margin = 0.05,
   cat.fontface = "bold",
   cat.cex = 2,
   cat.col = "black",
@@ -32,8 +31,8 @@ vennWrapper(
 \arguments{
 \item{x}{A named list of vectors containing strings to match intersections.}
 
-\item{...}{Additional arguments passed to the internal
-\code{venn_default}, which was stolen mostly from \code{\link[=VennDiagram]{VennDiagram()}}.}
+\item{...}{Additional arguments passed to the underlying plotting routine
+from \code{\link[=VennDiagram]{VennDiagram()}}.}
 
 \item{edge.col}{describe}
 
@@ -79,7 +78,7 @@ A grob class object which can be plotting to a device of printed to
 file if \code{filename} is not \code{NULL}.
 }
 \description{
-A wrapper function for plotting Venn diagrams comprising 1 - 5
+A wrapper function for plotting Venn diagrams comprising 2 -> 5
 intersections.
 }
 \details{

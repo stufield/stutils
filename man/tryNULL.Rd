@@ -15,18 +15,17 @@ This option is included for the rare case when something other
 than \code{NULL} is desired.}
 
 \item{quiet}{Logical. Should the error message
-(if encountered) be printed to the console?}
+(if encountered) be printed?}
 }
 \value{
 Either the value of the expression in \code{expr} or,
 if an error is encountered, the value in \code{default}.
 }
 \description{
-A convenient wrapper around either \code{\link[=try]{try()}} or \code{\link[=tryCatch]{tryCatch()}}.
-However, rather than of returning the an error signal/warning,
-\code{NULL} is returned if an error is encountered.
-This simplifies error catching for downstream functionalit via
-\code{\link[=is.null]{is.null()}}.
+A convenient wrapper to capture errors in an expression
+returning \code{NULL} rather than error out.
+This simplifies error catching for downstream functionality via
+\code{\link[=is.null]{is.null()}}. See \code{\link[=try]{try()}} and \code{\link[=tryCatch]{tryCatch()}}.
 }
 \examples{
 tryNULL(log("a"))

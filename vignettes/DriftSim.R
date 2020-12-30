@@ -19,7 +19,7 @@
 #' }
 #' @importFrom graphics hist legend plot lines
 #' @importFrom stats median
-#' @export DriftSim
+#' @export
 DriftSim <- function(p.star = 0.5, n = 50, nsim = 50, plot = "b") {
 
   time1 <- Sys.time()

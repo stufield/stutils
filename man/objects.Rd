@@ -33,10 +33,10 @@ test_data
 }
 \description{
 Below is a listing of all the objects contained in the
-"stuRpkg" beginner package. There is a short description of
+\pkg{stutils} package. There is a short description of
 each object, and perhaps a description of its elements, how they were
-derived, and their sources. Authorship of the object is attributed where
-it is known.
+derived, and their sources.
+If known, the authorship of the object is attributed.
 }
 \section{Functions}{
 \itemize{

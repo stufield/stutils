@@ -15,7 +15,7 @@ home:
   strip_header: false
   links:
   - text: GitHub
-    href: https://github.com/stufield/
+    href: https://github.com/stufield/stutils
   - text: Report a bug
     href: stu.g.field@gmail.com
   - text: The tidyverse
@@ -26,7 +26,7 @@ articles:
   - title: Getting Started
     navbar: ~
     contents:
-    - stuRpkg
+    - stutils
 
 
 development:
@@ -37,40 +37,18 @@ development:
 
 
 reference:
-  - title: Matrices
-    desc: General functions for dealing with matrices.
-    contents:
-    - BlockMat
-    - rotateMatrix
-    - analyzeProjectionMatrix
-    - calcMatrixSensitivity
-    - matPower
-    - zeros
-    - diagR
-    - matrixX
-    - rMat
-    - calcRo
-    - TribMate
-    - PunnettPack
-
   - title: Genetic Drift
-    desc: Drift simulations
+    desc: Simulating genetic drift in action.
     contents:
     - starts_with("DriftSim")
 
   - title: Data Manipulation
     desc: This was before dplyr.
     contents:
-    - removeColumns
-    - searchReplace
-    - subapply
-    - mergeMetaData
-    - Mapply
-    - mapVector
+    - remove_columns
+    - search_replace
     - capwords
     - seconds2time
-    - whichEntry
-    - collapse2df
 
   - title: Exploring
     desc: This was before dplyr.
@@ -84,15 +62,12 @@ reference:
     contents:
     - CI95se
     - coefRi
-    - optimizer
     - MonteCarloIntegral
-    - NormFun
     - bootstrap
 
-  - title: Plotting
-    desc: This was before the ggplot2.
+  - title: Venn
+    desc:  A thin wrapper around venn diagram plotting.
     contents:
-    - plotErrorBars
     - vennWrapper
 
   - title: File System Utilities
@@ -100,9 +75,14 @@ reference:
     contents:
     - print2file
     - path2file
-    - getFileExt
-    - assignRData
     - tryNULL
+
+  - title: Deprecated functions
+    desc: >
+      Previously exported functions that are now deprecated
+      in the current version of `stutils`.
+    contents:
+    - stutils-deprecated
 
   - title: Package Objects
     desc: Exported objects/data.

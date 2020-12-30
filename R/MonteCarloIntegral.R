@@ -68,7 +68,7 @@
 #' print(sum((H$breaks[2]-H$breaks[1]) * H$density), digits = 10)
 #' @importFrom graphics points title curve abline par box
 #' @importFrom stats runif optimize
-#' @export MonteCarloIntegral
+#' @export
 MonteCarloIntegral <- function(n = 10000, interval, FUN, force = FALSE,
                                quick = TRUE, plot = FALSE) {
 

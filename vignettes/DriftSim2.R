@@ -21,7 +21,7 @@
 #' DriftSim2(p = 0.5, Gen = 100, n = 10, trials = 20)
 #' }
 #' @importFrom graphics matplot grid box
-#' @export DriftSim2
+#' @export
 DriftSim2 <- function(p, Gen, n, trials) {
 
   for ( i in 1:trials ) {

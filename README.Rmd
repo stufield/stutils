@@ -16,16 +16,16 @@ knitr::opts_chunk$set(
 )
 ```
 
-[![Travis Build Status](https://travis-ci.org/stufield/stuRpkg.svg?branch=master)](https://travis-ci.org/stufield/stuRpkg)
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/stufield/stuRpkg?branch=master&svg=true)](https://ci.appveyor.com/project/stufield/stuRpkg)
-[![CRAN_Status](http://www.r-pkg.org/badges/version/stuRpkg)](https://cran.r-project.org/package=stuRpkg)
-[![codecov](https://codecov.io/gh/stufield/stuRpkg/branch/master/graph/badge.svg)](https://codecov.io/gh/stufield/stuRpkg)
+[![Travis Build Status](https://travis-ci.org/stufield/stutils.svg?branch=master)](https://travis-ci.org/stufield/stutils)
+[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/stufield/stutils?branch=master&svg=true)](https://ci.appveyor.com/project/stufield/stutils)
+[![CRAN_Status](http://www.r-pkg.org/badges/version/stutils)](https://cran.r-project.org/package=stutils)
+[![codecov](https://codecov.io/gh/stufield/stutils/branch/master/graph/badge.svg)](https://codecov.io/gh/stufield/stutils)
 
 
 --------------------
 
 
-# The `stuRpkg` library
+# The `stutils` library
 
 
 ## Overview
@@ -34,14 +34,14 @@ Small suite of useful functions, subroutines, and data objects for
 data set manipulation and analysis in R.
 
 
--------------------
+---------------
 
 
 ## Installation
-To install the latest `development` version of `stuRpkg` from **GitHub**:
+To install the latest `development` version of `stutils` from **GitHub**:
 
 ```{r, eval = FALSE}
-devtools::install_github("stufield/stuRpkg")
+devtools::install_github("stufield/stutils")
 ```
 
 
@@ -88,7 +88,10 @@ devtools::install_github("stufield/stuRpkg")
 | Response        | `factor(sample(c("control", "disease"), 40, replace = TRUE)))` |
 
 
--------------------------
+
+-------------
+
+
 
 ## Links
 ### Hadley Wickham Book
@@ -116,18 +119,15 @@ devtools::install_github("stufield/stuRpkg")
 
 
 ## LICENSE
+
 This package (suite of programs) is free software; you can redistribute 
-it and/or modify it under the terms of the GNU General Public License 
-as published by the Free Software Foundation, either version 3 of the 
-License, or (at your option) any later version. See please see the 
-a [LICENSE](LICENSE). By using in this package you agree to abide by its terms.
-
-See [GNU licenses](http://www.gnu.org/licenses/) for a copy of the 
-GNU General Public License.
+it and/or modify it under the terms of the MIT License.
+See please see the [LICENSE](LICENSE).
+By using in this package you agree to abide by its terms.
 
 
+-------------
 
-------------------------------
 
-Created on `r Sys.Date()` by [Rmarkdown](https://github.com/rstudio/rmarkdown)
+Created by [Rmarkdown](https://github.com/rstudio/rmarkdown)
 (v`r utils::packageVersion("rmarkdown")`) and `r R.version$version.string`. 
