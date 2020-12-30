@@ -3,57 +3,50 @@
 #' A wrapper function for plotting Venn diagrams comprising 2 -> 5
 #' intersections.
 #'
-#' More details \dots
-#'
+#' @inheritParams VennDiagram::venn.diagram
+#' @inherit VennDiagram::venn.diagram details
+#' @inherit VennDiagram::venn.diagram details
 #' @param x A named list of vectors containing strings to match intersections.
 #' @param ... Additional arguments passed to the underlying plotting routine
-#' from [VennDiagram()].
+#' from [VennDiagram::venn.diagram()].
 #' @param edge.col describe
 #' @param num.cex describe
 #' @param colors describe
 #' @param alpha describe
 #' @param label.col describe
 #' @param fontfamily describe
-#' @param main.fontface describe
-#' @param sub.fontface describe
-#' @param main.col describe
-#' @param sub.col describe
-#' @param main.cex describe
-#' @param sub.cex describe
 #' @param margin describe
 #' @param cat.fontface describe
 #' @param cat.cex describe
 #' @param cat.col describe
 #' @param cat.fontfamily describe
 #' @param rotation.degree Numeric (0-360). Rotation for the entire diagram.
-#' @param filename Character. Path and file name to which to print the figure.
-#' Default of `NULL` or `NA` prints to the null device.
-#' @return A grob class object which can be plotting to a device of printed to
-#' file if `filename` is not `NULL`.
-#' @note I stole this ...
+#' @return A `grob` class object which can be sent to a plotting device or
+#' printed to file with the `filename =` argument.
+#' @note I stole this from the \pkg{VennDiagram} package.
 #' @author Stu Field
-#' @seealso [VennDiagram()]
+#' @seealso [VennDiagram::venn.diagram()]
 #' @references See the \pkg{VennDiagram} package.
 #' @examples
 #' int_list <- lapply(1:3, function(...) sample(LETTERS[1:10], 6)) %>%
 #'   purrr::set_names(c("Larry", "Curly", "Mo"))
-#' vennWrapper(int_list, num.cex = seq(0.5, 2, length = 7), cat.cex = c(1, 1.5, 2),
-#'             main = "Title Here", sub = "Subtitle")
+#' venn_wrapper(int_list, num.cex = seq(0.5, 2, length = 7), cat.cex = c(1, 1.5, 2),
+#'              main = "Title Here", sub = "Subtitle")
 #' @importFrom VennDiagram draw.triple.venn draw.pairwise.venn
 #' @importFrom VennDiagram draw.single.venn draw.quad.venn
 #' @importFrom VennDiagram draw.quintuple.venn add.title adjust.venn
 #' @importFrom grid grid.draw gList textGrob
 #' @importFrom grDevices dev.list dev.new dev.off pdf png tiff svg
 #' @export
-vennWrapper <- function(x, ..., edge.col = "transparent",
-                        colors = seq(length(x)), num.cex = 1,
-                        alpha = 0.25, label.col = "gray35",
-                        fontfamily = "sans", main.fontface = "bold",
-                        sub.fontface = "bold", main.col = 1, sub.col = "gray35",
-                        main.cex = 3, sub.cex = 1, margin = 0.05,
-                        cat.fontface = "bold", cat.cex = 2,
-                        cat.col = "black", cat.fontfamily = "sans",
-                        rotation.degree = 0, filename = NULL) {
+venn_wrapper <- function(x, main, filename = NULL, edge.col = "transparent", ...,
+                         colors = seq(length(x)), num.cex = 1,
+                         alpha = 0.25, label.col = "gray35",
+                         fontfamily = "sans", main.fontface = "bold",
+                         sub.fontface = "bold", main.col = 1, sub.col = "gray35",
+                         main.cex = 3, sub.cex = 1, margin = 0.05,
+                         cat.fontface = "bold", cat.cex = 2,
+                         cat.col = "black", cat.fontfamily = "sans",
+                         rotation.degree = 0) {
 
 	if ( is.null(names(x)) ) {
 		usethis::ui_stop(

@@ -1,17 +1,17 @@
 #' Determine Time from Seconds (& vice versa)
-#' 
+#'
 #' [time2seconds()] and [seconds2time()] determine the
 #' time (format="hh:mm:ss.ss") from the value in seconds or vice versa.
 #' Two digit hour precision optional.
-#' 
+#'
 #' @rdname time
 #' @aliases time2seconds seconds2time
-#' @param x Character or Numeric. Of the form \code{"hh:mm:ss.ss"} 
+#' @param x Character or Numeric. Of the form \code{"hh:mm:ss.ss"}
 #' with 2 decimal point precision on the seconds to convert to seconds.
-#' If numeric, the seconds to convert to a character string of 
+#' If numeric, the seconds to convert to a character string of
 #' the form \code{"hh:mm:ss.ss"}.
-#' @return Either number of seconds (\code{numeric} or the time format
-#' (\code{string}) in "hh:mm:ss.ss".
+#' @return Either number of seconds (`numeric`) or the time format
+#' (`character`) as "hh:mm:ss.ss".
 #' @author Stu Field
 #' @seealso [strsplit()], [grep()]
 #' @examples
@@ -34,7 +34,6 @@ seconds2time <- function(x) {
 #' @examples
 #' time2seconds("3:44:12.04")
 #' time2seconds("15:44:12.04")
-#'
 #' @export
 time2seconds <- function(x) {
   format_check <- grepl("^[0-9]{1,2}:[0-9]{2}:[0-9]{2}[.][0-9]{1,2}$", x)
@@ -50,4 +49,3 @@ time2seconds <- function(x) {
   sec <- convert[3L]
   return(hr * 60 + min * 60 + sec)
 }
-

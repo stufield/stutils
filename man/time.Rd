@@ -16,8 +16,8 @@ If numeric, the seconds to convert to a character string of
 the form \code{"hh:mm:ss.ss"}.}
 }
 \value{
-Either number of seconds (\code{numeric} or the time format
-(\code{string}) in "hh:mm:ss.ss".
+Either number of seconds (\code{numeric}) or the time format
+(\code{character}) as "hh:mm:ss.ss".
 }
 \description{
 \code{\link[=time2seconds]{time2seconds()}} and \code{\link[=seconds2time]{seconds2time()}} determine the
@@ -29,7 +29,6 @@ seconds2time(159.72)
 
 time2seconds("3:44:12.04")
 time2seconds("15:44:12.04")
-
 }
 \seealso{
 \code{\link[=strsplit]{strsplit()}}, \code{\link[=grep]{grep()}}
