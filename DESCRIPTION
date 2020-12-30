@@ -1,6 +1,6 @@
 Type: Package
-Package: stuRpkg
-Title: The Stu R Package
+Package: stutils
+Title: Stu's Utilities Package
 Version: 1.3
 Authors@R: 
     person(given = "Stu",

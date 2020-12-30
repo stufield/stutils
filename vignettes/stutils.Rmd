@@ -1,16 +1,16 @@
 ---
-title: "Introduction to XXXX"
+title: "Introduction to the stutils Package"
 output:
   rmarkdown::html_vignette:
     fig_caption: yes
 vignette: >
-  %\VignetteIndexEntry{Introduction to XXXX}
+  %\VignetteIndexEntry{Introduction to the stutils Package}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
 ```{r setup, include = FALSE}
-library(stuRpkg)
+library(stutils)
 knitr::opts_chunk$set(
   collapse = TRUE, comment = "#>"
 )
@@ -19,7 +19,7 @@ set.seed(101)
 
 
 
-# The `stuRpkg` library
+# The `stutils` library
 
 Describe ...
 

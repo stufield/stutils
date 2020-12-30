@@ -1,2 +1,2 @@
 library(testthat)
-test_check("stuRpkg")
+test_check("stutils")

@@ -1,7 +1,7 @@
 #' Genetic Drift Simulation
-#' 
+#'
 #' Performs an illustrative simulation of genetic drift.
-#' 
+#'
 #' @param p.star Initial allelic frequency of the p allele.
 #' @param n Integer. Number of individuals in the population.
 #' @param nsim Integer. Number of simulations to perform.
@@ -17,7 +17,7 @@
 #' \dontrun{
 #' DriftSim()
 #' }
-#' @importFrom graphics hist legend plot
+#' @importFrom graphics hist legend plot lines
 #' @importFrom stats median
 #' @export DriftSim
 DriftSim <- function(p.star = 0.5, n = 50, nsim = 50, plot = "b") {
@@ -27,12 +27,12 @@ DriftSim <- function(p.star = 0.5, n = 50, nsim = 50, plot = "b") {
 
   # Run the simulation
   for ( i in 1:nsim ) {
-    Gametes <- c(rep("A", 2 * n * p.star), rep("a", 2 * n * (1 - p.star))) 
+    Gametes <- c(rep("A", 2 * n * p.star), rep("a", 2 * n * (1 - p.star)))
     p       <- p.star
     p_vec   <- p.star
     while ( p > 0 && p < 1 ) {
       s <- sample(Gametes, 2*n, replace = TRUE)
-      p <- length(which(s == "A")) / (2 * n) 
+      p <- length(which(s == "A")) / (2 * n)
       p_vec <- c(p_vec, p)
       Gametes <- s
     }
@@ -62,8 +62,8 @@ DriftSim <- function(p.star = 0.5, n = 50, nsim = 50, plot = "b") {
          xlab = "Time (generations)",
          main = "Time to fixation/extinction via Drift")
     legend("topright",
-           legend = c(paste("Mean", format(MeanFix)), 
-                      paste("Median", format(MedianFix))), 
+           legend = c(paste("Mean", format(MeanFix)),
+                      paste("Median", format(MedianFix))),
            lwd = 2, ncol=2, col = c("navy", 2),
            bg = "gray95", box.lty = 0, cex = 0.85)
     abline(v = MeanFix, col = "navy", lwd = 2, lty = 2)
