@@ -9,7 +9,7 @@ Authors@R:
            email = "stu.g.field@gmail.com")
 Description: Small suite of useful functions, subroutines, and
     data objects for data set manipulation and analysis in R.
-License: GPL-3 | file LICENSE
+License: MIT + file LICENSE
 URL: https://github.com/stufield/stuRpkg
 Depends:
     R (>= 3.4.0)

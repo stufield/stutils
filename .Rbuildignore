@@ -11,3 +11,4 @@
 ^filter_clean$
 ^filter_smudge$
 ^.*\.Rproj$
+^LICENSE\.md$
