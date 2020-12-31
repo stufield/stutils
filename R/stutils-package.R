@@ -1,3 +1,4 @@
+stutils_env <- new.env(parent = emptyenv())
 
 #' @keywords internal
 "_PACKAGE"
