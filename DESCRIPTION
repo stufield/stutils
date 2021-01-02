@@ -26,6 +26,7 @@ Imports:
     VennDiagram,
     withr
 Suggests:
+    bench,
     covr,
     devtools (>= 2.0.1),
     knitr (>= 1.17),
