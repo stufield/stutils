@@ -20,7 +20,3 @@
 *.utf8.md
 *.knit.md
 
-# ignore files related to adding keyword expansion
-# Revision Info: Id, Author and Date in file header
-filter_clean
-filter_smudge
